@@ -18,7 +18,7 @@ to know: [SECURITY.md](SECURITY.md) states the claim precisely, says what counts
 break, and tells you where to send it.
 
 ```
-curl -fsSL URL COMING SOON | sh
+curl -fsSL https://phic.online/rrsh/install.sh | sh
 ```
 
 One self-contained, signed binary. Linux and macOS, x86_64 and arm64. Nothing else to
