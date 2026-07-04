@@ -1,9 +1,9 @@
-# rrsh — Relational Shell
+# RRSH — Relational Shell
 
 **SSH-shaped remote access, but the session is an RRFC coupling — not an encrypted
 byte stream.**
 
-`rrsh` gives you what SSH gives you — an authenticated, confidential interactive
+`RRSH` gives you what SSH gives you — an authenticated, confidential interactive
 session to a remote machine, plus command execution, file copy, and headless/agent
 access — except the session is not a stream of ciphertext. What crosses the wire is a
 sequence of structureless float tuples that do not refer to your content at all. The
@@ -29,12 +29,12 @@ the one-liner does and how to verify it yourself.
 
 ## What it is
 
-`rrsh` is a remote-access tool: shell in, run a command, copy a file, hand a scoped
+`RRSH` is a remote-access tool: shell in, run a command, copy a file, hand a scoped
 credential to an agent or a CI job. If you use SSH, the shape is familiar — you mint a
 credential, provision it on the host, start a daemon, and connect.
 
 What is different is the transport underneath. A conventional secure shell wraps your
-session in a cipher and sends the resulting ciphertext across the network. `rrsh`
+session in a cipher and sends the resulting ciphertext across the network. `RRSH`
 instead couples the two endpoints through **RRFC** (Resolution-Relational Field
 Communications) — a communications method in which the shared secret (the *seed*)
 governs how each side resolves a stream of numeric field values back into meaning.
@@ -62,15 +62,15 @@ without the codec source. If it fails, the other two fail with it. We invite exa
 test; see [SECURITY.md](SECURITY.md) for what a valid break looks like and how to report
 one.
 
-## rrsh vs SSH
+## RRSH vs SSH
 
-`rrsh` is **not** "SSH but faster," and it is **not** strictly better than SSH. It is
+`RRSH` is **not** "SSH but faster," and it is **not** strictly better than SSH. It is
 better on one specific axis — the transport can only be *denied*, never *read* — and it
 is weaker on another (its confidentiality is a demonstrated *structural* result, not a
 decades-reviewed cipher; see [Read this first](#read-this-first-honest-limits)). Pick
 per context.
 
-| | SSH | rrsh |
+| | SSH | RRSH |
 |---|---|---|
 | **What's on the wire** | Ciphertext — safe under today's crypto assumptions; attackable if the cipher or an implementation breaks, now or later | Structureless float tuples that don't refer to the content at all — nothing to decrypt |
 | **Secret at rest on the server** | Private host key — steal the box, impersonate the host to everyone | No decodable secret at rest; a stolen box yields inert state |
@@ -83,7 +83,7 @@ per context.
 
 ### Capability parity
 
-| Capability | SSH | rrsh |
+| Capability | SSH | RRSH |
 |---|---|---|
 | Interactive shell (PTY) | ✓ | ✓ |
 | Non-interactive exec | ✓ | ✓ |
@@ -94,7 +94,7 @@ per context.
 | Multi-factor / cert auth | ✓ mature | not yet (seed is the single factor) |
 | Independently-reviewed transport | ✓ | not yet |
 
-**Reach for rrsh** when forwarding nodes must not be able to read the sessions they
+**Reach for RRSH** when forwarding nodes must not be able to read the sessions they
 carry, when "no secret at rest on the server" and "no harvest-now-decrypt-later" matter,
 or when you want to grant automation a scoped seed instead of a key plus an
 `authorized_keys` dance — fleet access, CI, agents, pre-provisioned devices.
@@ -107,11 +107,11 @@ properties at once.)
 
 ## Why a single opaque binary
 
-`rrsh` ships as **one self-contained, signed executable** rather than as source or a
+`RRSH` ships as **one self-contained, signed executable** rather than as source or a
 package. This is deliberate:
 
 - **The method is proprietary.** RRFC is patent-pending, pre-publication work. The
-  binary lets you *run* `rrsh` without shipping the method loose as readable source. The
+  binary lets you *run* `RRSH` without shipping the method loose as readable source. The
   RRFC codec and the resolution logic are compiled and embedded inside the executable
   together with a private runtime; nothing readable ships alongside it.
 - **One artifact, nothing to assemble.** The codec is embedded, so the target needs
@@ -144,7 +144,7 @@ The installer:
 2. **Verifies the signature** against the MiulusTek release public key pinned inside the
    script, and prints that key's SHA-256 so you can confirm the trust root. A failed
    verification aborts the install.
-3. Installs `rrsh` into `~/.local/bin` and links `rrshd`, `rrsh-cp`, and `rrsh-keygen`
+3. Installs `RRSH` into `~/.local/bin` and links `rrshd`, `rrsh-cp`, and `rrsh-keygen`
    beside it.
 
 Supported: Linux and macOS, `x86_64` and `aarch64`/`arm64`.
@@ -214,7 +214,7 @@ commands — useful for handing an agent or a CI job a tightly-scoped credential
 
 ## Read this first (honest limits)
 
-`rrsh` provides **Structural Privacy**, not encryption. It is not a cipher and makes no
+`RRSH` provides **Structural Privacy**, not encryption. It is not a cipher and makes no
 computational-hardness claim. Know its bounds before you rely on it:
 
 - **Not yet independently reviewed — this is a claim under test, not a settled result.**
@@ -225,10 +225,10 @@ computational-hardness claim. Know its bounds before you rely on it:
   the real test is the statistical battery an adversary can run on a capture. Because it
   is not a cipher, the bar is not cryptanalysis; it is independent scrutiny of the
   structural claim itself — and we actively invite it ([SECURITY.md](SECURITY.md) states
-  the claim precisely and what a valid break looks like). Do not represent `rrsh` as
+  the claim precisely and what a valid break looks like). Do not represent `RRSH` as
   "encryption," and do not lean on it as a *guarantee* of secrecy for high-stakes content
   until that review exists. If you need an independently-reviewed confidentiality layer
-  against a well-resourced adversary today, use SSH — or run `rrsh` *and* SSH together.
+  against a well-resourced adversary today, use SSH — or run `RRSH` *and* SSH together.
 - **Not traffic-hiding.** Content is unreadable, but a relay or observer still sees
   *that* two endpoints are talking, when, and how much. Metadata resistance is a
   separate mechanism, not a free property.
@@ -243,14 +243,14 @@ computational-hardness claim. Know its bounds before you rely on it:
 
 ## Provenance
 
-`rrsh` is built on **RRFC** (Resolution-Relational Field Communications), the same
+`RRSH` is built on **RRFC** (Resolution-Relational Field Communications), the same
 substrate behind [PHIc Messenger](https://phic.online), a messaging app for text, voice, video,
-and files. The primitives that carry a PHIc message carry an `rrsh` shell.
+and files. The primitives that carry a PHIc message carry an `RRSH` shell.
 
 This is early software — a research spike with real, on-device-demonstrated properties
 and rough edges. Expect both.
 
 ---
 
-*rrsh is Structural Privacy applied to remote access. It is not encryption, and it does
+*RRSH is Structural Privacy applied to remote access. It is not encryption, and it does
 not claim to be.*
