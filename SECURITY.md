@@ -1,13 +1,13 @@
 # Security — the claim, and how to break it
 
-`rrsh` ships a specific, falsifiable claim. This document states it precisely, tells you
+`RRSH` ships a specific, falsifiable claim. This document states it precisely, tells you
 what a valid break looks like, and gives you a path to report one. **We want the
 break.** A working distinguisher is not an attack on us — it is a research result we will
 treat as a contribution and act on.
 
 ## The claim under test
 
-The `rrsh` transport is a coupling through RRFC (Resolution-Relational Field
+The `RRSH` transport is a coupling through RRFC (Resolution-Relational Field
 Communications). What crosses the wire is a stream of numeric field tuples — roughly
 `{channel, mass, steps}` — governed by a shared secret (the *seed*). The claim is:
 
@@ -68,10 +68,10 @@ above are the real test, and running them is precisely the scrutiny this repo in
 - **Preferred:** open a GitHub issue with your method, sample sizes, and reproduction
   steps. Public findings are welcome — we are not trying to bury them.
 - **Sensitive findings** (e.g. a recovery technique you'd rather coordinate on):
-  email **security@phic.online** — replace with your real contact before publishing —
+  email **support@miulustek.com** — replace with your real contact before publishing —
   with enough detail to reproduce. We'll acknowledge and work it with you.
 
-When you report, tell us: OS/arch, `rrsh` binary version (`rrsh --version`), the capture
+When you report, tell us: OS/arch, `RRSH` binary version (`RRSH --version`), the capture
 or generator, the distinguisher, and the measured advantage vs. chance. That's what turns
 a claim into a result — in either direction.
 

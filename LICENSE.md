@@ -1,8 +1,8 @@
-# rrsh — License and Terms
+# RRSH — License and Terms
 
 Copyright © MiulusTek. All rights reserved.
 
-The `rrsh` binaries distributed in this repository (the "Software") are proprietary.
+The `RRSH` binaries distributed in this repository (the "Software") are proprietary.
 The Software embeds RRFC (Resolution-Relational Field Communications), a patent-pending,
 pre-publication method.
 
