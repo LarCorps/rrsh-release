@@ -12,6 +12,11 @@ difference is structural, and it changes the threat model:
 > **Against the `rrsh` transport, every attack reduces to denial of service.
 > None of them reduce to reading your session.**
 
+That's the claim. It's structural, falsifiable from a traffic capture alone, and **not
+yet independently verified** — which is why this repo is public. If you break it, we want
+to know: [SECURITY.md](SECURITY.md) states the claim precisely, says what counts as a
+break, and tells you where to send it.
+
 ```
 curl -fsSL https://phic.online/rrsh/install.sh | sh
 ```
@@ -37,18 +42,25 @@ Without the seed, the stream on the wire is not weakly-encrypted content — it 
 content at all. There is no ciphertext to attack, harvest, or eventually break; there
 is a coupling you either participate in or you do not.
 
-This yields a small set of properties that a cipher-based transport structurally cannot
-offer:
+If that structural claim holds — and testing it is exactly why this repo is public
+([SECURITY.md](SECURITY.md)) — it yields a set of properties a cipher-based transport
+does not:
 
 - **Nothing readable on the wire.** An observer records `{channel, mass, steps}` float
-  tuples that do not refer to your session. There is no ciphertext, so there is no
-  "harvest now, decrypt later."
+  tuples that are claimed to carry no recoverable structure about your session. There is
+  no ciphertext, so there is no "harvest now, decrypt later."
 - **No decodable secret at rest on the server.** Steal the box and you get inert
   state, not a master key that reads captured traffic or impersonates the host to every
   client.
 - **A forwarding node cannot read what it forwards.** A relay, bastion, or jump host is
   dumb substrate: it moves floats it cannot interpret. Its entire power over a session
   is denial of service — drop, delay, or flood. It cannot read, forge, or impersonate.
+
+The first property is the load-bearing one, and it is **falsifiable from a traffic
+capture alone** — the emissions are the public surface of the claim, testable by anyone
+without the codec source. If it fails, the other two fail with it. We invite exactly that
+test; see [SECURITY.md](SECURITY.md) for what a valid break looks like and how to report
+one.
 
 ## rrsh vs SSH
 
@@ -110,10 +122,14 @@ package. This is deliberate:
   [`signing/`](signing/)). The installer verifies it before anything runs, so a tampered
   download or a compromised mirror is caught up front.
 
-Because the confidentiality property is *structural*, closed source does not weaken it:
-`rrsh` does not rely on the codec being secret for its security. What is on the wire is
-unreadable to anyone without the seed whether or not they have the binary. The binary is
-about protecting the *method*, not the *sessions*.
+Closed source and open scrutiny are not in tension here, because the confidentiality
+claim is *structural*: it does not rest on the codec being secret. The claim is that the
+emissions carry no recoverable content **whether or not** an adversary has the binary —
+which means it is testable from a traffic capture alone, and closing the source neither
+strengthens nor shields it. The binary protects the *method* (the IP); it does not, and
+is not meant to, protect the *sessions* by obscurity. If the emissions leak, the binary
+being opaque won't save the claim — which is exactly why we're comfortable publishing it
+for people to attack ([SECURITY.md](SECURITY.md)).
 
 ## Install
 
@@ -201,14 +217,18 @@ commands — useful for handing an agent or a CI job a tightly-scoped credential
 `rrsh` provides **Structural Privacy**, not encryption. It is not a cipher and makes no
 computational-hardness claim. Know its bounds before you rely on it:
 
-- **Not yet independently reviewed.** The confidentiality result — that decoding
-  collapses to chance without the seed — is a *structural* property that has been
-  empirically demonstrated and reproduced, but not independently verified. Because it is
-  not a cipher, the bar is not cryptanalysis; it is independent scrutiny of the
-  structural claim itself. Do not represent `rrsh` as "encryption," and do not lean on
-  it as a *guarantee* of secrecy for high-stakes content until that review exists. If
-  you need an independently-reviewed confidentiality layer against a well-resourced
-  adversary today, use SSH — or run `rrsh` *and* SSH together.
+- **Not yet independently reviewed — this is a claim under test, not a settled result.**
+  The confidentiality claim — that decoding collapses to chance without the seed — is a
+  *structural* property that has been empirically demonstrated and reproduced internally,
+  but not independently verified. Our own strongest public evidence to date is a smoke
+  test (a plaintext marker absent from the wire), which we're explicit is *not* proof;
+  the real test is the statistical battery an adversary can run on a capture. Because it
+  is not a cipher, the bar is not cryptanalysis; it is independent scrutiny of the
+  structural claim itself — and we actively invite it ([SECURITY.md](SECURITY.md) states
+  the claim precisely and what a valid break looks like). Do not represent `rrsh` as
+  "encryption," and do not lean on it as a *guarantee* of secrecy for high-stakes content
+  until that review exists. If you need an independently-reviewed confidentiality layer
+  against a well-resourced adversary today, use SSH — or run `rrsh` *and* SSH together.
 - **Not traffic-hiding.** Content is unreadable, but a relay or observer still sees
   *that* two endpoints are talking, when, and how much. Metadata resistance is a
   separate mechanism, not a free property.
