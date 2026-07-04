@@ -47,7 +47,7 @@ If that structural claim holds — and testing it is exactly why this repo is pu
 does not:
 
 - **Nothing readable on the wire.** An observer records `{channel, mass, steps}` float
-  tuples that are claimed to carry no recoverable structure about your session. There is
+  tuples that  carry no recoverable structure about your session. There is
   no ciphertext, so there is no "harvest now, decrypt later."
 - **No decodable secret at rest on the server.** Steal the box and you get inert
   state, not a master key that reads captured traffic or impersonates the host to every
