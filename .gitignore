@@ -1,0 +1,7 @@
+# local grant/seed material — never commit
+.rrsh/
+*.grant.json
+
+# OS / editor cruft
+.DS_Store
+*.swp
