@@ -244,7 +244,7 @@ computational-hardness claim. Know its bounds before you rely on it:
 ## Provenance
 
 `rrsh` is built on **RRFC** (Resolution-Relational Field Communications), the same
-substrate behind [PHIc](https://phic.online), a messaging app for text, voice, video,
+substrate behind [PHIc Messenger](https://phic.online), a messaging app for text, voice, video,
 and files. The primitives that carry a PHIc message carry an `rrsh` shell.
 
 This is early software — a research spike with real, on-device-demonstrated properties
