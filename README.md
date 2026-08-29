@@ -9,8 +9,8 @@ access — except the session is not a stream of ciphertext. What crosses the wi
 sequence of structureless float tuples that do not refer to your content at all. The
 difference is structural, and it changes the threat model:
 
-> **Against the `rrsh` transport, every attack reduces to denial of service.
-> None of them reduce to reading your session.**
+> **An unauthorized transport or relay may observe, drop, delay, replay, or flood
+> frames, but cannot resolve their application content merely by forwarding them.**
 
 That's the claim. It's structural, falsifiable from a traffic capture alone, and **not
 yet independently verified** — which is why this repo is public. If you break it, we want
@@ -21,9 +21,9 @@ break, and tells you where to send it.
 curl -fsSL https://phic.online/rrsh/install.sh | sh
 ```
 
-One self-contained, signed binary. Linux and macOS, x86_64 and arm64. Nothing else to
-install — the codec is embedded in the binary. See [Install](#install) below for what
-the one-liner does and how to verify it yourself.
+One self-contained, signed binary for each published target: macOS arm64 and Linux
+x86_64. Nothing else to install — the codec is embedded in the binary. See
+[Install](#install) below for what the one-liner does and how to verify it yourself.
 
 ---
 
@@ -36,11 +36,11 @@ credential, provision it on the host, start a daemon, and connect.
 What is different is the transport underneath. A conventional secure shell wraps your
 session in a cipher and sends the resulting ciphertext across the network. `RRSH`
 instead couples the two endpoints through **RRFC** (Resolution-Relational Field
-Communications) — a communications method in which the shared secret (the *seed*)
-governs how each side resolves a stream of numeric field values back into meaning.
-Without the seed, the stream on the wire is not weakly-encrypted content — it is not
-content at all. There is no ciphertext to attack, harvest, or eventually break; there
-is a coupling you either participate in or you do not.
+Communications) — a communications method in which endpoint coupling state governs how
+each side resolves a stream of numeric field values back into meaning. Without that
+state, the stream on the wire is not weakly-encrypted content — it is not content at
+all. There is no ciphertext to attack, harvest, or eventually break; there is a
+coupling you either participate in or you do not.
 
 If that structural claim holds — and testing it is exactly why this repo is public
 ([SECURITY.md](SECURITY.md)) — it yields a set of properties a cipher-based transport
@@ -49,10 +49,10 @@ does not:
 - **Nothing readable on the wire.** An observer records `{channel, mass, steps}` float
   tuples that  carry no recoverable structure about your session. There is
   no ciphertext, so there is no "harvest now, decrypt later."
-- **No decodable secret at rest on the server.** Steal the box and you get inert
-  state, not a master key that reads captured traffic or impersonates the host to every
-  client.
-- **A forwarding node cannot read what it forwards.** A relay, bastion, or jump host is
+- **Successfully collapsed history has a backward key boundary.** The current grant
+  contains endpoint participation state, but does not derive a predecessor content key
+  that was actually erased after a confirmed collapse.
+- **A forwarding node cannot read what it forwards.** A relay or bastion is
   dumb substrate: it moves floats it cannot interpret. Its entire power over a session
   is denial of service — drop, delay, or flood. It cannot read, forge, or impersonate.
 
@@ -65,21 +65,21 @@ one.
 ## RRSH vs SSH
 
 `RRSH` is **not** "SSH but faster," and it is **not** strictly better than SSH. It is
-better on one specific axis — the transport can only be *denied*, never *read* — and it
-is weaker on another (its confidentiality is a demonstrated *structural* result, not a
-decades-reviewed cipher; see [Read this first](#read-this-first-honest-limits)). Pick
-per context.
+better on one specific axis — an unauthorized forwarder can *deny* the coupling but
+cannot resolve its content merely by forwarding it — and it is weaker on another (its
+confidentiality is a demonstrated *structural* result, not a decades-reviewed cipher;
+see [Read this first](#read-this-first-honest-limits)). Pick per context.
 
 | | SSH | RRSH |
 |---|---|---|
 | **What's on the wire** | Ciphertext — safe under today's crypto assumptions; attackable if the cipher or an implementation breaks, now or later | Structureless float tuples that don't refer to the content at all — nothing to decrypt |
-| **Secret at rest on the server** | Private host key — steal the box, impersonate the host to everyone | No decodable secret at rest; a stolen box yields inert state |
+| **Secret at rest on the server** | Private host key | Per-relationship identity `S` plus current content key `C(n)`; compromise is an endpoint failure, not a way to derive an erased predecessor |
 | **Harvest-now, decrypt-later** | A real concern for recorded ciphertext | No ciphertext to harvest — recorded traffic is meaningless |
 | **Compromised jump host / bastion** | Can MITM if it holds keys; always sees metadata | Cannot read the session it forwards — DoS only |
-| **Worst case for the transport** | Key/cipher compromise → **disclosure** | Link capture / sever / flood → **denial of service, never disclosure** |
-| **Trust bootstrap** | TOFU on first connect (a MITM window) | Out-of-band seed (no in-band moment to attack), or bootstrap + in-band rotation over a low-trust channel — TOFU-shaped, forward-secure |
+| **Worst case for an unauthorized forwarder** | Keyed MITM can disclose content | Link capture / sever / flood → denial of service; current-grant compromise is outside this claim |
+| **Trust bootstrap** | TOFU on first connect (a MITM window) | Independently provisioned v3 grant; low-assurance bootstrap is not enabled |
 | **Independently reviewed** | ✓ decades of cryptanalysis | Not yet — the structural confidentiality claim is demonstrated but awaits independent scrutiny |
-| **Multi-factor / cert chains** | ✓ mature | The seed is the single factor today |
+| **Multi-factor / cert chains** | ✓ mature | The symmetric grant is the single factor today |
 
 ### Capability parity
 
@@ -89,14 +89,14 @@ per context.
 | Non-interactive exec | ✓ | ✓ |
 | File copy (scp/sftp) | ✓ | ✓ |
 | Jump host / bastion | ✓ (host sees metadata; can MITM if keyed) | ✓ — **and unreadable to the bastion** |
-| Agent / headless access | ✓ (`ssh-agent`) | ✓ (`rrshd` holding a scoped seed) |
+| Agent / headless access | ✓ (`ssh-agent`) | ✓ (`rrshd` holding a scoped grant) |
 | Transparent reconnect | needs mosh/autossh | ✓ recoverable coupling |
-| Multi-factor / cert auth | ✓ mature | not yet (seed is the single factor) |
+| Multi-factor / cert auth | ✓ mature | not yet (the grant is the single factor) |
 | Independently-reviewed transport | ✓ | not yet |
 
 **Reach for RRSH** when forwarding nodes must not be able to read the sessions they
-carry, when "no secret at rest on the server" and "no harvest-now-decrypt-later" matter,
-or when you want to grant automation a scoped seed instead of a key plus an
+carry, when a collapsed-history boundary and "no harvest-now-decrypt-later" matter,
+or when you want to grant automation a scoped relationship instead of a key plus an
 `authorized_keys` dance — fleet access, CI, agents, pre-provisioned devices.
 
 **Reach for SSH** when your compliance regime mandates an audited cipher or MFA/cert
@@ -104,6 +104,24 @@ chains, when you need a today-independently-reviewed confidentiality layer, or f
 contact with a host where an active MITM is in your threat model and you have no
 out-of-band verification. (You can also run `rrsh` *over* or *alongside* SSH to get both
 properties at once.)
+
+## Transport hardening in this release
+
+This binary is wire/grant version 3 and carries Field Collapse Ratchet v2:
+
+- Every complete frame has an opaque token and full-frame HMAC; tampering, replay, and
+  v1/v2 downgrade fail closed.
+- Sender-minted authenticated time defines canonical cross-sender chronology. At a
+  clean close, `D(n)` commits both the measured field `M(n)` and the load-bearing
+  ordered transcript `T(n)` before deriving `C(n+1)`.
+- Accepted open-epoch records, dedup state, and sender high-water persist across
+  restart. A successor is staged before signaling and commits on authenticated
+  successor-field traffic, closing the terminal-ack loss gap.
+- A separately placeable epoch/key-commitment marker rejects an older grant file while
+  that marker remains current. It is portable rollback detection, not secure hardware.
+
+Version 2 grants and frames are deliberately not migrated in place. Reissue old grants
+with `rrsh-keygen`; a mixed-version pair fails visibly rather than silently downgrading.
 
 ## Why a single opaque binary
 
@@ -147,7 +165,7 @@ The installer:
 3. Installs `RRSH` into `~/.local/bin` and links `rrshd`, `rrsh-cp`, and `rrsh-keygen`
    beside it.
 
-Supported: Linux and macOS, `x86_64` and `aarch64`/`arm64`.
+Published targets: Linux `x86_64` and macOS `aarch64`/`arm64`.
 
 ### Verify it yourself
 
@@ -187,16 +205,16 @@ dir, default `~/.local/bin`), `RRSH_NO_VERIFY=1` (skip signature verification �
 ## Usage
 
 The workflow mirrors SSH. You mint a *grant* (the analogue of an SSH keypair), provision
-the same grant on the host out of band (the seed **is** the credential — treat grant
+the same grant on the host out of band (the grant **is** the credential — treat grant
 files exactly like SSH private keys), start the daemon on the host, and connect from the
 client.
 
 ```sh
-# 1. mint a grant — a seed + address + policy (the ssh-keygen step)
+# 1. mint a v3 grant — identity S + independent C(0) + address + policy
 rrsh-keygen mybox --host 10.0.0.5 --port 8022 \
   --allow exec --exec-allowlist uname,uptime
 
-# 2. provision the SAME grant on the host, out of band (the seed IS the credential)
+# 2. provision the SAME grant on the host, out of band (the grant IS the credential)
 scp ~/.rrsh/grants/mybox.json host:~/.rrsh/grants/mybox.json
 
 # 3. on the host: start the daemon
@@ -218,8 +236,8 @@ commands — useful for handing an agent or a CI job a tightly-scoped credential
 computational-hardness claim. Know its bounds before you rely on it:
 
 - **Not yet independently reviewed — this is a claim under test, not a settled result.**
-  The confidentiality claim — that decoding collapses to chance without the seed — is a
-  *structural* property that has been empirically demonstrated and reproduced internally,
+  The confidentiality claim — that decoding collapses to chance without the endpoint's
+  coupling state — is a *structural* property demonstrated and reproduced internally,
   but not independently verified. Our own strongest public evidence to date is a smoke
   test (a plaintext marker absent from the wire), which we're explicit is *not* proof;
   the real test is the statistical battery an adversary can run on a capture. Because it
@@ -232,14 +250,19 @@ computational-hardness claim. Know its bounds before you rely on it:
 - **Not traffic-hiding.** Content is unreadable, but a relay or observer still sees
   *that* two endpoints are talking, when, and how much. Metadata resistance is a
   separate mechanism, not a free property.
-- **First contact is out-of-band or TOFU-shaped — not active-MITM-proof.** Provisioning
-  the seed out of band (device setup, fleet tooling, QR) removes the in-band moment a
-  MITM could interpose — this is the strongest posture. The low-trust onboarding path
-  (share a disposable bootstrap seed, couple, then instantly rotate in-band to a true
-  seed) is forward-secure and passive-safe, but like SSH's TOFU it does not defend
-  against an attacker online at the rotation instant.
-- **The seed is the whole security boundary.** There is no second factor in this
-  version. Protect grant files exactly as you would SSH private keys.
+- **First contact is out-of-band.** Provisioning a v3 grant out of band (device setup,
+  fleet tooling, QR) removes the in-band moment a MITM could interpose. The earlier
+  low-trust bootstrap design predates independent `C(0)` and is not enabled.
+- **The grant is the endpoint security boundary.** There is no second factor in this
+  version. Protect grant files exactly as you would SSH private keys. A current-grant
+  compromise exposes current and future participation.
+- **Field collapse is not post-compromise healing.** At a clean close, both endpoints
+  commit the measured field and its load-bearing chronology `T(n)`, then advance the
+  independent content key. This can protect successfully collapsed recorded traffic
+  from later current-state compromise only if the predecessor was actually erased.
+- **Backups remain real copies.** The separate epoch marker detects an older grant file
+  only while that marker remains current. A backup taken while `C(n)` was live retains
+  it after pruning; rolling back the marker with the grant defeats the portable check.
 
 ## Provenance
 

@@ -88,7 +88,7 @@ cat <<'EOF'
 
 Next:
   rrsh-keygen mybox --host <ip> --port 8022 --allow exec --exec-allowlist uname,uptime
-  # copy ~/.rrsh/grants/mybox.json to the host, out of band (the seed IS the credential)
+  # copy ~/.rrsh/grants/mybox.json to the host, out of band (the grant IS the credential)
   rrshd --grant mybox            # on the host
   rrsh  mybox -- uname -a         # from the client
 EOF

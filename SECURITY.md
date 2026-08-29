@@ -8,10 +8,11 @@ treat as a contribution and act on.
 ## The claim under test
 
 The `RRSH` transport is a coupling through RRFC (Resolution-Relational Field
-Communications). What crosses the wire is a stream of numeric field tuples — roughly
-`{channel, mass, steps}` — governed by a shared secret (the *seed*). The claim is:
+Communications). What crosses the wire is opaque authenticated framing around numeric
+field contributions — roughly `{channel, mass, steps}` — governed by endpoint coupling
+state. The frame MAC supplies integrity; the confidentiality claim remains structural:
 
-> **Without the seed, the emitted stream is statistically indistinguishable from chance
+> **Without the coupling state, the emitted stream is statistically indistinguishable from chance
 > with respect to the session content. Decoding collapses to chance; the emissions do
 > not carry recoverable structure about what is being sent.**
 
@@ -27,25 +28,32 @@ Be precise about the target so a "break" is a real break and not a category erro
 - **We do not claim traffic-analysis resistance.** That two endpoints are talking, when,
   how much, and coarse timing/volume are visible to any observer. Recovering *that a
   session happened* or *how large it was* is **not** a break. Recovering *content* — or
-  any content-dependent structure the seed was supposed to erase — **is**.
-- **We do not claim active-MITM resistance at first contact.** Trust bootstrap is
-  out-of-band or TOFU-shaped (see README). Interposing at seed-provisioning time is a
-  known limit, not a break of the transport claim.
+  any content-dependent structure the coupling state was supposed to erase — **is**.
+- **We do not claim active-MITM resistance at first contact.** The current v3 grant is
+  provisioned out of band; the older low-assurance bootstrap design is not enabled.
+  Interposing at provisioning time is a known limit, not a break of the transport claim.
 - **We do not claim "encryption."** RRFC is not a cipher and rests on no
   computational-hardness assumption. "It's not IND-CPA" / "no security proof in model X"
   is a valid *critique of framing*, but the empirical claim above stands or falls on
   measurement, not on fitting a cipher model.
+- **We do not claim endpoint compromise is harmless.** A v3 grant contains durable
+  identity `S` and current content key `C(n)`. Compromise exposes current/future
+  participation. The Field Collapse Ratchet supplies a backward boundary only for a
+  successfully collapsed epoch whose predecessor key was actually erased.
+- **We do not claim backups erase themselves.** A backup made while `C(n)` was live
+  retains it after the active grant advances. The portable epoch marker detects a stale
+  grant only while the separately stored marker remains current.
 
 ## What a valid break looks like
 
 Anything that extracts, or statistically distinguishes, **content** from the emitted
-stream **without the seed**. Concretely, any of:
+stream **without the endpoint coupling state**. Concretely, any of:
 
 - A distinguisher that separates two known plaintexts (or plaintext vs. random) from
   their emissions better than chance, at a reported advantage and sample size.
-- Recoverable structure in the float stream that correlates with content — distribution
-  skew, autocorrelation, spectral lines, inter-burst timing/size that tracks keystroke
-  cadence or message boundaries, cross-coupling correlation for couplings sharing a seed.
+- Recoverable structure in the numeric field values that correlates with content beyond
+  the disclosed timing/volume envelope — distribution skew, autocorrelation, spectral
+  lines, or cross-coupling correlation for couplings sharing state.
 - Any partial-recovery result: even leaking *bits* about content from emissions alone is
   a finding we want.
 
