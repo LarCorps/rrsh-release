@@ -1,0 +1,6 @@
+# Release checksums pin exact bytes across checkouts.
+* -text
+bin/** binary
+# Preserve the pinned upstream header and unmodified license notices.
+include/relational_field_core.h whitespace=cr-at-eol
+third-party/** -whitespace

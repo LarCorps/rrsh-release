@@ -1,0 +1,31 @@
+{
+  "status": "bounded-controls-passed",
+  "outcomes": {
+    "transparent-relay": {
+      "expected_complete": true,
+      "host_status": "bounded-correspondence",
+      "client_status": "bounded-correspondence",
+      "host_reason": null,
+      "secret_given_to_intermediary": false,
+      "application_execution": false
+    },
+    "public-continuation": {
+      "expected_complete": false,
+      "host_status": "refused",
+      "client_status": "refused",
+      "host_reason": "challenge ambiguity: []",
+      "secret_given_to_intermediary": false,
+      "application_execution": false
+    },
+    "recorded-continuation": {
+      "expected_complete": false,
+      "host_status": "refused",
+      "client_status": "refused",
+      "host_reason": "challenge ambiguity: []",
+      "secret_given_to_intermediary": false,
+      "application_execution": false
+    }
+  },
+  "peer_authentication_established": false,
+  "release_admitted": false
+}

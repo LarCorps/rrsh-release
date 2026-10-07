@@ -1,279 +1,215 @@
-# RRSH — Relational Shell
+# RFC 1.0.1 and paired connection tester 0.3.3
 
-**SSH-shaped remote access, but the session is an RRFC coupling — not an encrypted
-byte stream.**
+This repository distributes signed native **Relational Field Core (RFC)
+1.0.1** libraries, derived from **Librarian ABI 1.14.0**, for evaluation and
+integration. The core owns field creation, profile input, reaction measurement,
+candidate notebooks and local binary snapshots.
 
-`RRSH` gives you what SSH gives you — an authenticated, confidential interactive
-session to a remote machine, plus command execution, file copy, and headless/agent
-access — except the session is not a stream of ciphertext. What crosses the wire is a
-sequence of structureless float tuples that do not refer to your content at all. The
-difference is structural, and it changes the threat model:
+These libraries replace the previous RRSH command-line binaries here. They are
+loaded through a C API; they are not shell clients or daemons. The previous
+`rrsh`, `rrshd`, `rrsh-cp` and `rrsh-keygen` commands are not included.
+The accompanying `rrsh-peer` executable bundles this core for a synthetic
+paired connection test. It provides local pairing setup and host/connect
+commands; it grants no remote execution, file or forwarding capability.
 
-> **An unauthorized transport or relay may observe, drop, delay, replay, or flood
-> frames, but cannot resolve their application content merely by forwarding them.**
+This is a research profile. Signing establishes artifact provenance, not
+confidentiality, complete-wire compliance or production readiness. See
+[SECURITY.md](SECURITY.md) for evidence limits and reporting, and
+[LICENSE.md](LICENSE.md) for distribution terms and
+[third-party notices](third-party/README.md) for bundled runtime licenses.
 
-That's the claim. It's structural, falsifiable from a traffic capture alone, and **not
-yet independently verified** — which is why this repo is public. If you break it, we want
-to know: [SECURITY.md](SECURITY.md) states the claim precisely, says what counts as a
-break, and tells you where to send it.
+For an actual two-device connection alongside SSH, follow the
+[pairing and host/connect instructions](ENDPOINT_TESTING.md). The tester checks
+native private-field correspondence. Authentication security and semantic
+non-referentiality remain unestablished.
 
-```
-curl -fsSL https://phic.online/rrsh/install.sh | sh
-```
+## Artifacts
 
-One self-contained, signed binary for each published target: macOS arm64 and Linux
-x86_64. Nothing else to install — the codec is embedded in the binary. See
-[Install](#install) below for what the one-liner does and how to verify it yourself.
+| Platform | Native library | Signature | Requirement |
+| --- | --- | --- | --- |
+| Linux x86_64 | [librelational_field_core_1_0_1.so](bin/x86_64-linux/librelational_field_core_1_0_1.so) | [.sig](bin/x86_64-linux/librelational_field_core_1_0_1.so.sig) | glibc 2.28 or later |
+| macOS Apple Silicon | [librelational_field_core_1_0_1.dylib](bin/aarch64-macos/librelational_field_core_1_0_1.dylib) | [.sig](bin/aarch64-macos/librelational_field_core_1_0_1.dylib.sig) | arm64 / aarch64 |
 
----
+The standalone tester is available for [Linux x86_64](bin/x86_64-linux/rrsh-peer-x86_64-linux)
+([signature](bin/x86_64-linux/rrsh-peer-x86_64-linux.sig)) and
+[macOS Apple Silicon](bin/aarch64-macos/rrsh-peer-aarch64-macos)
+([signature](bin/aarch64-macos/rrsh-peer-aarch64-macos.sig)). It includes the
+unchanged hash-pinned RFC core and a bundled Python runtime: no system Python
+is required. The Linux tester requires glibc 2.31 or later; the standalone core
+requires 2.28. The macOS tester requires macOS 26 or later.
+[Tester manifest](peer-release-manifest.json) records build/source identities.
 
-## What it is
+Linux arm64, Intel macOS and Windows binaries are not included in this update.
+The macOS library has a detached release signature; Apple Developer ID signing
+and notarization are not provided.
 
-`RRSH` is a remote-access tool: shell in, run a command, copy a file, hand a scoped
-credential to an agent or a CI job. If you use SSH, the shape is familiar — you mint a
-credential, provision it on the host, start a daemon, and connect.
+The [C header](include/relational_field_core.h),
+[release manifest](release-manifest.json), [checksums](SHA256SUMS),
+[public key](signing/miulustek-release.pub) and
+[certificate](signing/miulustek-release-9a.crt) accompany the libraries.
+Checksums and the manifest describe the artifacts; the detached signatures
+provide the authenticity check.
 
-What is different is the transport underneath. A conventional secure shell wraps your
-session in a cipher and sends the resulting ciphertext across the network. `RRSH`
-instead couples the two endpoints through **RRFC** (Resolution-Relational Field
-Communications) — a communications method in which endpoint coupling state governs how
-each side resolves a stream of numeric field values back into meaning. Without that
-state, the stream on the wire is not weakly-encrypted content — it is not content at
-all. There is no ciphertext to attack, harvest, or eventually break; there is a
-coupling you either participate in or you do not.
+## Verify before loading
 
-If that structural claim holds — and testing it is exactly why this repo is public
-([SECURITY.md](SECURITY.md)) — it yields a set of properties a cipher-based transport
-does not:
-
-- **Nothing readable on the wire.** An observer records `{channel, mass, steps}` float
-  tuples that  carry no recoverable structure about your session. There is
-  no ciphertext, so there is no "harvest now, decrypt later."
-- **Successfully collapsed history has a backward key boundary.** The current grant
-  contains endpoint participation state, but does not derive a predecessor content key
-  that was actually erased after a confirmed collapse.
-- **A forwarding node cannot read what it forwards.** A relay or bastion is
-  dumb substrate: it moves floats it cannot interpret. Its entire power over a session
-  is denial of service — drop, delay, or flood. It cannot read, forge, or impersonate.
-
-The first property is the load-bearing one, and it is **falsifiable from a traffic
-capture alone** — the emissions are the public surface of the claim, testable by anyone
-without the codec source. If it fails, the other two fail with it. We invite exactly that
-test; see [SECURITY.md](SECURITY.md) for what a valid break looks like and how to report
-one.
-
-## RRSH vs SSH
-
-`RRSH` is **not** "SSH but faster," and it is **not** strictly better than SSH. It is
-better on one specific axis — an unauthorized forwarder can *deny* the coupling but
-cannot resolve its content merely by forwarding it — and it is weaker on another (its
-confidentiality is a demonstrated *structural* result, not a decades-reviewed cipher;
-see [Read this first](#read-this-first-honest-limits)). Pick per context.
-
-| | SSH | RRSH |
-|---|---|---|
-| **What's on the wire** | Ciphertext — safe under today's crypto assumptions; attackable if the cipher or an implementation breaks, now or later | Structureless float tuples that don't refer to the content at all — nothing to decrypt |
-| **Secret at rest on the server** | Private host key | Per-relationship identity `S` plus current content key `C(n)`; compromise is an endpoint failure, not a way to derive an erased predecessor |
-| **Harvest-now, decrypt-later** | A real concern for recorded ciphertext | No ciphertext to harvest — recorded traffic is meaningless |
-| **Compromised jump host / bastion** | Can MITM if it holds keys; always sees metadata | Cannot read the session it forwards — DoS only |
-| **Worst case for an unauthorized forwarder** | Keyed MITM can disclose content | Link capture / sever / flood → denial of service; current-grant compromise is outside this claim |
-| **Trust bootstrap** | TOFU on first connect (a MITM window) | Independently provisioned v3 grant; low-assurance bootstrap is not enabled |
-| **Independently reviewed** | ✓ decades of cryptanalysis | Not yet — the structural confidentiality claim is demonstrated but awaits independent scrutiny |
-| **Multi-factor / cert chains** | ✓ mature | The symmetric grant is the single factor today |
-
-### Capability parity
-
-| Capability | SSH | RRSH |
-|---|---|---|
-| Interactive shell (PTY) | ✓ | ✓ |
-| Non-interactive exec | ✓ | ✓ |
-| File copy (scp/sftp) | ✓ | ✓ |
-| Jump host / bastion | ✓ (host sees metadata; can MITM if keyed) | ✓ — **and unreadable to the bastion** |
-| Agent / headless access | ✓ (`ssh-agent`) | ✓ (`rrshd` holding a scoped grant) |
-| Transparent reconnect | needs mosh/autossh | ✓ recoverable coupling |
-| Multi-factor / cert auth | ✓ mature | not yet (the grant is the single factor) |
-| Independently-reviewed transport | ✓ | not yet |
-
-**Reach for RRSH** when forwarding nodes must not be able to read the sessions they
-carry, when a collapsed-history boundary and "no harvest-now-decrypt-later" matter,
-or when you want to grant automation a scoped relationship instead of a key plus an
-`authorized_keys` dance — fleet access, CI, agents, pre-provisioned devices.
-
-**Reach for SSH** when your compliance regime mandates an audited cipher or MFA/cert
-chains, when you need a today-independently-reviewed confidentiality layer, or for first
-contact with a host where an active MITM is in your threat model and you have no
-out-of-band verification. (You can also run `rrsh` *over* or *alongside* SSH to get both
-properties at once.)
-
-## Transport hardening in this release
-
-This binary is wire/grant version 3 and carries Field Collapse Ratchet v2:
-
-- Every complete frame has an opaque token and full-frame HMAC; tampering, replay, and
-  v1/v2 downgrade fail closed.
-- Sender-minted authenticated time defines canonical cross-sender chronology. At a
-  clean close, `D(n)` commits both the measured field `M(n)` and the load-bearing
-  ordered transcript `T(n)` before deriving `C(n+1)`.
-- Accepted open-epoch records, dedup state, and sender high-water persist across
-  restart. A successor is staged before signaling and commits on authenticated
-  successor-field traffic, closing the terminal-ack loss gap.
-- A separately placeable epoch/key-commitment marker rejects an older grant file while
-  that marker remains current. It is portable rollback detection, not secure hardware.
-
-Version 2 grants and frames are deliberately not migrated in place. Reissue old grants
-with `rrsh-keygen`; a mixed-version pair fails visibly rather than silently downgrading.
-
-## Why a single opaque binary
-
-`RRSH` ships as **one self-contained, signed executable** rather than as source or a
-package. This is deliberate:
-
-- **The method is proprietary.** RRFC is patent-pending, pre-publication work. The
-  binary lets you *run* `RRSH` without shipping the method loose as readable source. The
-  RRFC codec and the resolution logic are compiled and embedded inside the executable
-  together with a private runtime; nothing readable ships alongside it.
-- **One artifact, nothing to assemble.** The codec is embedded, so the target needs
-  nothing but the binary itself — no separate library, no interpreter, no package
-  install. Download, verify the signature, run.
-- **Signed, so the download is verifiable.** Every binary has a detached signature
-  against the MiulusTek release key (held in hardware; public key and certificate under
-  [`signing/`](signing/)). The installer verifies it before anything runs, so a tampered
-  download or a compromised mirror is caught up front.
-
-Closed source and open scrutiny are not in tension here, because the confidentiality
-claim is *structural*: it does not rest on the codec being secret. The claim is that the
-emissions carry no recoverable content **whether or not** an adversary has the binary —
-which means it is testable from a traffic capture alone, and closing the source neither
-strengthens nor shields it. The binary protects the *method* (the IP); it does not, and
-is not meant to, protect the *sessions* by obscurity. If the emissions leak, the binary
-being opaque won't save the claim — which is exactly why we're comfortable publishing it
-for people to attack ([SECURITY.md](SECURITY.md)).
-
-## Install
-
-```
-curl -fsSL https://phic.online/rrsh/install.sh | sh
-```
-
-The installer:
-
-1. Detects your OS/arch and downloads the matching binary (`rrsh-<os>-<arch>`) and its
-   detached signature (`.sig`).
-2. **Verifies the signature** against the MiulusTek release public key pinned inside the
-   script, and prints that key's SHA-256 so you can confirm the trust root. A failed
-   verification aborts the install.
-3. Installs `RRSH` into `~/.local/bin` and links `rrshd`, `rrsh-cp`, and `rrsh-keygen`
-   beside it.
-
-Published targets: Linux `x86_64` and macOS `aarch64`/`arm64`.
-
-### Verify it yourself
-
-Prefer to inspect before running? Download the binary and signature directly and check
-them against the published key:
+From a checkout, verify the library for your platform:
 
 ```sh
-base=https://phic.online/rrsh
-curl -fSLO "$base/bin/rrsh-linux-x86_64"
-curl -fSLO "$base/bin/rrsh-linux-x86_64.sig"
-
-# the release public key is in this repo under signing/
+# Linux
 openssl dgst -sha256 -verify signing/miulustek-release.pub \
-  -signature rrsh-linux-x86_64.sig rrsh-linux-x86_64
-# → "Verified OK"
+  -signature bin/x86_64-linux/librelational_field_core_1_0_1.so.sig \
+  bin/x86_64-linux/librelational_field_core_1_0_1.so
+
+# macOS
+openssl dgst -sha256 -verify signing/miulustek-release.pub \
+  -signature bin/aarch64-macos/librelational_field_core_1_0_1.dylib.sig \
+  bin/aarch64-macos/librelational_field_core_1_0_1.dylib
 ```
 
-### Install from this repository
-
-The binaries and signatures live under [`bin/`](bin/) and the installer alongside them.
-To install straight from a checkout or from the raw repo, point the installer's base URL
-at the repo root (the layout is `install.sh` + `bin/<asset>` + `<asset>.sig`):
+Verify the tester before executing it as well:
 
 ```sh
-# from a local checkout
-RRSH_BASEURL="$PWD" sh install.sh
-
-# or from raw GitHub
-curl -fsSL https://raw.githubusercontent.com/<owner>/rrsh-release/main/install.sh \
-  | RRSH_BASEURL=https://raw.githubusercontent.com/<owner>/rrsh-release/main sh
+# Linux; on macOS use aarch64-macos/rrsh-peer-aarch64-macos instead.
+openssl dgst -sha256 -verify signing/miulustek-release.pub \
+  -signature bin/x86_64-linux/rrsh-peer-x86_64-linux.sig \
+  bin/x86_64-linux/rrsh-peer-x86_64-linux
 ```
 
-Installer environment variables: `RRSH_BASEURL` (download base), `RRSH_BIN` (install
-dir, default `~/.local/bin`), `RRSH_NO_VERIFY=1` (skip signature verification — only if
-`openssl` is unavailable; not recommended).
+Each successful check prints `Verified OK`. The signatures use RSA-2048,
+PKCS#1 v1.5 and SHA-256 with the existing MiulusTek release key in YubiKey PIV
+slot 9a. Establish trust in the public key independently: an attacker who can
+replace both a download and your trust key can substitute a different signed
+artifact. The installer pins this key and prints its DER SHA-256 fingerprint.
 
-## Usage
+## Install the library, header and connection tester
 
-The workflow mirrors SSH. You mint a *grant* (the analogue of an SSH keypair), provision
-the same grant on the host out of band (the grant **is** the credential — treat grant
-files exactly like SSH private keys), start the daemon on the host, and connect from the
-client.
+From this checkout:
 
 ```sh
-# 1. mint a v3 grant — identity S + independent C(0) + address + policy
-rrsh-keygen mybox --host 10.0.0.5 --port 8022 \
-  --allow exec --exec-allowlist uname,uptime
-
-# 2. provision the SAME grant on the host, out of band (the grant IS the credential)
-scp ~/.rrsh/grants/mybox.json host:~/.rrsh/grants/mybox.json
-
-# 3. on the host: start the daemon
-rrshd --grant mybox
-
-# 4. from the client:
-rrsh    mybox -- uname -a      # run a command      (like: ssh host cmd)
-rrsh    mybox                  # interactive shell  (like: ssh host)
-rrsh-cp mybox ./file           # copy a file        (like: scp file host:)
+sh install.sh
 ```
 
-`rrsh-keygen` policy flags scope what a grant may do: `--allow shell,exec,copy` selects
-capabilities, and `--exec-allowlist cmd1,cmd2` restricts non-interactive exec to named
-commands — useful for handing an agent or a CI job a tightly-scoped credential.
+The installer stages the supported platform's library, tester, signatures and
+header, verifies against its pinned release key, and checks both artifacts and
+the header against their pinned SHA-256 identities before installing anything.
+It requires OpenSSL and does not execute downloaded artifacts during installation.
 
-## Read this first (honest limits)
+Default layout:
 
-`RRSH` provides **Structural Privacy**, not encryption. It is not a cipher and makes no
-computational-hardness claim. Know its bounds before you rely on it:
+```text
+~/.local/share/relational-field-core/1.0.1/
+  bin/rrsh-peer
+  bin/rrsh-peer.sig
+  lib/librelational_field_core_1_0_1.so     # Linux; .dylib on macOS
+  lib/librelational_field_core_1_0_1.so.sig
+  include/relational_field_core.h
+  share/rfc/miulustek-release.pub
+  share/rfc/LICENSE.md
+  share/rfc/licenses/                       # bundled runtime notices
+```
 
-- **Not yet independently reviewed — this is a claim under test, not a settled result.**
-  The confidentiality claim — that decoding collapses to chance without the endpoint's
-  coupling state — is a *structural* property demonstrated and reproduced internally,
-  but not independently verified. Our own strongest public evidence to date is a smoke
-  test (a plaintext marker absent from the wire), which we're explicit is *not* proof;
-  the real test is the statistical battery an adversary can run on a capture. Because it
-  is not a cipher, the bar is not cryptanalysis; it is independent scrutiny of the
-  structural claim itself — and we actively invite it ([SECURITY.md](SECURITY.md) states
-  the claim precisely and what a valid break looks like). Do not represent `RRSH` as
-  "encryption," and do not lean on it as a *guarantee* of secrecy for high-stakes content
-  until that review exists. If you need an independently-reviewed confidentiality layer
-  against a well-resourced adversary today, use SSH — or run `RRSH` *and* SSH together.
-- **Not traffic-hiding.** Content is unreadable, but a relay or observer still sees
-  *that* two endpoints are talking, when, and how much. Metadata resistance is a
-  separate mechanism, not a free property.
-- **First contact is out-of-band.** Provisioning a v3 grant out of band (device setup,
-  fleet tooling, QR) removes the in-band moment a MITM could interpose. The earlier
-  low-trust bootstrap design predates independent `C(0)` and is not enabled.
-- **The grant is the endpoint security boundary.** There is no second factor in this
-  version. Protect grant files exactly as you would SSH private keys. A current-grant
-  compromise exposes current and future participation.
-- **Field collapse is not post-compromise healing.** At a clean close, both endpoints
-  commit the measured field and its load-bearing chronology `T(n)`, then advance the
-  independent content key. This can protect successfully collapsed recorded traffic
-  from later current-state compromise only if the predecessor was actually erased.
-- **Backups remain real copies.** The separate epoch marker detects an older grant file
-  only while that marker remains current. A backup taken while `C(n)` was live retains
-  it after pruning; rolling back the marker with the grant defeats the portable check.
+To select another checkout, host or prefix:
 
-## Provenance
+```sh
+RFC_BASEURL=/path/to/rrsh-release RFC_PREFIX=/path/to/rfc sh install.sh
 
-`RRSH` is built on **RRFC** (Resolution-Relational Field Communications), the same
-substrate behind [PHIc Messenger](https://phic.online), a messaging app for text, voice, video,
-and files. The primitives that carry a PHIc message carry an `RRSH` shell.
+# Save and inspect the installer before running it.
+base=https://raw.githubusercontent.com/LarCorps/rrsh-release/main
+curl -fsSL "$base/install.sh" -o install-rfc.sh
+RFC_BASEURL="$base" sh install-rfc.sh
+```
 
-This is early software — a research spike with real, on-device-demonstrated properties
-and rough edges. Expect both.
+The remote example requires this update to be published first. Copying these
+files here does not update `phic.online` or any other hosted download.
 
----
+`RFC_BASEURL` selects a local directory or HTTP(S) repository root.
+`RFC_PREFIX` selects the installation prefix. The old `RRSH_BIN` and
+`RRSH_NO_VERIFY` behavior is retired. The tester is installed as `bin/rrsh-peer`;
+no services are installed.
+Remove the selected RFC prefix to uninstall after checking that applications
+no longer use it. Existing RRSH installations are separate and are not
+upgraded by this installer.
 
-*RRSH is Structural Privacy applied to remote access. It is not encryption, and it does
-not claim to be.*
+## Integrate through the C API
+
+Include `relational_field_core.h` and link or dynamically load the matching
+library. The linker name is `relational_field_core_1_0_1`. Configure your
+application's loader search path for the installed library. The macOS install
+name is `@rpath/librelational_field_core_1_0_1.dylib`.
+No Python interpreter is required by the native core.
+
+```c
+#include "relational_field_core.h"
+
+int main(void) {
+    RfcCore *core = rfc_field_create(16);
+    if (!core) return 1;
+    RfcNotebookRow rows[17];
+    int32_t count = rfc_notebook(core, 16, rows, 17);
+    librarian_destroy(core);
+    return count == 17 ? 0 : 1;
+}
+```
+
+Supported field sizes are 16 and 32. A notebook contains the no-input candidate
+(`-1`), then every site candidate, giving 17 or 33 rows. Each row has a 40-byte
+C layout. Reaction bits represent a binary32 value; post-state hashes are local
+diagnostics. The header documents buffer queries, refusal results and sizing.
+
+Handles belong to their creating library and must be destroyed through that
+same library. Do not mutate a source core concurrently with a notebook call.
+The inherited ownership/step APIs are `librarian_destroy` and `librarian_step`.
+`rfc_version_*` reports 1.0.1; `librarian_version_*` reports upstream ABI 1.14.0.
+This profile is not full legacy Librarian compatibility.
+
+Active snapshots use typed local binary state with an `RFCB` schema-1 header.
+They are build-bound validation data, not a cross-platform persistence or peer
+state interchange format. There is no binary snapshot import API. Legacy JSON
+serialization, deserialization and metabolic output refuse in this profile.
+Identity text remains available locally. Snapshots, notebook rows and hashes
+do not define an application wire protocol.
+
+## Build and verification record
+
+Built on 2026-10-07 from RRSH `main` at
+`26f389d081a42bac764b256fb0fe469eb010b98a`, using unchanged RFC 1.0.1 sources
+and Zig 0.15.2, `ReleaseFast`, with debug symbols stripped. Binary-state,
+instrumentation and passive-event omission options are enabled. The macOS SDK
+was 15.4; Linux targets glibc 2.28.
+
+These are new platform builds, not replicas of the earlier Windows artifact
+recorded with Zig `0.16.0-dev.2349+204fa8959`. The
+[manifest](release-manifest.json) records source, compiler, header, library,
+signature and certificate identities.
+
+The native smoke check passed on the macOS arm64 host and in an emulated
+Linux x86_64 Debian bookworm container: product and upstream versions, the
+40-byte row layout, JSON refusal, snapshot schema, candidate ordering,
+selected reaction agreement, 16 notebooks across both profile sizes and
+native ownership cleanup. Logs: [macOS](verification/macos-smoke.log),
+[Linux](verification/linux-smoke.log). Both copied signatures were verified
+independently with OpenSSL.
+
+These native API checks do not test a complete RRSH transport, authentication,
+PTY, file copy, long-session behavior or confidentiality. The previous full
+RRSH artifacts remain historical evidence in Git history; their behavior
+must not be attributed to the current distribution.
+
+Tester 0.3.3 was frozen separately with PyInstaller 6.22.3, using Python 3.14
+on macOS and Python 3.12 on Debian bullseye for Linux. The unchanged core is
+bundled as a local compressed asset, restored and hash-verified before load
+to preserve its signed byte identity. Actual frozen setup and
+connection checks, capture comparisons and failed-gate limits are documented
+in [ENDPOINT_TESTING.md](ENDPOINT_TESTING.md) and the
+[readiness record](verification/peer-readiness.json).
+
+The final installer passed local-checkout and HTTP staging checks on macOS,
+including refusal of modified tester bytes, tester/core signatures and the C
+header before any prefix was created. See
+[installer verification](verification/peer-installer.json).
+
+The Linux installer also passed in an emulated Debian bookworm container,
+including the installed tester's version and detached-signature verification:
+[Linux installer log](verification/peer-linux-install.log). A bullseye package
+mirror failure occurred before the initial installer attempt could run; paired
+binary runtime checks on bullseye are separate from this setup failure.

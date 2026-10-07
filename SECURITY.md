@@ -1,98 +1,137 @@
-# Security — the claim, and how to break it
+# Security and evaluation scope
 
-`RRSH` ships a specific, falsifiable claim. This document states it precisely, tells you
-what a valid break looks like, and gives you a path to report one. **We want the
-break.** A working distinguisher is not an attack on us — it is a research result we will
-treat as a contribution and act on.
+The current distribution contains Relational Field Core 1.0.1 research libraries,
+derived from Librarian ABI 1.14.0. It also includes `rrsh-peer 0.3.3`, a connection-only research tester with
+local pairing setup and a TCP host/connect probe. It grants no remote commands,
+files or forwarding. Integrating applications own additional capability boundaries.
 
-## The claim under test
+## Current evidence
 
-The `RRSH` transport is a coupling through RRFC (Resolution-Relational Field
-Communications). What crosses the wire is opaque authenticated framing around numeric
-field contributions — roughly `{channel, mass, steps}` — governed by endpoint coupling
-state. The frame MAC supplies integrity; the confidentiality claim remains structural:
+The shipped libraries passed bounded native API checks. The
+[release manifest](release-manifest.json) pins their source, compiler, artifacts
+and verification records. These checks establish the exercised API behavior,
+not a reviewed confidentiality guarantee or production admission.
 
-> **Without the coupling state, the emitted stream is statistically indistinguishable from chance
-> with respect to the session content. Decoding collapses to chance; the emissions do
-> not carry recoverable structure about what is being sent.**
+Float-valued output, successful recovery and failure of one observer do not
+establish that emissions reveal nothing about content. Confidentiality,
+mechanism classification and complete-wire compliance remain unestablished
+for an integrating application. Do not describe this release as providing
+proven "Structural Privacy," meaningless recordings, harvest resistance or a
+relay whose only possible attack is denial of service. This release also does
+not establish that a proposed transport is categorically not encryption.
 
-This is a **structural** property, not a computational-hardness (cipher) claim. That
-matters for how you test it — see below. It has been **demonstrated and reproduced
-internally, but not independently verified.** That is exactly why this repository is
-public.
+The binding design target is no content ciphertext, no plaintext except
+necessary float values, and no other referential information on the application
+wire. Packing content into float bits or sending semantic identifiers,
+snapshots or state hashes does not meet that target. Packaging a core library
+neither implements nor certifies an application protocol meeting it.
 
-## What we do NOT claim
+## Paired tester scope
 
-Be precise about the target so a "break" is a real break and not a category error:
+The tester sends native measured binary32 observations, without application
+headers, peer IDs, state dumps, keyed tags or packed secret bits. Its local
+pairing code contains a conventional transcription checksum; neither the code
+nor checksum crosses the tested TCP connection. Direct nearby console transfer
+is deliberate private provisioning, not NFC/Bluetooth integration. Console
+scrollback, copied credentials, local backups and compromised accounts remain
+outside the tested credential boundary. Do not transfer the code through SSH,
+chat or a relay. File permissions do not establish hardware-backed storage.
 
-- **We do not claim traffic-analysis resistance.** That two endpoints are talking, when,
-  how much, and coarse timing/volume are visible to any observer. Recovering *that a
-  session happened* or *how large it was* is **not** a break. Recovering *content* — or
-  any content-dependent structure the coupling state was supposed to erase — **is**.
-- **We do not claim active-MITM resistance at first contact.** The current v3 grant is
-  provisioned out of band; the older low-assurance bootstrap design is not enabled.
-  Interposing at provisioning time is a known limit, not a break of the transport claim.
-- **We do not claim "encryption."** RRFC is not a cipher and rests on no
-  computational-hardness assumption. "It's not IND-CPA" / "no security proof in model X"
-  is a valid *critique of framing*, but the empirical claim above stands or falls on
-  measurement, not on fitting a cipher model.
-- **We do not claim endpoint compromise is harmless.** A v3 grant contains durable
-  identity `S` and current content key `C(n)`. Compromise exposes current/future
-  participation. The Field Collapse Ratchet supplies a backward boundary only for a
-  successfully collapsed epoch whose predecessor key was actually erased.
-- **We do not claim backups erase themselves.** A backup made while `C(n)` was live
-  retains it after the active grant advances. The portable epoch marker detects a stale
-  grant only while the separately stored marker remains current.
+The first live candidate admitted a two-session splice: independent directional
+fields allowed the two proofs to belong to different sessions. The current
+candidate clones only its own native first-proof state into the second phase
+and binds continuation to both histories. The tested splice and public/prior
+continuation substitutions refused, while genuine paired connections passed.
+A legitimate challenge collision was also found; the current source chooses
+only measurements unique across all 33 notebook rows. It refuses if fewer than
+16 challenge choices remain or a private probe has no unique eligible event.
 
-## What a valid break looks like
+These bounded tests do not establish unforgeability or a secure authentication
+primitive. A recording observer recovered all 64 public challenge choices;
+a tested public-bootstrap response predictor matched 0/64 private responses.
+Adaptive chosen-challenge/parallel oracles, secret-state inference, effective
+response entropy, collisions, side channels and stronger attackers remain open.
+The probe has no variable application content, so it does not test content
+confidentiality. Semantic non-referentiality and mechanism classification are
+unestablished; float serialization alone cannot establish either claim.
+All holders of a pairing credential can construct matching native fields. The
+tester does not attest individual device identity or bind host permissions.
+Transparent forwarding of actual paired endpoints remains possible.
 
-Anything that extracts, or statistically distinguishes, **content** from the emitted
-stream **without the endpoint coupling state**. Concretely, any of:
+Each host accepts one connection, with a 300-second state-machine deadline and
+60-second socket waits. Native calls are not preempted by that deadline.
+This is not production denial-of-service resistance.
+Local run records include the proposed application stream and timing but not
+packet-level TCP/IP captures; an unexpected post-proof trailing byte is rejected
+but not included in the persisted stream. Preserve failures when evaluating a
+broader observer. Current evidence is summarized in
+[verification/peer-readiness.json](verification/peer-readiness.json).
 
-- A distinguisher that separates two known plaintexts (or plaintext vs. random) from
-  their emissions better than chance, at a reported advantage and sample size.
-- Recoverable structure in the numeric field values that correlates with content beyond
-  the disclosed timing/volume envelope — distribution skew, autocorrelation, spectral
-  lines, or cross-coupling correlation for couplings sharing state.
-- Any partial-recovery result: even leaking *bits* about content from emissions alone is
-  a finding we want.
+## Historical RRSH findings
 
-The right tools are exactly the black-box ones: capture the wire and throw the standard
-batteries at it — entropy/min-entropy estimates, autocorrelation, spectral analysis,
-NIST STS / dieharder / PractRand, distribution fitting, side-channel timing analysis.
-You do not need the codec source to test the claim; the emissions are the public surface,
-and they are testable by anyone with a capture.
+The previous full RRSH distribution remains in repository history. The
+2026-10-03 restoration record reports seedless recovery of six bits of every
+byte in one 165-byte server message, including 128 synthetic stdout bytes,
+from a recorded Linux executable's wire. Its binary SHA-256 was
+`80894fc4206df111482fe1f81d8395c10632e4815fe928c4ac76fdf094f2fc09`.
+This is a scoped partial-content leak, not general full-byte recovery and not
+a measurement of these new core libraries.
 
-## Honesty about our own evidence
+The owning record is RRSH `docs/PRIMITIVE_RESTORATION.md`, section "Existing
+release findings," at source commit
+`26f389d081a42bac764b256fb0fe469eb010b98a`. Original captures reside in the
+adjacent private PHIc research repository. That finding supersedes the previous
+README and security document's categorical unreadability and denial-only claims.
+Replacing the artifact does not erase that finding or establish that a future
+complete application fixes it.
 
-Our internal check to date includes a live capture where a plaintext marker string
-appeared **zero times** on the wire (only inert bursts). We are explicit that this is a
-**smoke test, not proof** — a plaintext-substring grep is the weakest possible
-distinguisher. It rules out the dumbest failure, nothing more. The statistical batteries
-above are the real test, and running them is precisely the scrutiny this repo invites.
+## Evaluate the complete application
 
-## How to report
+Give the primary observer the public implementation and complete recording at
+the claimed boundary: setup, identifiers, headers, values, ordering, timing and
+lengths. Withhold private seeds and endpoint state. Use fresh private seeds,
+not fixed seeds from a public harness. Allow independent recovery algorithms;
+do not restrict the observer to the intended decoder.
 
-- **Preferred:** open a GitHub issue with your method, sample sizes, and reproduction
-  steps. Public findings are welcome — we are not trying to bury them.
-- **Sensitive findings** (e.g. a recovery technique you'd rather coordinate on):
-  email **support@miulustek.com** — replace with your real contact before publishing —
-  with enough detail to reproduce. We'll acknowledge and work it with you.
+Report full-symbol recovery, partial-bit information, repeated-symbol
+relationships, state information and metadata separately. Identify additional
+known-plaintext, chosen-plaintext or seed-compromise access explicitly.
+Seed-holder reconstruction is a separate compromise case. A passing round trip
+or absence of a plaintext marker in a capture does not establish privacy.
 
-When you report, tell us: OS/arch, `RRSH` binary version (`RRSH --version`), the capture
-or generator, the distinguisher, and the measured advantage vs. chance. That's what turns
-a claim into a result — in either direction.
+Snapshots and notebook rows are local diagnostic state. Do not transmit them as
+a recovery shortcut or assume snapshot portability across builds. Handles are
+owned by their creating library; concurrent source mutation during a notebook
+call is unsupported. Applications must provide authorization, input validation,
+resource bounds and secure handling of any private state.
 
-## Signature verification
+## Verify artifact provenance
 
-Every binary is signed against the MiulusTek release key (public key + certificate under
-[`signing/`](signing/)). Verify before trusting a download:
+Every current library and tester has a detached RSA-2048 PKCS#1 v1.5 SHA-256 signature
+made with the MiulusTek release key in YubiKey PIV slot 9a. The private key
+remains on hardware. See [README.md](README.md) for verification commands.
+Establish trust in the [public key](signing/miulustek-release.pub) independently.
+The supplied certificate identifies that key; checking a detached signature
+does not validate a certificate chain.
 
-```sh
-openssl dgst -sha256 -verify signing/miulustek-release.pub \
-  -signature bin/rrsh-linux-x86_64.sig bin/rrsh-linux-x86_64
-# → Verified OK
-```
+The installer pins the key, requires both artifact signatures and pins both artifact and header SHA-256 identities.
+There is no verification bypass. Checksums and manifest metadata are not
+separately hardware-signed and are not independent authenticity evidence.
+The macOS artifact is not Developer ID notarized. A signature establishes
+provenance and integrity of signed bytes, not their behavioral security.
 
-A verification failure — or a signature that doesn't chain to the published key — is
-itself a report-worthy finding.
+## Report findings
+
+Open an issue in this repository for public findings. For sensitive reports,
+email **support@miulustek.com**. Include:
+
+- Platform, library filename, SHA-256 and version from `rfc_version_*`.
+- Integrating application identity and the exact evaluated boundary.
+- Inputs, reproduction code, capture scope and observer access.
+- Expected behavior, observed result, trial count and recovery advantage.
+- For signature failures, artifact, signature and verification key identities.
+
+Do not include real grants, private seeds, signing PINs or unrelated private
+data. API defects, malformed-state behavior, allocation or ownership problems,
+signature failures and partial-information findings are relevant. State the
+tested scope without generalizing a finite result to every possible observer.

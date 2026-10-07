@@ -2,7 +2,10 @@
 
 Copyright © MiulusTek. All rights reserved.
 
-The `RRSH` binaries distributed in this repository (the "Software") are proprietary.
+The Relational Field Core native libraries, paired connection tester and accompanying C API header distributed
+in this RRSH release repository (the "Software") are proprietary.
+Separately licensed bundled runtime components retain their upstream terms;
+see [third-party notices](third-party/README.md).
 The Software embeds RRFC (Resolution-Relational Field Communications), a patent-pending,
 pre-publication method.
 
@@ -20,8 +23,8 @@ pre-publication method.
   restriction is expressly prohibited by applicable law.
 - Modify, tamper with, or repackage the binaries, or redistribute them stripped of their
   signatures or this license.
-- Represent the Software as "encryption" or as a reviewed cryptographic guarantee. It
-  provides Structural Privacy, not encryption; see the README's honest-limits section.
+- Represent the Software as providing a reviewed cryptographic or confidentiality
+  guarantee. Its security properties remain unestablished; see SECURITY.md.
 
 ## No warranty
 

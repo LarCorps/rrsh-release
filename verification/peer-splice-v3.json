@@ -1,0 +1,88 @@
+{
+  "control": {
+    "splice_enabled": false,
+    "status": "transparent-complete",
+    "accepted_endpoints": [
+      "host0",
+      "host1",
+      "client0",
+      "client1"
+    ],
+    "errors": [],
+    "returncodes": {
+      "host0": 0,
+      "host1": 0,
+      "client0": 0,
+      "client1": 0
+    },
+    "outcomes": {
+      "host0": {
+        "status": "bounded-correspondence",
+        "reason": null,
+        "mutual_proof_phases_complete": true,
+        "private_continuation_complete": true
+      },
+      "host1": {
+        "status": "bounded-correspondence",
+        "reason": null,
+        "mutual_proof_phases_complete": true,
+        "private_continuation_complete": true
+      },
+      "client0": {
+        "status": "bounded-correspondence",
+        "reason": null,
+        "mutual_proof_phases_complete": true,
+        "private_continuation_complete": true
+      },
+      "client1": {
+        "status": "bounded-correspondence",
+        "reason": null,
+        "mutual_proof_phases_complete": true,
+        "private_continuation_complete": true
+      }
+    },
+    "application_execution": false,
+    "secret_supplied_to_proxy": false
+  },
+  "attack": {
+    "splice_enabled": true,
+    "status": "splice-refused",
+    "accepted_endpoints": [],
+    "errors": [],
+    "returncodes": {
+      "host0": 1,
+      "host1": 1,
+      "client0": 1,
+      "client1": 1
+    },
+    "outcomes": {
+      "host0": {
+        "status": "refused",
+        "reason": "truncated native observation",
+        "mutual_proof_phases_complete": null,
+        "private_continuation_complete": null
+      },
+      "host1": {
+        "status": "refused",
+        "reason": "truncated native observation",
+        "mutual_proof_phases_complete": null,
+        "private_continuation_complete": null
+      },
+      "client0": {
+        "status": "refused",
+        "reason": "private response mismatch",
+        "mutual_proof_phases_complete": null,
+        "private_continuation_complete": null
+      },
+      "client1": {
+        "status": "refused",
+        "reason": "private response mismatch",
+        "mutual_proof_phases_complete": null,
+        "private_continuation_complete": null
+      }
+    },
+    "application_execution": false,
+    "secret_supplied_to_proxy": false
+  },
+  "candidate_ready": true
+}

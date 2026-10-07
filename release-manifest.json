@@ -1,0 +1,96 @@
+{
+  "product": "Relational Field Core",
+  "version": "1.0.1",
+  "lineage": "Librarian ABI 1.14.0",
+  "source_commit": "26f389d081a42bac764b256fb0fe469eb010b98a",
+  "compiler": {
+    "version": "0.15.2",
+    "sha256": "c65cd34917923f575448cc0603dd7c2326da0af0e5c323043d090662dcdf351c",
+    "archive_sha256": "3cc2bab367e185cdfb27501c4b30b1b0653c28d9f73df8dc91488e66ece5fa6b",
+    "recorded_parent_compiler": "0.16.0-dev.2349+204fa8959",
+    "note": "Compatible stable compiler; new platform builds, not replicas of the recorded Windows build."
+  },
+  "options": {
+    "optimize": "ReleaseFast",
+    "strip": true,
+    "binary_state": true,
+    "instrument": true,
+    "omit_events": true
+  },
+  "linux_libc_minimum": "glibc 2.28",
+  "macos_sdk": "MacOSX15.4.sdk",
+  "artifacts": {
+    "bin/aarch64-macos/librelational_field_core_1_0_1.dylib": {
+      "sha256": "1b7e7b6838c53d4af03fb08924ecc7e1d7d39b413832c194a536ce2f568d1f61",
+      "bytes": 216248,
+      "target": "aarch64-macos",
+      "signature": "bin/aarch64-macos/librelational_field_core_1_0_1.dylib.sig",
+      "signature_sha256": "58733cf8ebce8b50054483ccd6925531dda44eb7057183fc191a9f860b8f7a96",
+      "signature_verified": true
+    },
+    "bin/x86_64-linux/librelational_field_core_1_0_1.so": {
+      "sha256": "99695573b2ad8bf915675a5a090399bab2b56de9a6c40a7bc169f0dab34f8740",
+      "bytes": 190200,
+      "target": "x86_64-linux",
+      "signature": "bin/x86_64-linux/librelational_field_core_1_0_1.so.sig",
+      "signature_sha256": "6f257abe39c79c810b2065fa73e8259f6a5c49c7830790ba89a8cf83971e755f",
+      "signature_verified": true
+    }
+  },
+  "sources": {
+    "experiments/communications-core/reduced-core/variants/relational-field-core-1.0-binary/build.zig": "e9257896365eaf14dec8feb4e613f5a27af68d7f71b57965a31952d36abd23e5",
+    "experiments/communications-core/reduced-core/variants/relational-field-core-1.0-binary/fork/src/belief.zig": "671c9af4ef86164826b4f09381a904eb537f53dba97e3c1c44cdf25b0082485a",
+    "experiments/communications-core/reduced-core/variants/relational-field-core-1.0-binary/fork/src/bench.zig": "956391a12db695bcb6a009cfac288445960ed7a26b0b6c194ae51efb2bf6edd2",
+    "experiments/communications-core/reduced-core/variants/relational-field-core-1.0-binary/fork/src/core.zig": "7b2126ed7c84041ee3733cae0b0864e835b1ec8611f37c43b28503ae2f522ec1",
+    "experiments/communications-core/reduced-core/variants/relational-field-core-1.0-binary/fork/src/exports.zig": "e450255d344530b36f9f7ff8f23349713065d743f7e6f03e21d2642d7be9f52e",
+    "experiments/communications-core/reduced-core/variants/relational-field-core-1.0-binary/fork/src/kernel/boot.zig": "1f1c279474e044c377c680186f388a06626c00e45f0915d79af58b3d50fcee69",
+    "experiments/communications-core/reduced-core/variants/relational-field-core-1.0-binary/fork/src/kernel/console.zig": "7c0f7c7f68d34487e78412441b8b318e7dcb09bbb8d7d9e19f95bf66894ebe9a",
+    "experiments/communications-core/reduced-core/variants/relational-field-core-1.0-binary/fork/src/kernel/main.zig": "b416d5b09982812ef29a2b57834b104f102783e7587e0cadf53cca8ee574169d",
+    "experiments/communications-core/reduced-core/variants/relational-field-core-1.0-binary/fork/src/kernel/runtime.zig": "e1978c338418b3bc57bd394e4b60f54f8b2e51fefbbe26ac2ab2c6b8178c1705",
+    "experiments/communications-core/reduced-core/variants/relational-field-core-1.0-binary/fork/src/kernel/serial.zig": "246cfb7fd799b94e3e4fe33d58655e94314f4a9387c7ee9358ea2b79325d4f9c",
+    "experiments/communications-core/reduced-core/variants/relational-field-core-1.0-binary/fork/src/kernel/x86.zig": "b7454d14121650f49029491046214684437a4a29e06159e95dcfcf7bef652555",
+    "experiments/communications-core/reduced-core/variants/relational-field-core-1.0-binary/fork/src/metabolism.zig": "aa2d27f796ab19a19d3b2305398688ec6763962f1fa12dc4455f24a2011cbe79",
+    "experiments/communications-core/reduced-core/variants/relational-field-core-1.0-binary/fork/src/numeric.zig": "d2bf95032cbcf2e2f8fe5449f4fe34be0a728cccf2e81ff7402d56c019e9ccef",
+    "experiments/communications-core/reduced-core/variants/relational-field-core-1.0-binary/fork/src/relational_field.zig": "12186080f3dc6678850e2da189ad39222e7e5554362a7e4b560b1b1d76ba29ab",
+    "experiments/communications-core/reduced-core/variants/relational-field-core-1.0-binary/fork/src/ruler.zig": "8004838461b680229992e5403527f31d8d98eb0ca3b454b17b6834388333006a",
+    "experiments/communications-core/reduced-core/variants/relational-field-core-1.0-binary/fork/src/storage.zig": "85fe4f99b139ce50e19124bd0cd7813c5cc0f67851a807ef6b2480001af3b300",
+    "experiments/communications-core/reduced-core/variants/relational-field-core-1.0-binary/fork/src/tools.zig": "c21cd61aa724b534a99552a49cabaa9064b5fdcbe1182e62ba95442e3f186492",
+    "experiments/communications-core/reduced-core/variants/relational-field-core-1.0-binary/fork/src/zipf_sentences.zig": "d32193e24c8a528a1a60276b73965266b81570f15da6ebebc3c56e3a42ab845f",
+    "experiments/communications-core/reduced-core/variants/relational-field-core-1.0-binary/native_smoke.zig": "c896b6a8f7d42cd849e3bc93f05d5ebe1e13f6ce408bea9fa00b347fdaa3b40f"
+  },
+  "header_sha256": "8a5331841cc2ce6f78a28625993b05a90d3eb6a5ed2730dfbbb04ddb61af4d2e",
+  "signing_status": "verified",
+  "scope": "Native shared libraries; existing research profile. No new privacy, production or runtime-migration claim.",
+  "verification": {
+    "aarch64-macos": {
+      "status": "passed",
+      "native_notebooks": 16,
+      "alphabets": [
+        16,
+        32
+      ],
+      "log": "verification/macos-smoke.log",
+      "log_sha256": "f7e4ee2aad513fa12b3e1646999dd3e1240925ab254f2913da66fbd8571baea9",
+      "environment": "macOS arm64 host"
+    },
+    "x86_64-linux": {
+      "status": "passed",
+      "native_notebooks": 16,
+      "alphabets": [
+        16,
+        32
+      ],
+      "log": "verification/linux-smoke.log",
+      "log_sha256": "f7e4ee2aad513fa12b3e1646999dd3e1240925ab254f2913da66fbd8571baea9",
+      "environment": "Docker linux/amd64 emulation; Debian bookworm"
+    }
+  },
+  "signing": {
+    "algorithm": "RSA2048 PKCS1v1.5 SHA256",
+    "slot": "9a",
+    "public_key_matches_pinned": true,
+    "certificate_sha256": "0f79cef3b2987bcff0f92c645d9881f74d496fe9dd8004824c806dd24c5bcba0",
+    "signing_script_sha256": "2fcb02d0ff27c896a34d772a8a1d20bb7e889882c1ba498f4147c8dedc83badb"
+  },
+  "header": "include/relational_field_core.h"
+}

@@ -1,0 +1,2983 @@
+
+Runtime notice: /usr/share/doc/libc6/copyright
+
+This is the Debian prepackaged version of the GNU C Library version 2.23.
+
+It was put together by the GNU Libc Maintainers <debian-glibc@lists.debian.org>
+from <https://sourceware.org/git/glibc.git>
+
+* Most of the GNU C library is under the following copyright:
+
+    Copyright (C) 1991-2015 Free Software Foundation, Inc.
+
+    The GNU C Library is free software; you can redistribute it and/or
+    modify it under the terms of the GNU Lesser General Public
+    License as published by the Free Software Foundation; either
+    version 2.1 of the License, or (at your option) any later version.
+
+    The GNU C Library is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    Lesser General Public License for more details.
+
+    You should have received a copy of the GNU Lesser General Public
+    License along with the GNU C Library; if not, write to the Free
+    Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+    02110-1301 USA
+
+  On Debian systems, the complete text of the GNU Library
+  General Public License can be found in `/usr/share/common-licenses/LGPL-2.1'.
+
+* The utilities associated with GNU C library is under the following
+  copyright:
+
+    Copyright (C) 1991-2015 Free Software Foundation, Inc.
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published
+    by the Free Software Foundation; version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software Foundation,
+    Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
+
+  On Debian systems, the complete text of the GNU Library
+  General Public License can be found in `/usr/share/common-licenses/GPL-2'.
+
+* All code incorporated from 4.4 BSD is distributed under the following
+  license:
+
+   Copyright (C) 1991 Regents of the University of California.
+   All rights reserved.
+
+   Redistribution and use in source and binary forms, with or without
+   modification, are permitted provided that the following conditions
+   are met:
+
+   1. Redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.
+   2. Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer in the
+      documentation and/or other materials provided with the distribution.
+   3. [This condition was removed.]
+   4. Neither the name of the University nor the names of its contributors
+      may be used to endorse or promote products derived from this software
+      without specific prior written permission.
+
+   THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+   ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+   IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+   ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+   FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+   DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+   OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+   HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+   LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+   OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+   SUCH DAMAGE.
+
+* The DNS resolver code, taken from BIND 4.9.5, is copyrighted both by
+  UC Berkeley and by Digital Equipment Corporation.  The DEC portions
+  are under the following license:
+
+    Portions Copyright (C) 1993 by Digital Equipment Corporation.
+
+    Permission to use, copy, modify, and distribute this software for any
+    purpose with or without fee is hereby granted, provided that the above
+    copyright notice and this permission notice appear in all copies, and
+    that the name of Digital Equipment Corporation not be used in
+    advertising or publicity pertaining to distribution of the document or
+    software without specific, written prior permission.
+
+    THE SOFTWARE IS PROVIDED ``AS IS'' AND DIGITAL EQUIPMENT CORP.
+    DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE, INCLUDING ALL
+    IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS.  IN NO EVENT SHALL
+    DIGITAL EQUIPMENT CORPORATION BE LIABLE FOR ANY SPECIAL, DIRECT,
+    INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING
+    FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT,
+    NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION
+    WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+* The ISC portions are under the following license:
+
+    Portions Copyright (c) 1996-1999 by Internet Software Consortium.
+
+    Permission to use, copy, modify, and distribute this software for any
+    purpose with or without fee is hereby granted, provided that the above
+    copyright notice and this permission notice appear in all copies.
+
+    THE SOFTWARE IS PROVIDED "AS IS" AND INTERNET SOFTWARE CONSORTIUM DISCLAIMS
+    ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES
+    OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL INTERNET SOFTWARE
+    CONSORTIUM BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
+    DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR
+    PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS
+    ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
+    SOFTWARE.
+
+* The Sun RPC support (from rpcsrc-4.0) is covered by the following
+  license:
+
+    Copyright (c) 2010, Oracle America, Inc. 
+
+    Redistribution and use in source and binary forms, with or without
+    modification, are permitted provided that the following conditions are
+    met:
+
+        * Redistributions of source code must retain the above copyright
+          notice, this list of conditions and the following disclaimer.
+        * Redistributions in binary form must reproduce the above
+          copyright notice, this list of conditions and the following
+          disclaimer in the documentation and/or other materials
+          provided with the distribution.
+        * Neither the name of the "Oracle America, Inc." nor the names of its
+          contributors may be used to endorse or promote products derived
+          from this software without specific prior written permission.
+
+      THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+      "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+      LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+      FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+      COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+      INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+      DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+      GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+      INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+      WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+      NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+      OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+* The following CMU license covers some of the support code for Mach,
+  derived from Mach 3.0:
+
+    Mach Operating System
+    Copyright (C) 1991,1990,1989 Carnegie Mellon University
+    All Rights Reserved.
+
+    Permission to use, copy, modify and distribute this software and its
+    documentation is hereby granted, provided that both the copyright
+    notice and this permission notice appear in all copies of the
+    software, derivative works or modified versions, and any portions
+    thereof, and that both notices appear in supporting documentation.
+
+    CARNEGIE MELLON ALLOWS FREE USE OF THIS SOFTWARE IN ITS ``AS IS''
+    CONDITION.  CARNEGIE MELLON DISCLAIMS ANY LIABILITY OF ANY KIND FOR
+    ANY DAMAGES WHATSOEVER RESULTING FROM THE USE OF THIS SOFTWARE.
+
+    Carnegie Mellon requests users of this software to return to
+
+     Software Distribution Coordinator
+     School of Computer Science
+     Carnegie Mellon University
+     Pittsburgh PA 15213-3890
+
+    or Software.Distribution@CS.CMU.EDU any improvements or
+    extensions that they make and grant Carnegie Mellon the rights to
+    redistribute these changes.
+
+* The file if_ppp.h is under the following CMU license:
+
+     Redistribution and use in source and binary forms, with or without
+     modification, are permitted provided that the following conditions
+     are met:
+     1. Redistributions of source code must retain the above copyright
+        notice, this list of conditions and the following disclaimer.
+     2. Redistributions in binary form must reproduce the above copyright
+        notice, this list of conditions and the following disclaimer in the
+        documentation and/or other materials provided with the distribution.
+     3. Neither the name of the University nor the names of its contributors
+        may be used to endorse or promote products derived from this software
+        without specific prior written permission.
+
+     THIS SOFTWARE IS PROVIDED BY CARNEGIE MELLON UNIVERSITY AND
+     CONTRIBUTORS ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES,
+     INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+     IN NO EVENT SHALL THE UNIVERSITY OR CONTRIBUTORS BE LIABLE FOR ANY
+     DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+     DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+     GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+     INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER
+     IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+     OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+     IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+* The following license covers the files from Intel's "Highly Optimized
+  Mathematical Functions for Itanium" collection:
+
+    Intel License Agreement
+
+    Copyright (c) 2000, Intel Corporation
+
+    All rights reserved.
+
+    Redistribution and use in source and binary forms, with or without
+    modification, are permitted provided that the following conditions are
+    met:
+
+    * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+
+    * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+
+    * The name of Intel Corporation may not be used to endorse or promote
+    products derived from this software without specific prior written
+    permission.
+
+    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+    "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+    LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+    A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL INTEL OR
+    CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+    EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+    PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+    PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+    LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+    NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+* The files inet/getnameinfo.c and sysdeps/posix/getaddrinfo.c are copyright
+  (C) by Craig Metz and are distributed under the following license:
+
+    /* The Inner Net License, Version 2.00
+
+      The author(s) grant permission for redistribution and use in source and
+    binary forms, with or without modification, of the software and documentation
+    provided that the following conditions are met:
+
+    0. If you receive a version of the software that is specifically labelled
+       as not being for redistribution (check the version message and/or README),
+       you are not permitted to redistribute that version of the software in any
+       way or form.
+    1. All terms of the all other applicable copyrights and licenses must be
+       followed.
+    2. Redistributions of source code must retain the authors' copyright
+       notice(s), this list of conditions, and the following disclaimer.
+    3. Redistributions in binary form must reproduce the authors' copyright
+       notice(s), this list of conditions, and the following disclaimer in the
+       documentation and/or other materials provided with the distribution.
+    4. [The copyright holder has authorized the removal of this clause.]
+    5. Neither the name(s) of the author(s) nor the names of its contributors
+       may be used to endorse or promote products derived from this software
+       without specific prior written permission.
+
+    THIS SOFTWARE IS PROVIDED BY ITS AUTHORS AND CONTRIBUTORS ``AS IS'' AND ANY
+    EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+    WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+    DISCLAIMED. IN NO EVENT SHALL THE AUTHORS OR CONTRIBUTORS BE LIABLE FOR ANY
+    DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+    (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+    LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+    ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+    (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+      If these license terms cause you a real problem, contact the author.  */
+
+* The file sunrpc/des_impl.c is copyright Eric Young:
+
+    Copyright (C) 1992 Eric Young
+    Collected from libdes and modified for SECURE RPC by Martin Kuck 1994
+    This file is distributed under the terms of the GNU Lesser General
+    Public License, version 2.1 or later - see the file COPYING.LIB for details.
+    If you did not receive a copy of the license with this program, please
+    see <http://www.gnu.org/licenses/> to obtain a copy.
+
+* The libidn code is copyright Simon Josefsson, with portions copyright
+  The Internet Society, Tom Tromey and Red Hat, Inc.:
+
+    Copyright (C) 2002, 2003, 2004, 2011  Simon Josefsson
+
+    This file is part of GNU Libidn.
+
+    GNU Libidn is free software; you can redistribute it and/or
+    modify it under the terms of the GNU Lesser General Public
+    License as published by the Free Software Foundation; either
+    version 2.1 of the License, or (at your option) any later version.
+
+    GNU Libidn is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    Lesser General Public License for more details.
+
+    You should have received a copy of the GNU Lesser General Public
+    License along with GNU Libidn; if not, see <http://www.gnu.org/licenses/>.
+
+* The following notice applies to portions of libidn/nfkc.c:
+
+    This file contains functions from GLIB, including gutf8.c and
+    gunidecomp.c, all licensed under LGPL and copyright hold by:
+
+    Copyright (C) 1999, 2000 Tom Tromey
+    Copyright 2000 Red Hat, Inc.
+
+* The following applies to portions of libidn/punycode.c and
+  libidn/punycode.h:
+
+    This file is derived from RFC 3492bis written by Adam M. Costello.
+
+    Disclaimer and license: Regarding this entire document or any
+    portion of it (including the pseudocode and C code), the author
+    makes no guarantees and is not responsible for any damage resulting
+    from its use.  The author grants irrevocable permission to anyone
+    to use, modify, and distribute it in any way that does not diminish
+    the rights of anyone else to use, modify, and distribute it,
+    provided that redistributed derivative works do not contain
+    misleading author or version information.  Derivative works need
+    not be licensed under similar terms.
+
+    Copyright (C) The Internet Society (2003).  All Rights Reserved.
+
+    This document and translations of it may be copied and furnished to
+    others, and derivative works that comment on or otherwise explain it
+    or assist in its implementation may be prepared, copied, published
+    and distributed, in whole or in part, without restriction of any
+    kind, provided that the above copyright notice and this paragraph are
+    included on all such copies and derivative works.  However, this
+    document itself may not be modified in any way, such as by removing
+    the copyright notice or references to the Internet Society or other
+    Internet organizations, except as needed for the purpose of
+    developing Internet standards in which case the procedures for
+    copyrights defined in the Internet Standards process must be
+    followed, or as required to translate it into languages other than
+    English.
+
+    The limited permissions granted above are perpetual and will not be
+    revoked by the Internet Society or its successors or assigns.
+
+    This document and the information contained herein is provided on an
+    "AS IS" basis and THE INTERNET SOCIETY AND THE INTERNET ENGINEERING
+    TASK FORCE DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING
+    BUT NOT LIMITED TO ANY WARRANTY THAT THE USE OF THE INFORMATION
+    HEREIN WILL NOT INFRINGE ANY RIGHTS OR ANY IMPLIED WARRANTIES OF
+    MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
+
+* The file inet/rcmd.c is under a UCB copyright and the following:
+
+    Copyright (C) 1998 WIDE Project.
+    All rights reserved.
+
+    Redistribution and use in source and binary forms, with or without
+    modification, are permitted provided that the following conditions
+    are met:
+    1. Redistributions of source code must retain the above copyright
+       notice, this list of conditions and the following disclaimer.
+    2. Redistributions in binary form must reproduce the above copyright
+       notice, this list of conditions and the following disclaimer in the
+       documentation and/or other materials provided with the distribution.
+    3. Neither the name of the project nor the names of its contributors
+       may be used to endorse or promote products derived from this software
+       without specific prior written permission.
+
+    THIS SOFTWARE IS PROVIDED BY THE PROJECT AND CONTRIBUTORS ``AS IS'' AND
+    ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+    IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+    ARE DISCLAIMED.  IN NO EVENT SHALL THE PROJECT OR CONTRIBUTORS BE LIABLE
+    FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+    DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+    OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+    HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+    LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+    OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+    SUCH DAMAGE.
+
+    * The file posix/runtests.c is copyright Tom Lord:
+
+    Copyright 1995 by Tom Lord
+
+                            All Rights Reserved
+
+    Permission to use, copy, modify, and distribute this software and its
+    documentation for any purpose and without fee is hereby granted,
+    provided that the above copyright notice appear in all copies and that
+    both that copyright notice and this permission notice appear in
+    supporting documentation, and that the name of the copyright holder not be
+    used in advertising or publicity pertaining to distribution of the
+    software without specific, written prior permission.
+
+    Tom Lord DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE,
+    INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO
+    EVENT SHALL TOM LORD BE LIABLE FOR ANY SPECIAL, INDIRECT OR
+    CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF
+    USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+    OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+    PERFORMANCE OF THIS SOFTWARE.
+
+* The posix/rxspencer tests are copyright Henry Spencer:
+
+    Copyright 1992, 1993, 1994, 1997 Henry Spencer.  All rights reserved.
+    This software is not subject to any license of the American Telephone
+    and Telegraph Company or of the Regents of the University of California.
+
+    Permission is granted to anyone to use this software for any purpose on
+    any computer system, and to alter it and redistribute it, subject
+    to the following restrictions:
+
+    1. The author is not responsible for the consequences of use of this
+       software, no matter how awful, even if they arise from flaws in it.
+
+    2. The origin of this software must not be misrepresented, either by
+       explicit claim or by omission.  Since few users ever read sources,
+       credits must appear in the documentation.
+
+    3. Altered versions must be plainly marked as such, and must not be
+       misrepresented as being the original software.  Since few users
+       ever read sources, credits must appear in the documentation.
+
+    4. This notice may not be removed or altered.
+
+* The file posix/PCRE.tests is copyright University of Cambridge:
+
+    Copyright (c) 1997-2003 University of Cambridge
+
+    Permission is granted to anyone to use this software for any purpose on any
+    computer system, and to redistribute it freely, subject to the following
+    restrictions:
+
+    1. This software is distributed in the hope that it will be useful,
+       but WITHOUT ANY WARRANTY; without even the implied warranty of
+       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+    2. The origin of this software must not be misrepresented, either by
+       explicit claim or by omission. In practice, this means that if you use
+       PCRE in software that you distribute to others, commercially or
+       otherwise, you must put a sentence like this
+
+         Regular expression support is provided by the PCRE library package,
+         which is open source software, written by Philip Hazel, and copyright
+         by the University of Cambridge, England.
+
+       somewhere reasonably visible in your documentation and in any relevant
+       files or online help data or similar. A reference to the ftp site for
+       the source, that is, to
+
+         ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/
+
+       should also be given in the documentation. However, this condition is not
+       intended to apply to whole chains of software. If package A includes PCRE,
+       it must acknowledge it, but if package B is software that includes package
+       A, the condition is not imposed on package B (unless it uses PCRE
+       independently).
+
+    3. Altered versions must be plainly marked as such, and must not be
+       misrepresented as being the original software.
+
+    4. If PCRE is embedded in any software that is released under the GNU
+      General Purpose Licence (GPL), or Lesser General Purpose Licence (LGPL),
+      then the terms of that licence shall supersede any condition above with
+      which it is incompatible.
+
+* Files from Sun fdlibm are copyright Sun Microsystems, Inc.:
+
+    Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
+
+    Developed at SunPro, a Sun Microsystems, Inc. business.
+    Permission to use, copy, modify, and distribute this
+    software is freely granted, provided that this notice
+    is preserved.
+
+* Part of stdio-common/tst-printf.c is copyright C E Chew:
+
+    (C) Copyright C E Chew
+
+    Feel free to copy, use and distribute this software provided:
+
+         1. you do not pretend that you wrote it
+         2. you leave this copyright notice intact.
+
+* Various long double libm functions are copyright Stephen L. Moshier:
+
+    Copyright 2001 by Stephen L. Moshier <moshier@na-net.ornl.gov>
+
+     This library is free software; you can redistribute it and/or
+     modify it under the terms of the GNU Lesser General Public
+     License as published by the Free Software Foundation; either
+     version 2.1 of the License, or (at your option) any later version.
+
+     This library is distributed in the hope that it will be useful,
+     but WITHOUT ANY WARRANTY; without even the implied warranty of
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+     Lesser General Public License for more details.
+
+     You should have received a copy of the GNU Lesser General Public
+     License along with this library; if not, see
+     <http://www.gnu.org/licenses/>.  */
+
+Runtime notice: /usr/share/doc/libssl1.1/copyright
+
+This package was debianized by Christoph Martin martin@uni-mainz.de on
+Fri, 22 Nov 1996 21:29:51 +0100.
+
+Copyright (c) 1998-2004 The OpenSSL Project
+Copyright (c) 1995-1998 Eric A. Young, Tim J. Hudson
+
+The upstream sources were obtained from https://www.openssl.org/
+
+
+  LICENSE ISSUES
+  ==============
+
+  The OpenSSL toolkit stays under a dual license, i.e. both the conditions of
+  the OpenSSL License and the original SSLeay license apply to the toolkit.
+  See below for the actual license texts. Actually both licenses are BSD-style
+  Open Source licenses. In case of any license issues related to OpenSSL
+  please contact openssl-core@openssl.org.
+
+  OpenSSL License
+  ---------------
+
+/* ====================================================================
+ * Copyright (c) 1998-2004 The OpenSSL Project.  All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer. 
+ *
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in
+ *    the documentation and/or other materials provided with the
+ *    distribution.
+ *
+ * 3. All advertising materials mentioning features or use of this
+ *    software must display the following acknowledgment:
+ *    "This product includes software developed by the OpenSSL Project
+ *    for use in the OpenSSL Toolkit. (http://www.openssl.org/)"
+ *
+ * 4. The names "OpenSSL Toolkit" and "OpenSSL Project" must not be used to
+ *    endorse or promote products derived from this software without
+ *    prior written permission. For written permission, please contact
+ *    openssl-core@openssl.org.
+ *
+ * 5. Products derived from this software may not be called "OpenSSL"
+ *    nor may "OpenSSL" appear in their names without prior written
+ *    permission of the OpenSSL Project.
+ *
+ * 6. Redistributions of any form whatsoever must retain the following
+ *    acknowledgment:
+ *    "This product includes software developed by the OpenSSL Project
+ *    for use in the OpenSSL Toolkit (http://www.openssl.org/)"
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE OpenSSL PROJECT ``AS IS'' AND ANY
+ * EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE OpenSSL PROJECT OR
+ * ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+ * NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+ * STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+ * OF THE POSSIBILITY OF SUCH DAMAGE.
+ * ====================================================================
+ *
+ * This product includes cryptographic software written by Eric Young
+ * (eay@cryptsoft.com).  This product includes software written by Tim
+ * Hudson (tjh@cryptsoft.com).
+ *
+ */
+
+ Original SSLeay License
+ -----------------------
+
+/* Copyright (C) 1995-1998 Eric Young (eay@cryptsoft.com)
+ * All rights reserved.
+ *
+ * This package is an SSL implementation written
+ * by Eric Young (eay@cryptsoft.com).
+ * The implementation was written so as to conform with Netscapes SSL.
+ * 
+ * This library is free for commercial and non-commercial use as long as
+ * the following conditions are aheared to.  The following conditions
+ * apply to all code found in this distribution, be it the RC4, RSA,
+ * lhash, DES, etc., code; not just the SSL code.  The SSL documentation
+ * included with this distribution is covered by the same copyright terms
+ * except that the holder is Tim Hudson (tjh@cryptsoft.com).
+ * 
+ * Copyright remains Eric Young's, and as such any Copyright notices in
+ * the code are not to be removed.
+ * If this package is used in a product, Eric Young should be given attribution
+ * as the author of the parts of the library used.
+ * This can be in the form of a textual message at program startup or
+ * in documentation (online or textual) provided with the package.
+ * 
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 1. Redistributions of source code must retain the copyright
+ *    notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ * 3. All advertising materials mentioning features or use of this software
+ *    must display the following acknowledgement:
+ *    "This product includes cryptographic software written by
+ *     Eric Young (eay@cryptsoft.com)"
+ *    The word 'cryptographic' can be left out if the rouines from the library
+ *    being used are not cryptographic related :-).
+ * 4. If you include any Windows specific code (or a derivative thereof) from 
+ *    the apps directory (application code) you must include an acknowledgement:
+ *    "This product includes software written by Tim Hudson (tjh@cryptsoft.com)"
+ * 
+ * THIS SOFTWARE IS PROVIDED BY ERIC YOUNG ``AS IS'' AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGE.
+ * 
+ * The licence and distribution terms for any publically available version or
+ * derivative of this code cannot be changed.  i.e. this code cannot simply be
+ * copied and put under another distribution licence
+ * [including the GNU Public Licence.]
+ */
+
+
+Runtime notice: /usr/share/doc/libffi7/copyright
+
+This package was debianized by Matthias Klose <doko@debian.org>
+on Mon, 10 Mar 2008 05:46:40 +0000.
+
+It was downloaded from ftp://sourceware.org/pub/libffi/
+
+Upstream Authors: 
+
+    Anthony Green <green@redhat.com>
+    GCC developers
+    See the README and below in the list of copyright holders for a more
+    complete list.
+
+Copyright: 
+    Copyright (c) 1996-2011 Red Hat, Inc.
+    Copyright (C) 1996-2011 Anthony Green
+    Copyright (C) 1996-2010 Free Software Foundation, Inc
+    Copyright (c) 2003, 2004, 2006, 2007, 2008 Kaz Kojima
+    Copyright (c) 2010, 2011, Plausible Labs Cooperative , Inc.
+    Copyright (c) 2010 CodeSourcery
+    Copyright (c) 1998 Andreas Schwab
+    Copyright (c) 2000 Hewlett Packard Company
+    Copyright (c) 2009 Bradley Smith
+    Copyright (c) 2008 David Daney
+    Copyright (c) 2004 Simon Posnjak
+    Copyright (c) 2005 Axis Communications AB
+    Copyright (c) 1998 Cygnus Solutions
+    Copyright (c) 2004 Renesas Technology
+    Copyright (c) 2002, 2007  Bo Thorsen <bo@suse.de>
+    Copyright (c) 2002 Ranjit Mathew
+    Copyright (c) 2002 Roger Sayle
+    Copyright (c) 2000, 2007 Software AG
+    Copyright (c) 2003 Jakub Jelinek
+    Copyright (c) 2000, 2001 John Hornkvist
+    Copyright (c) 1998 Geoffrey Keating
+    Copyright (c) 2008 Björn König
+
+License:
+
+    libffi - Copyright (c) 1996-2010  Red Hat, Inc and others.
+    See source files for details.
+
+    Permission is hereby granted, free of charge, to any person obtaining
+    a copy of this software and associated documentation files (the
+    ``Software''), to deal in the Software without restriction, including
+    without limitation the rights to use, copy, modify, merge, publish,
+    distribute, sublicense, and/or sell copies of the Software, and to
+    permit persons to whom the Software is furnished to do so, subject to
+    the following conditions:
+
+    The above copyright notice and this permission notice shall be included
+    in all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED ``AS IS'', WITHOUT WARRANTY OF ANY KIND,
+    EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+    IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+    CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+    TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+    SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+    Documentation:
+    Permission is granted to copy, distribute and/or modify this document
+    under the terms of the GNU General Public License as published by the
+    Free Software Foundation; either version 2, or (at your option) any
+    later version.  A copy of the license is included in the
+    section entitled ``GNU General Public License''.
+
+doc/*:
+  Permission is granted to copy, distribute and/or modify this document
+  under the terms of the GNU General Public License as published by the
+  Free Software Foundation; either version 2, or (at your option) any
+  later version.  A copy of the license is included in the
+  section entitled ``GNU General Public License''.
+
+  On Debian GNU/Linux systems, the complete text of the GNU General
+  Public License is in `/usr/share/common-licenses/GPL'.
+
+The Debian packaging is (C) 2008, 2011 Matthias Klose <doko@debian.org>
+and is licensed under the GPL, see `/usr/share/common-licenses/GPL'.
+
+Runtime notice: /usr/share/doc/zlib1g/copyright
+
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: zlib
+Upstream-Contact: zlib@gzip.org
+Source: http://zlib.net/
+Comment: This is the pre-packaged Debian Linux version of the zlib compression
+ library.  It was packaged by Michael Alan Dorman <mdorman@debian.org>
+ from sources originally retrieved from ftp.uu.net in the directory
+ /pub/archiving/zip/zlib as the file zlib-1.0.4.tar.gz.
+ .
+ The deflate format used by zlib was defined by Phil Katz. The deflate
+ and zlib specifications were written by Peter Deutsch. Thanks to all the
+ people who reported problems and suggested various improvements in zlib;
+ they are too numerous to cite here.
+Files-Excluded:
+ contrib/ada
+ contrib/amd64
+ contrib/asm686
+ contrib/blast
+ contrib/delphi
+ contrib/dotzlib
+ contrib/gcc_gvmat64
+ contrib/infback9
+ contrib/inflate86
+ contrib/iostream
+ contrib/iostream2
+ contrib/iostream3
+ contrib/masmx64
+ contrib/masmx86
+ contrib/pascal
+ contrib/puff
+ contrib/testzlib
+ contrib/untgz
+ contrib/vstudio
+ doc/rfc1950.txt
+ doc/rfc1951.txt
+ doc/rfc1952.txt
+
+Files: *
+Copyright: 1995-2013 Jean-loup Gailly and Mark Adler
+License: Zlib
+
+Files: amiga/Makefile.pup
+Copyright: 1998 by Andreas R. Kleinert
+License: Zlib
+
+Files: contrib/minizip/*
+Copyright: 1998-2010 Gilles Vollant
+           2007-2008 Even Rouault
+           2009-2010 Mathias Svensson
+License: Zlib
+
+Files: debian/*
+Copyright: 2000-2017 Mark Brown
+License: Zlib
+
+License: Zlib
+ This software is provided 'as-is', without any express or implied
+ warranty.  In no event will the authors be held liable for any damages
+ arising from the use of this software.
+ .
+ Permission is granted to anyone to use this software for any purpose,
+ including commercial applications, and to alter it and redistribute it
+ freely, subject to the following restrictions:
+ .
+ 1. The origin of this software must not be misrepresented; you must not
+    claim that you wrote the original software. If you use this software
+    in a product, an acknowledgment in the product documentation would be
+    appreciated but is not required.
+ 2. Altered source versions must be plainly marked as such, and must not be
+    misrepresented as being the original software.
+ 3. This notice may not be removed or altered from any source distribution.
+ .
+ Jean-loup Gailly        Mark Adler
+ jloup@gzip.org          madler@alumni.caltech.edu
+ .
+ If you use the zlib library in a product, we would appreciate *not* receiving
+ lengthy legal documents to sign.  The sources are provided for free but without
+ warranty of any kind.  The library has been entirely written by Jean-loup
+ Gailly and Mark Adler; it does not include third-party code.
+ .
+ If you redistribute modified sources, we would appreciate that you include in
+ the file ChangeLog history information documenting your changes.  Please read
+ the FAQ for more information on the distribution of modified source versions.
+
+Runtime notice: /usr/share/doc/liblzma5/copyright
+
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: XZ Utils
+Upstream-Contact:
+ Lasse Collin <lasse.collin@tukaani.org>
+ https://tukaani.org/xz/lists.html
+Source:
+ https://tukaani.org/xz
+ https://git.tukaani.org/xz.git
+Comment:
+ XZ Utils is developed and maintained upstream by Lasse Collin.  Major
+ portions are based on code by other authors; see AUTHORS for details.
+ Most of the source has been put into the public domain, but some files
+ have not (details below).
+ .
+ This file describes the source package.  The binary packages contain
+ some files derived from other works: for example, images in the API
+ documentation come from Doxygen.
+License:
+ Different licenses apply to different files in this package. Here
+ is a rough summary of which licenses apply to which parts of this
+ package (but check the individual files to be sure!):
+ .
+   - liblzma is in the public domain.
+ .
+   - xz, xzdec, and lzmadec command line tools are in the public
+     domain unless GNU getopt_long had to be compiled and linked
+     in from the lib directory. The getopt_long code is under
+     GNU LGPLv2.1+.
+ .
+   - The scripts to grep, diff, and view compressed files have been
+     adapted from gzip. These scripts and their documentation are
+     under GNU GPLv2+.
+ .
+   - All the documentation in the doc directory and most of the
+     XZ Utils specific documentation files in other directories
+     are in the public domain.
+ .
+   - Translated messages are in the public domain.
+ .
+   - The build system contains public domain files, and files that
+     are under GNU GPLv2+ or GNU GPLv3+. None of these files end up
+     in the binaries being built.
+ .
+   - Test files and test code in the tests directory, and debugging
+     utilities in the debug directory are in the public domain.
+ .
+   - The extra directory may contain public domain files, and files
+     that are under various free software licenses.
+ .
+ You can do whatever you want with the files that have been put into
+ the public domain. If you find public domain legally problematic,
+ take the previous sentence as a license grant. If you still find
+ the lack of copyright legally problematic, you have too many
+ lawyers.
+ .
+ As usual, this software is provided "as is", without any warranty.
+ .
+ If you copy significant amounts of public domain code from XZ Utils
+ into your project, acknowledging this somewhere in your software is
+ polite (especially if it is proprietary, non-free software), but
+ naturally it is not legally required. Here is an example of a good
+ notice to put into "about box" or into documentation:
+ .
+     This software includes code from XZ Utils <http://tukaani.org/xz/>.
+ .
+ The following license texts are included in the following files:
+   - COPYING.LGPLv2.1: GNU Lesser General Public License version 2.1
+   - COPYING.GPLv2: GNU General Public License version 2
+   - COPYING.GPLv3: GNU General Public License version 3
+ .
+ Note that the toolchain (compiler, linker etc.) may add some code
+ pieces that are copyrighted. Thus, it is possible that e.g. liblzma
+ binary wouldn't actually be in the public domain in its entirety
+ even though it contains no copyrighted code from the XZ Utils source
+ package.
+ .
+ If you have questions, don't hesitate to ask the author(s) for more
+ information.
+
+Files: *
+Copyright: 2006-2018, Lasse Collin
+           1999-2008, Igor Pavlov
+           2006, Ville Koskinen
+           1998, Steve Reid
+           2000, Wei Dai
+           2003, Kevin Springle
+           2009, Jonathan Nieder
+           2010, Anders F Björklund
+License: PD
+ This file has been put in the public domain.
+ You can do whatever you want with this file.
+Comment:
+  From: Lasse Collin <lasse.collin@tukaani.org>
+  To: Jonathan Nieder <jrnieder@gmail.com>
+  Subject: Re: XZ utils for Debian
+  Date: Sun, 19 Jul 2009 13:28:23 +0300
+  Message-Id: <200907191328.23816.lasse.collin@tukaani.org>
+ .
+ [...]
+ .
+  > AUTHORS, ChangeLog, COPYING, README, THANKS, TODO,
+  > dos/README, windows/README
+ .
+  COPYING says that most docs are in the public domain. Maybe that's not
+  clear enough, but on the other hand it looks a bit stupid to put
+  copyright information in tiny and relatively small docs like README.
+ .
+  I don't dare to say that _all_ XZ Utils specific docs are in the public
+  domain unless otherwise mentioned in the file. I'm including PDF files
+  generated by groff + ps2pdf, and some day I might include Doxygen-
+  generated HTML docs too. Those don't include any copyright notices, but
+  it seems likely that groff + ps2pdf or at least Doxygen put some
+  copyrighted content into the generated files.
+
+Files: INSTALL NEWS PACKAGERS
+ windows/README-Windows.txt
+ windows/INSTALL-MinGW.txt
+Copyright: 2009-2010, Lasse Collin
+License: probably-PD
+ See the note on AUTHORS, README, and so on above.
+
+Files: src/scripts/* lib/* extra/scanlzma/scanlzma.c
+Copyright: © 1993, Jean-loup Gailly
+           © 1989-1994, 1996-1999, 2001-2007, Free Software Foundation, Inc.
+           © 2006 Timo Lindfors
+           2005, Charles Levert
+           2005, 2009, Lasse Collin
+           2009, Andrew Dudman
+Other-Authors: Paul Eggert, Ulrich Drepper
+License: GPL-2+
+
+Files: src/scripts/Makefile.am src/scripts/xzless.1
+Copyright: 2009, Andrew Dudman
+           2009, Lasse Collin
+License: PD
+ This file has been put in the public domain.
+ You can do whatever you want with this file.
+
+Files: doc/examples/xz_pipe_comp.c doc/examples/xz_pipe_decomp.c
+Copyright: 2010, Daniel Mealha Cabrita
+License: PD
+ Not copyrighted -- provided to the public domain.
+
+Files: lib/getopt.c lib/getopt1.c lib/getopt.in.h
+Copyright: © 1987-2007 Free Software Foundation, Inc.
+Other-Authors: Ulrich Drepper
+License: LGPL-2.1+
+
+Files: m4/getopt.m4 m4/posix-shell.m4
+Copyright: © 2002-2006, 2008 Free Software Foundation, Inc.
+           © 2007-2008 Free Software Foundation, Inc.
+Other-Authors: Bruno Haible, Paul Eggert
+License: permissive-fsf
+
+Files: m4/acx_pthread.m4
+Copyright: © 2008, Steven G. Johnson <stevenj@alum.mit.edu>
+License: Autoconf
+
+files: m4/ax_check_capsicum.m4
+Copyright: © 2014, Google Inc.
+           © 2015, Lasse Collin <lasse.collin@tukaani.org>
+License: permissive-nowarranty
+
+Files: Doxyfile.in
+Copyright: © 1997-2007 by Dimitri van Heesch
+Origin: Doxygen 1.4.7
+License: GPL-2
+
+Files: src/liblzma/check/crc32_table_?e.h
+ src/liblzma/check/crc64_table_?e.h
+ src/liblzma/lzma/fastpos_table.c
+ src/liblzma/rangecoder/price_table.c
+Copyright: none, automatically generated data
+Generated-With:
+ src/liblzma/check/crc32_tablegen.c
+ src/liblzma/check/crc64_tablegen.c
+ src/liblzma/lzma/fastpos_tablegen.c
+ src/liblzma/rangecoder/price_tablegen.c
+License: none
+ No copyright to license.
+
+Files: .gitignore m4/.gitignore po/.gitignore po/LINGUAS po/POTFILES.in
+Copyright: none; these are just short lists.
+License: none
+ No copyright to license.
+
+Files: tests/compress_prepared_bcj_*
+Copyright: 2008-2009, Lasse Collin
+Source-Code: tests/bcj_test.c
+License: PD
+ This file has been put into the public domain.
+ You can do whatever you want with this file.
+Comment:
+ changelog.gz (commit 975d8fd) explains:
+ .
+ Recreated the BCJ test files for x86 and SPARC. The old files
+ were linked with crt*.o, which are copyrighted, and thus the
+ old test files were not in the public domain as a whole. They
+ are freely distributable though, but it is better to be careful
+ and avoid including any copyrighted pieces in the test files.
+ The new files are just compiled and assembled object files,
+ and thus don't contain any copyrighted code.
+
+Files: po/cs.po po/de.po po/fr.po
+Copyright: 2010, Marek Černocký
+           2010, Andre Noll
+           2011, Adrien Nader
+License: PD
+ This file is put in the public domain.
+
+Files: po/it.po po/pl.po
+Copyright: 2009, 2010, Gruppo traduzione italiano di Ubuntu-it
+           2010, Lorenzo De Liso
+           2009, 2010, 2011, Milo Casagrande
+           2011, Jakub Bogusz
+License: PD
+ This file is in the public domain
+
+Files: INSTALL.generic
+Copyright: © 1994, 1995, 1996, 1999, 2000, 2001, 2002, 2004, 2005,
+             2006, 2007, 2008, 2009, 2010 Free Software Foundation, Inc.
+License: permissive-nowarranty
+
+Files: dos/config.h
+Copyright: © 1992, 1993, 1994, 1999, 2000, 2001, 2002, 2005
+             Free Software Foundation, Inc.
+           2007-2010, Lasse Collin
+Other-Authors: Roland McGrath, Akim Demaille, Paul Eggert,
+               David Mackenzie, Bruno Haible, and many others.
+Origin: configure.ac from XZ Utils,
+        visibility.m4 serial 1 (gettext-0.15),
+        Autoconf 2.52g
+License: config-h
+ configure.ac:
+ .
+  # Author: Lasse Collin
+  #
+  # This file has been put into the public domain.
+  # You can do whatever you want with this file.
+ .
+ visibility.m4:
+ .
+  dnl Copyright (C) 2005 Free Software Foundation, Inc.
+  dnl This file is free software; the Free Software Foundation
+  dnl gives unlimited permission to copy and/or distribute it,
+  dnl with or without modifications, as long as this notice is preserved.
+ .
+ dnl From Bruno Haible.
+ .
+ comments from Autoconf 2.52g:
+ .
+  # Copyright 1992, 1993, 1994, 1999, 2000, 2001, 2002
+  # Free Software Foundation, Inc.
+ .
+ [...]
+ .
+  # As a special exception, the Free Software Foundation gives unlimited
+  # permission to copy, distribute and modify the configure scripts that
+  # are the output of Autoconf.  You need not follow the terms of the GNU
+  # General Public License when using or distributing such scripts, even
+  # though portions of the text of Autoconf appear in them.  The GNU
+  # General Public License (GPL) does govern all other use of the material
+  # that constitutes the Autoconf program.
+ .
+ On Debian systems, the complete text of the GNU General Public
+ License version 2 can be found in ‘/usr/share/common-licenses/GPL-2’.
+ dos/config.h was generated with autoheader, which tells Autoconf to
+ output a script to generate a config.h file and then runs it.
+
+Files: po/Makevars
+Origin: gettext-runtime/po/Makevars (gettext-0.12)
+Copyright: © 2003 Free Software Foundation, Inc.
+Authors: Bruno Haible
+License: LGPL-2.1+
+ The gettext-runtime package is under the LGPL, see files intl/COPYING.LIB-2.0
+ and intl/COPYING.LIB-2.1.
+ .
+ On Debian systems, the complete text of intl/COPYING.LIB-2.0 from
+ gettext-runtime 0.12 can be found in ‘/usr/share/common-licenses/LGPL-2’
+ and the text of intl/COPYING.LIB-2.1 can be found in
+ ‘/usr/share/common-licenses/LGPL-2.1’.
+ .
+ po/Makevars consists mostly of helpful comments and does not contain a
+ copyright and license notice.
+
+Files: COPYING.GPLv2 COPYING.GPLv3 COPYING.LGPLv2.1
+Copyright: © 1989, 1991, 1999, 2007 Free Software Foundation, Inc.
+License: noderivs
+ Everyone is permitted to copy and distribute verbatim copies
+ of this license document, but changing it is not allowed.
+
+Files: debian/*
+Copyright: 2009-2012, Jonathan Nieder
+License: PD-debian
+ The Debian packaging files are in the public domain.
+ You may freely use, modify, distribute, and relicense them.
+
+License: LGPL-2.1+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU Lesser General Public License as published by
+ the Free Software Foundation; either version 2.1, or (at your option)
+ any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU Lesser General Public License for more details.
+ .
+ You should have received a copy of the GNU Lesser General Public License along
+ with this program; if not, write to the Free Software Foundation,
+ Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ .
+ On Debian systems, the complete text of the GNU Lesser General Public
+ License version 2.1 can be found in ‘/usr/share/common-licenses/LGPL-2.1’.
+
+License: GPL-2
+ Permission to use, copy, modify, and distribute this software and its
+ documentation under the terms of the GNU General Public License is
+ hereby granted. No representations are made about the suitability of
+ this software for any purpose. It is provided "as is" without express
+ or implied warranty. See the GNU General Public License for more
+ details.
+ .
+ Documents produced by doxygen are derivative works derived from the
+ input used in their production; they are not affected by this license.
+ .
+ On Debian systems, the complete text of the version of the GNU General
+ Public License distributed with Doxygen can be found in
+ ‘/usr/share/common-licenses/GPL-2’.
+
+License: GPL-2+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2, or (at your option)
+ any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License along
+ with this program; if not, write to the Free Software Foundation,
+ Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ .
+ On Debian systems, the complete text of the GNU General Public License
+ version 2 can be found in ‘/usr/share/common-licenses/GPL-2’.
+
+License: Autoconf
+ This program is free software: you can redistribute it and/or modify it
+ under the terms of the GNU General Public License as published by the
+ Free Software Foundation, either version 3 of the License, or (at your
+ option) any later version.
+ .
+ This program is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General
+ Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License along
+ with this program. If not, see <http://www.gnu.org/licenses/>.
+ .
+ As a special exception, the respective Autoconf Macro's copyright owner
+ gives unlimited permission to copy, distribute and modify the configure
+ scripts that are the output of Autoconf when processing the Macro. You
+ need not follow the terms of the GNU General Public License when using
+ or distributing such scripts, even though portions of the text of the
+ Macro appear in them. The GNU General Public License (GPL) does govern
+ all other use of the material that constitutes the Autoconf Macro.
+ .
+ This special exception to the GPL applies to versions of the Autoconf
+ Macro released by the Autoconf Archive. When you make and distribute a
+ modified version of the Autoconf Macro, you may extend this special
+ exception to the GPL to apply to your modified version as well.
+ .
+ On Debian systems, the complete text of the GNU General Public
+ License version 3 can be found in ‘/usr/share/common-licenses/GPL-3’.
+
+License: permissive-fsf
+ This file is free software; the Free Software Foundation
+ gives unlimited permission to copy and/or distribute it,
+ with or without modifications, as long as this notice is preserved.
+
+License: permissive-nowarranty
+ Copying and distribution of this file, with or without modification,
+ are permitted in any medium without royalty provided the copyright
+ notice and this notice are preserved.  This file is offered as-is,
+ without warranty of any kind.
+
+Runtime notice: /usr/share/doc/libbz2-1.0/copyright
+
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: bzip2
+Source: http://www.bzip.org/
+
+Files: *
+Copyright: 1996-2010 Julian R Seward <jseward@bzip.org>
+License: BSD-variant
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions
+ are met:
+ .
+ 1. Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ .
+ 2. The origin of this software must not be misrepresented; you must
+    not claim that you wrote the original software.  If you use this
+    software in a product, an acknowledgment in the product
+    documentation would be appreciated but is not required.
+ .
+ 3. Altered source versions must be plainly marked as such, and must
+    not be misrepresented as being the original software.
+ .
+ 4. The name of the author may not be used to endorse or promote
+    products derived from this software without specific prior written
+    permission.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS
+ OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+ WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY
+ DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+ GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+ INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+ NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+Files: debian/*
+Copyright: 2018 Nicolas Boulenguez <nicolas.boulenguez@free.fr>
+	   2012-2015 Santiago Ruano Rincón <santiago@debian.org>
+           2014      Canonical Ltd.
+           2004-2011 Anibal Monsalve Salazar <anibal@debian.org>
+           1999-2002 Philippe Troin <phil@fifi.org>
+           1997-1999 Anthony Fok <foka@debian.org>
+License: GPL-2
+ The full text of the GNU General Public License version 2
+ can be found in /usr/share/common-licenses/GPL-2.
+
+Runtime notice: /usr/share/doc/libgcc-s1/copyright
+
+This is the Debian GNU/Linux prepackaged version of the GNU compiler
+collection, containing Ada, C, C++, D, Fortran 95, Go, Objective-C,
+Objective-C++, and Modula-2 compilers, documentation, and support
+libraries.  In addition, Debian provides the gm2 compiler, either in
+the same source package, or built from a separate same source package.
+Packaging is done by the Debian GCC Maintainers
+<debian-gcc@lists.debian.org>, with sources obtained from:
+
+  ftp://gcc.gnu.org/pub/gcc/releases/  (for full releases)
+  svn://gcc.gnu.org/svn/gcc/           (for prereleases)
+  ftp://sourceware.org/pub/newlib/     (for newlib)
+  git://git.savannah.gnu.org/gm2.git   (for Modula-2)
+
+The current gcc-10 source package is taken from the SVN gcc-10-branch.
+
+Changes: See changelog.Debian.gz
+
+Debian splits the GNU Compiler Collection into packages for each language,
+library, and documentation as follows:
+
+Language       Compiler package  Library package    Documentation
+---------------------------------------------------------------------------
+Ada            gnat-10          libgnat-10          gnat-10-doc
+BRIG           gccbrig-10       libhsail-rt0
+C              gcc-10                              gcc-10-doc
+C++            g++-10           libstdc++6         libstdc++6-10-doc
+D              gdc-10
+Fortran 95     gfortran-10      libgfortran5       gfortran-10-doc
+Go             gccgo-10         libgo0
+Objective C    gobjc-10         libobjc4
+Objective C++  gobjc++-10
+Modula-2       gm2-10           libgm2
+
+For some language run-time libraries, Debian provides source files,
+development files, debugging symbols and libraries containing position-
+independent code in separate packages:
+
+Language  Sources      Development   Debugging            Position-Independent
+------------------------------------------------------------------------------
+C++                                  libstdc++6-10-dbg  libstdc++6-10-pic
+D         libphobos-10-dev
+
+Additional packages include:
+
+All languages:
+libgcc1, libgcc2, libgcc4       GCC intrinsics (platform-dependent)
+gcc-10-base                    Base files common to all compilers
+gcc-10-soft-float              Software floating point (ARM only)
+gcc-10-source                  The sources with patches
+
+Ada:
+libgnat-util10-dev, libgnat-util10   GNAT version library
+
+C:
+cpp-10, cpp-10-doc            GNU C Preprocessor
+libssp0-dev, libssp0            GCC stack smashing protection library
+libquadmath0                    Math routines for the __float128 type
+fixincludes                     Fix non-ANSI header files
+
+C, C++ and Fortran 95:
+libgomp1-dev, libgomp1		GCC OpenMP (GOMP) support library
+libitm1-dev, libitm1		GNU Transactional Memory Library
+
+Biarch support: On some 64-bit platforms which can also run 32-bit code,
+Debian provides additional packages containing 32-bit versions of some
+libraries.  These packages have names beginning with 'lib32' instead of
+'lib', for example lib32stdc++6.  Similarly, on some 32-bit platforms which
+can also run 64-bit code, Debian provides additional packages with names
+beginning with 'lib64' instead of 'lib'.  These packages contain 64-bit
+versions of the libraries.  (At this time, not all platforms and not all
+libraries support biarch.)  The license terms for these lib32 or lib64
+packages are identical to the ones for the lib packages.
+
+
+COPYRIGHT STATEMENTS AND LICENSING TERMS
+
+
+GCC is Copyright (C) 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993, 1994,
+1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007,
+2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019
+Free Software Foundation, Inc.
+
+GCC is free software; you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free
+Software Foundation; either version 3, or (at your option) any later
+version.
+
+GCC is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+for more details.
+
+Files that have exception clauses are licensed under the terms of the
+GNU General Public License; either version 3, or (at your option) any
+later version.
+
+On Debian GNU/Linux systems, the complete text of the GNU General
+Public License is in `/usr/share/common-licenses/GPL', version 3 of this
+license in `/usr/share/common-licenses/GPL-3'.
+
+The following runtime libraries are licensed under the terms of the
+GNU General Public License (v3 or later) with version 3.1 of the GCC
+Runtime Library Exception (included in this file):
+
+ - libgcc (libgcc/, gcc/libgcc2.[ch], gcc/unwind*, gcc/gthr*,
+   gcc/coretypes.h, gcc/crtstuff.c, gcc/defaults.h, gcc/dwarf2.h,
+   gcc/emults.c, gcc/gbl-ctors.h, gcc/gcov-io.h, gcc/libgcov.c,
+   gcc/tsystem.h, gcc/typeclass.h).
+ - libatomic
+ - libdecnumber
+ - libgomp
+ - libitm
+ - libssp
+ - libstdc++-v3
+ - libobjc
+ - libgfortran
+ - The libgnat-10 Ada support library and libgnat-util10 library.
+ - Various config files in gcc/config/ used in runtime libraries.
+ - libvtv
+
+The libbacktrace library is licensed under the following terms:
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are
+met:
+
+    (1) Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer. 
+
+    (2) Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the
+    distribution.  
+    
+    (3) The name of the author may not be used to
+    endorse or promote products derived from this software without
+    specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT,
+INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING
+IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
+
+
+The libsanitizer libraries (libasan, liblsan, libtsan, libubsan) are
+licensed under the following terms:
+
+Copyright (c) 2009-2019 by the LLVM contributors.
+
+All rights reserved.
+
+Developed by:
+
+    LLVM Team
+
+    University of Illinois at Urbana-Champaign
+
+    http://llvm.org
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal with
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+of the Software, and to permit persons to whom the Software is furnished to do
+so, subject to the following conditions:
+
+    * Redistributions of source code must retain the above copyright notice,
+      this list of conditions and the following disclaimers.
+
+    * Redistributions in binary form must reproduce the above copyright notice,
+      this list of conditions and the following disclaimers in the
+      documentation and/or other materials provided with the distribution.
+
+    * Neither the names of the LLVM Team, University of Illinois at
+      Urbana-Champaign, nor the names of its contributors may be used to
+      endorse or promote products derived from this Software without specific
+      prior written permission.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
+CONTRIBUTORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS WITH THE
+SOFTWARE.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+
+The libffi library is licensed under the following terms:
+
+    libffi - Copyright (c) 1996-2003  Red Hat, Inc.
+
+    Permission is hereby granted, free of charge, to any person obtaining
+    a copy of this software and associated documentation files (the
+    ``Software''), to deal in the Software without restriction, including
+    without limitation the rights to use, copy, modify, merge, publish,
+    distribute, sublicense, and/or sell copies of the Software, and to
+    permit persons to whom the Software is furnished to do so, subject to
+    the following conditions:
+
+    The above copyright notice and this permission notice shall be included
+    in all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED ``AS IS'', WITHOUT WARRANTY OF ANY KIND, EXPRESS
+    OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+    IN NO EVENT SHALL CYGNUS SOLUTIONS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+    OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+    ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+    OTHER DEALINGS IN THE SOFTWARE.
+
+
+The documentation is licensed under the GNU Free Documentation License (v1.2).
+On Debian GNU/Linux systems, the complete text of this license is in
+`/usr/share/common-licenses/GFDL-1.2'.
+
+
+GCC RUNTIME LIBRARY EXCEPTION
+
+Version 3.1, 31 March 2009
+
+Copyright (C) 2009 Free Software Foundation, Inc. <http://fsf.org/>
+
+Everyone is permitted to copy and distribute verbatim copies of this
+license document, but changing it is not allowed.
+
+This GCC Runtime Library Exception ("Exception") is an additional
+permission under section 7 of the GNU General Public License, version
+3 ("GPLv3"). It applies to a given file (the "Runtime Library") that
+bears a notice placed by the copyright holder of the file stating that
+the file is governed by GPLv3 along with this Exception.
+
+When you use GCC to compile a program, GCC may combine portions of
+certain GCC header files and runtime libraries with the compiled
+program. The purpose of this Exception is to allow compilation of
+non-GPL (including proprietary) programs to use, in this way, the
+header files and runtime libraries covered by this Exception.
+
+0. Definitions.
+
+A file is an "Independent Module" if it either requires the Runtime
+Library for execution after a Compilation Process, or makes use of an
+interface provided by the Runtime Library, but is not otherwise based
+on the Runtime Library.
+
+"GCC" means a version of the GNU Compiler Collection, with or without
+modifications, governed by version 3 (or a specified later version) of
+the GNU General Public License (GPL) with the option of using any
+subsequent versions published by the FSF.
+
+"GPL-compatible Software" is software whose conditions of propagation,
+modification and use would permit combination with GCC in accord with
+the license of GCC.
+
+"Target Code" refers to output from any compiler for a real or virtual
+target processor architecture, in executable form or suitable for
+input to an assembler, loader, linker and/or execution
+phase. Notwithstanding that, Target Code does not include data in any
+format that is used as a compiler intermediate representation, or used
+for producing a compiler intermediate representation.
+
+The "Compilation Process" transforms code entirely represented in
+non-intermediate languages designed for human-written code, and/or in
+Java Virtual Machine byte code, into Target Code. Thus, for example,
+use of source code generators and preprocessors need not be considered
+part of the Compilation Process, since the Compilation Process can be
+understood as starting with the output of the generators or
+preprocessors.
+
+A Compilation Process is "Eligible" if it is done using GCC, alone or
+with other GPL-compatible software, or if it is done without using any
+work based on GCC. For example, using non-GPL-compatible Software to
+optimize any GCC intermediate representations would not qualify as an
+Eligible Compilation Process.
+
+1. Grant of Additional Permission.
+
+You have permission to propagate a work of Target Code formed by
+combining the Runtime Library with Independent Modules, even if such
+propagation would otherwise violate the terms of GPLv3, provided that
+all Target Code was generated by Eligible Compilation Processes. You
+may then convey such a combination under terms of your choice,
+consistent with the licensing of the Independent Modules.
+
+2. No Weakening of GCC Copyleft.
+
+The availability of this Exception does not imply any general
+presumption that third-party software is unaffected by the copyleft
+requirements of the license of GCC.
+
+
+libquadmath/*.[hc]:
+
+   Copyright (C) 2010 Free Software Foundation, Inc.
+   Written by Francois-Xavier Coudert  <fxcoudert@gcc.gnu.org>
+   Written by Tobias Burnus  <burnus@net-b.de>
+
+This file is part of the libiberty library.
+Libiberty is free software; you can redistribute it and/or
+modify it under the terms of the GNU Library General Public
+License as published by the Free Software Foundation; either
+version 2 of the License, or (at your option) any later version.
+
+Libiberty is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+Library General Public License for more details.
+
+libquadmath/math:
+
+atanq.c, expm1q.c, j0q.c, j1q.c, log1pq.c, logq.c:
+    Copyright 2001 by Stephen L. Moshier <moshier@na-net.ornl.gov> 
+
+    This library is free software; you can redistribute it and/or
+    modify it under the terms of the GNU Lesser General Public
+    License as published by the Free Software Foundation; either
+    version 2.1 of the License, or (at your option) any later version.
+
+    This library is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    Lesser General Public License for more details.
+
+coshq.c, erfq.c, jnq.c, lgammaq.c, powq.c, roundq.c:
+   Changes for 128-bit __float128 are
+   Copyright (C) 2001 Stephen L. Moshier <moshier@na-net.ornl.gov>
+   and are incorporated herein by permission of the author.  The author 
+   reserves the right to distribute this material elsewhere under different
+   copying permissions.  These modifications are distributed here under 
+   the following terms:
+
+    This library is free software; you can redistribute it and/or
+    modify it under the terms of the GNU Lesser General Public
+    License as published by the Free Software Foundation; either
+    version 2.1 of the License, or (at your option) any later version.
+
+    This library is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    Lesser General Public License for more details.
+
+ldexpq.c:
+   * Conversion to long double by Ulrich Drepper,
+   * Cygnus Support, drepper@cygnus.com.
+
+cosq_kernel.c, expq.c, sincos_table.c, sincosq.c, sincosq_kernel.c,
+sinq_kernel.c, truncq.c:
+   Copyright (C) 1997, 1999 Free Software Foundation, Inc.
+
+   The GNU C Library is free software; you can redistribute it and/or
+   modify it under the terms of the GNU Lesser General Public
+   License as published by the Free Software Foundation; either
+   version 2.1 of the License, or (at your option) any later version.
+
+   The GNU C Library is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   Lesser General Public License for more details.
+
+isinfq.c:
+ * Written by J.T. Conklin <jtc@netbsd.org>.
+ * Change for long double by Jakub Jelinek <jj@ultra.linux.cz>
+ * Public domain.
+
+llroundq.c, lroundq.c, tgammaq.c:
+   Copyright (C) 1997, 1999, 2002, 2004 Free Software Foundation, Inc.
+   This file is part of the GNU C Library.
+   Contributed by Ulrich Drepper <drepper@cygnus.com>, 1997 and
+                  Jakub Jelinek <jj@ultra.linux.cz>, 1999.
+
+   The GNU C Library is free software; you can redistribute it and/or
+   modify it under the terms of the GNU Lesser General Public
+   License as published by the Free Software Foundation; either
+   version 2.1 of the License, or (at your option) any later version.
+
+   The GNU C Library is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   Lesser General Public License for more details.
+
+log10q.c:
+   Cephes Math Library Release 2.2:  January, 1991
+   Copyright 1984, 1991 by Stephen L. Moshier
+   Adapted for glibc November, 2001
+
+    This library is free software; you can redistribute it and/or
+    modify it under the terms of the GNU Lesser General Public
+    License as published by the Free Software Foundation; either
+    version 2.1 of the License, or (at your option) any later version.
+
+    This library is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    Lesser General Public License for more details.
+
+remaining files:
+
+ * Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
+ *
+ * Developed at SunPro, a Sun Microsystems, Inc. business.
+ * Permission to use, copy, modify, and distribute this
+ * software is freely granted, provided that this notice
+ * is preserved.
+
+
+gcc/go/gofrontend, libgo:
+
+Copyright (c) 2009 The Go Authors. All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are
+met:
+
+   * Redistributions of source code must retain the above copyright
+notice, this list of conditions and the following disclaimer.
+   * Redistributions in binary form must reproduce the above
+copyright notice, this list of conditions and the following disclaimer
+in the documentation and/or other materials provided with the
+distribution.
+   * Neither the name of Google Inc. nor the names of its
+contributors may be used to endorse or promote products derived from
+this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+D:
+gdc-10                         GNU D Compiler
+libphobos-10-dev               D standard runtime library
+
+The D source package is made up of the following components.
+
+The D front-end for GCC:
+ - d/*
+
+Copyright (C) 2004-2007 David Friedman
+Modified by Vincenzo Ampolo, Michael Parrot, Iain Buclaw, (C) 2009, 2010
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+On Debian GNU/Linux systems, the complete text of the GNU General
+Public License is in `/usr/share/common-licenses/GPL', version 2 of this
+license in `/usr/share/common-licenses/GPL-2'.
+
+
+The DMD Compiler implementation of the D programming language:
+ - d/dmd/*
+
+Copyright (c) 1999-2010 by Digital Mars
+All Rights Reserved
+written by Walter Bright
+http://www.digitalmars.com
+License for redistribution is by either the Artistic License or
+the GNU General Public License (v1).
+
+On Debian GNU/Linux systems, the complete text of the GNU General
+Public License is in `/usr/share/common-licenses/GPL', the Artistic
+license in `/usr/share/common-licenses/Artistic'.
+
+
+The Zlib data compression library:
+ - d/phobos/etc/c/zlib/*
+
+ (C) 1995-2004 Jean-loup Gailly and Mark Adler
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+
+The Phobos standard runtime library:
+ - d/phobos/*
+
+Unless otherwise marked within the file, each file in the source
+is under the following licenses:
+
+Copyright (C) 2004-2005 by Digital Mars, www.digitalmars.com
+Written by Walter Bright
+
+This software is provided 'as-is', without any express or implied
+warranty. In no event will the authors be held liable for any damages
+arising from the use of this software.
+
+Permission is granted to anyone to use this software for any purpose,
+including commercial applications, and to alter it and redistribute it
+freely, in both source and binary form, subject to the following
+restrictions:
+
+ o  The origin of this software must not be misrepresented; you must not
+    claim that you wrote the original software. If you use this software
+    in a product, an acknowledgment in the product documentation would be
+    appreciated but is not required.
+ o  Altered source versions must be plainly marked as such, and must not
+    be misrepresented as being the original software.
+ o  This notice may not be removed or altered from any source
+    distribution.
+
+By plainly marking modifications, something along the lines of adding to each
+file that has been changed a "Modified by Foo Bar" line
+underneath the "Written by" line would be adequate.
+
+The libhsail-rt library is licensed under the following terms:
+
+   Copyright (C) 2015-2017 Free Software Foundation, Inc.
+   Contributed by Pekka Jaaskelainen <pekka.jaaskelainen@parmance.com>
+   for General Processor Tech.
+
+   Permission is hereby granted, free of charge, to any person obtaining a
+   copy of this software and associated documentation files
+   (the "Software"), to deal in the Software without restriction, including
+   without limitation the rights to use, copy, modify, merge, publish,
+   distribute, sublicense, and/or sell copies of the Software, and to
+   permit persons to whom the Software is furnished to do so, subject to
+   the following conditions:
+
+   The above copyright notice and this permission notice shall be included
+   in all copies or substantial portions of the Software.
+
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+   OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+   MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+   IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+   DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+   OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+   USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+libhsail-rt/rt/fp16.c is licensed under the following terms:
+
+   Copyright (C) 2008-2017 Free Software Foundation, Inc.
+   Contributed by CodeSourcery.
+
+   This file is free software; you can redistribute it and/or modify it
+   under the terms of the GNU General Public License as published by the
+   Free Software Foundation; either version 3, or (at your option) any
+   later version.
+
+   This file is distributed in the hope that it will be useful, but
+   WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   General Public License for more details.
+
+   Under Section 7 of GPL version 3, you are granted additional
+   permissions described in the GCC Runtime Library Exception, version
+   3.1, as published by the Free Software Foundation.
+
+   You should have received a copy of the GNU General Public License and
+   a copy of the GCC Runtime Library Exception along with this program;
+   see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+   <http://www.gnu.org/licenses/>.
+
+gcc/m2:
+gcc/m2/gm2-libiberty:
+gcc/m2/mc-boot/:
+gcc/m2/mc-boot-ch/:
+Copyright (C) 2001-2019 Free Software Foundation, Inc.
+Contributed by Gaius Mulley <gaius@glam.ac.uk>.
+
+This file is part of GNU Modula-2.
+
+GNU Modula-2 is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 3, or (at your option)
+any later version.
+
+GNU Modula-2 is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+gcc/m2/**/*.texi:
+Copyright (C) 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010,
+2011, 2012, 2012, 2013 Free Software Foundation, Inc.
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3 or
+any later version published by the Free Software Foundation; with no
+Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
+
+gcc/m2/gm2-coroutines:
+gcc/m2/gm2-libs:
+gcc/m2/gm2-libs-min:
+gcc/m2/gm2-libs-pim:
+gcc/m2/gm2-libs-ch:
+Copyright (C) 2002-2019 Free Software Foundation, Inc.
+
+This library is free software; you can redistribute it and/or
+modify it under the terms of the GNU Lesser General Public
+License as published by the Free Software Foundation; either
+version 2.1 of the License, or (at your option) any later version.
+
+This library is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+Lesser General Public License for more details.
+
+Under Section 7 of GPL version 3, you are granted additional
+permissions described in the GCC Runtime Library Exception, version
+3.1, as published by the Free Software Foundation.
+
+gcc/m2/gm2-libs-iso/:
+This has a mix of licenses, most as GPL-3+ plus GCC Runtime Library
+Exception, version 3.1.
+
+gcc/m2/gm2-libs-iso/*.def:
+Library module defined by the International Standard
+Information technology - programming languages
+BS ISO/IEC 10514-1:1996E Part 1: Modula-2, Base Language.
+
+Copyright ISO/IEC (International Organization for Standardization
+and International Electrotechnical Commission) 1996, 1997, 1998,
+1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010
+
+Copyright (C) 2001-2019 Free Software Foundation, Inc.
+mix of GPL-3.0 and LGPL-2.1/3
+
+Copyright (C) 2001-2019 Free Software Foundation, Inc.
+mix of GPL-3.0 and LGPL-2.1/3
+
+gcc/m2/examples:
+Copyright (C) 2005-2015 Free Software Foundation, Inc.
+Mix of LGPL-2.1 and GPL-3.0.
+
+gcc/m2/images:
+GPL-3+
+
+gcc/m2/el/gm2-mode.el:
+;; Everyone is granted permission to copy, modify and redistribute
+;; GNU Emacs, but only under the conditions described in the
+;; GNU Emacs General Public License.   A copy of this license is
+;; supposed to have been given to you along with GNU Emacs so you
+;; can know your rights and responsibilities.  It should be in a
+;; file named COPYING.  Among other things, the copyright notice
+;; and this notice must be preserved on all copies.
+
+Copyright (C) 2001-2018 Free Software Foundation, Inc.
+Contributed by Gaius Mulley <gaius@glam.ac.uk>.
+Mix of GPL-3 and LGPL-2.1.
+
+gcc/testsuite/gm2/:
+Copyright (C) 2001-2019 Free Software Foundation, Inc.
+Mix of GPL-2+ and GPL-3+
+
+libgm2:
+
+libgm2/libiso/:
+libgm2/libpim/:
+libgm2/liblog/:
+libgm2/libcor/:
+libgm2/libmin/:
+Copyright (C) 2002-2019 Free Software Foundation, Inc.
+
+This library is free software; you can redistribute it and/or
+modify it under the terms of the GNU Lesser General Public
+License as published by the Free Software Foundation; either
+version 2.1 of the License, or (at your option) any later version.
+
+This library is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+Lesser General Public License for more details.
+
+Under Section 7 of GPL version 3, you are granted additional
+permissions described in the GCC Runtime Library Exception, version
+3.1, as published by the Free Software Foundation.
+
+newlib-X.Y.Z/:
+
+Upstream Authors:
+newlib@sources.redhat.com
+Jeff Johnston <jjohnstn@redhat.com>
+Tom Fitzsimmons <fitzsim@redhat.com>
+
+The newlib subdirectory is a collection of software from several sources.
+Each file may have its own copyright/license that is embedded in the source 
+file.
+
+This list documents those licenses which are more restrictive than
+a BSD-like license or require the copyright notice
+to be duplicated in documentation and/or other materials associated with
+the distribution.  Certain licenses documented here only apply to
+specific targets.  Certain clauses only apply if you are building the
+code as part of your binary.
+
+Note that this list may omit certain licenses that
+only pertain to the copying/modifying of the individual source code. 
+If you are distributing the source code, then you do not need to
+worry about these omitted licenses, so long as you do not modify the
+copyright information already in place.
+
+Parts of this work are licensed under the terms of the GNU General
+Public License. On Debian systems, the complete text of this license
+can be found in /usr/share/common-licenses/GPL.
+
+Parts of this work are licensed under the terms of the GNU Library
+General Public License. On Debian systems, the complete text of this
+license be found in /usr/share/common-licenses/LGPL.
+
+(1) University of California, Berkeley
+
+[1a]
+
+Copyright (c) 1990 The Regents of the University of California.
+All rights reserved.
+
+Redistribution and use in source and binary forms are permitted
+provided that the above copyright notice and this paragraph are
+duplicated in all such forms and that any documentation,
+and other materials related to such distribution and use 
+acknowledge that the software was developed
+by the University of California, Berkeley.  The name of the
+University may not be used to endorse or promote products derived
+from this software without specific prior written permission.
+THIS SOFTWARE IS PROVIDED ``AS IS'' AND WITHOUT ANY EXPRESS OR
+IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+
+[1b]
+
+Copyright (c) 1990 The Regents of the University of California.
+All rights reserved.
+
+Redistribution and use in source and binary forms are permitted
+provided that the above copyright notice and this paragraph are
+duplicated in all such forms and that any documentation,
+advertising materials, and other materials related to such
+distribution and use acknowledge that the software was developed
+by the University of California, Berkeley.  The name of the
+University may not be used to endorse or promote products derived
+from this software without specific prior written permission.
+THIS SOFTWARE IS PROVIDED ``AS IS'' AND WITHOUT ANY EXPRESS OR
+IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+
+[1c]
+
+Copyright (c) 1981, 1983, 1986, 1988, 1989, 1991, 1992, 1993, 1994 
+The Regents of the University of California.
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+1. Redistributions of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+2. Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in the
+   documentation and/or other materials provided with the distribution.
+3. All advertising materials mentioning features or use of this software
+   must display the following acknowledgement:
+     This product includes software developed by the University of
+     California, Berkeley and its contributors.
+4. Neither the name of the University nor the names of its contributors
+   may be used to endorse or promote products derived from this software
+   without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+SUCH DAMAGE.
+
+[1d]
+
+Copyright (c) 1988, 1990, 1993 Regents of the University of California.
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+1. Redistributions of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+2. Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in the
+   documentation and/or other materials provided with the distribution.
+3. Neither the name of the University nor the names of its contributors
+   may be used to endorse or promote products derived from this software
+   without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+SUCH DAMAGE.
+
+[1e]
+
+Copyright (c) 1982, 1986, 1989, 1991, 1993, 1994
+The Regents of the University of California.  All rights reserved.
+(c) UNIX System Laboratories, Inc.
+All or some portions of this file are derived from material licensed
+to the University of California by American Telephone and Telegraph
+Co. or Unix System Laboratories, Inc. and are reproduced herein with
+the permission of UNIX System Laboratories, Inc.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+1. Redistributions of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+2. Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in the
+   documentation and/or other materials provided with the distribution.
+3. All advertising materials mentioning features or use of this software
+   must display the following acknowledgement:
+     This product includes software developed by the University of
+     California, Berkeley and its contributors.
+4. Neither the name of the University nor the names of its contributors
+   may be used to endorse or promote products derived from this software
+   without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+SUCH DAMAGE.
+
+[1f]
+
+Copyright (c) 1987, 1988, 2000 Regents of the University of California.
+All rights reserved.
+
+Redistribution and use in source and binary forms are permitted
+provided that: (1) source distributions retain this entire copyright
+notice and comment, and (2) distributions including binaries display
+the following acknowledgement:  ``This product includes software
+developed by the University of California, Berkeley and its contributors''
+in the documentation or other materials provided with the distribution
+and in all advertising materials mentioning features or use of this
+software. Neither the name of the University nor the names of its
+contributors may be used to endorse or promote products derived
+from this software without specific prior written permission.
+THIS SOFTWARE IS PROVIDED ``AS IS'' AND WITHOUT ANY EXPRESS OR
+IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+
+-------------------------------------------------------------
+ Please note that in some of the above alternate licenses, there is a
+ statement regarding that acknowledgement must be made in any
+ advertising materials for products using the code.  This restriction
+ no longer applies due to the following license change:
+
+  ftp://ftp.cs.berkeley.edu/pub/4bsd/README.Impt.License.Change
+
+ In some cases the defunct clause has been removed in modified newlib code and
+ in some cases, the clause has been left as-is.
+-------------------------------------------------------------
+
+(2) Cygwin (cygwin targets only)
+
+Copyright 2001 Red Hat, Inc.
+
+This software is a copyrighted work licensed under the terms of the
+Cygwin license.  Please consult the file "CYGWIN_LICENSE" for
+details.
+
+(3) David M. Gay at AT&T
+
+The author of this software is David M. Gay.
+
+Copyright (c) 1991 by AT&T.
+
+Permission to use, copy, modify, and distribute this software for any
+purpose without fee is hereby granted, provided that this entire notice
+is included in all copies of any software which is or includes a copy
+or modification of this software and in all copies of the supporting
+documentation for such software.
+
+THIS SOFTWARE IS BEING PROVIDED "AS IS", WITHOUT ANY EXPRESS OR IMPLIED
+WARRANTY.  IN PARTICULAR, NEITHER THE AUTHOR NOR AT&T MAKES ANY
+REPRESENTATION OR WARRANTY OF ANY KIND CONCERNING THE MERCHANTABILITY
+OF THIS SOFTWARE OR ITS FITNESS FOR ANY PARTICULAR PURPOSE.
+
+(4) Advanced Micro Devices
+
+Copyright 1989, 1990 Advanced Micro Devices, Inc.
+
+This software is the property of Advanced Micro Devices, Inc  (AMD)  which
+specifically  grants the user the right to modify, use and distribute this
+software provided this notice is not removed or altered.  All other rights
+are reserved by AMD.
+
+AMD MAKES NO WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, WITH REGARD TO THIS
+SOFTWARE.  IN NO EVENT SHALL AMD BE LIABLE FOR INCIDENTAL OR CONSEQUENTIAL
+DAMAGES IN CONNECTION WITH OR ARISING FROM THE FURNISHING, PERFORMANCE, OR
+USE OF THIS SOFTWARE.
+
+So that all may benefit from your experience, please report  any  problems
+or  suggestions about this software to the 29K Technical Support Center at
+800-29-29-AMD (800-292-9263) in the USA, or 0800-89-1131  in  the  UK,  or
+0031-11-1129 in Japan, toll free.  The direct dial number is 512-462-4118.
+
+Advanced Micro Devices, Inc.
+29K Support Products
+Mail Stop 573
+5900 E. Ben White Blvd.
+Austin, TX 78741
+800-292-9263
+
+(5) C.W. Sandmann
+
+Copyright (C) 1993 C.W. Sandmann
+
+This file may be freely distributed as long as the author's name remains.
+
+(6) Eric Backus
+
+(C) Copyright 1992 Eric Backus
+
+This software may be used freely so long as this copyright notice is
+left intact.  There is no warrantee on this software.
+
+(7) Sun Microsystems
+
+Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
+
+Developed at SunPro, a Sun Microsystems, Inc. business.
+Permission to use, copy, modify, and distribute this
+software is freely granted, provided that this notice 
+is preserved.
+
+(8) Hewlett Packard
+
+(c) Copyright 1986 HEWLETT-PACKARD COMPANY
+
+To anyone who acknowledges that this file is provided "AS IS"
+without any express or implied warranty:
+    permission to use, copy, modify, and distribute this file
+for any purpose is hereby granted without fee, provided that
+the above copyright notice and this notice appears in all
+copies, and that the name of Hewlett-Packard Company not be
+used in advertising or publicity pertaining to distribution
+of the software without specific, written prior permission.
+Hewlett-Packard Company makes no representations about the
+suitability of this software for any purpose.
+
+(9) Hans-Peter Nilsson
+
+Copyright (C) 2001 Hans-Peter Nilsson
+
+Permission to use, copy, modify, and distribute this software is
+freely granted, provided that the above copyright notice, this notice
+and the following disclaimer are preserved with no changes.
+
+THIS SOFTWARE IS PROVIDED ``AS IS'' AND WITHOUT ANY EXPRESS OR
+IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+PURPOSE.
+
+(10) Stephane Carrez (m68hc11-elf/m68hc12-elf targets only)
+
+Copyright (C) 1999, 2000, 2001, 2002 Stephane Carrez (stcarrez@nerim.fr)
+
+The authors hereby grant permission to use, copy, modify, distribute,
+and license this software and its documentation for any purpose, provided
+that existing copyright notices are retained in all copies and that this
+notice is included verbatim in any distributions. No written agreement,
+license, or royalty fee is required for any of the authorized uses.
+Modifications to this software may be copyrighted by their authors
+and need not follow the licensing terms described here, provided that
+the new terms are clearly indicated on the first page of each file where
+they apply.
+
+(11) Christopher G. Demetriou
+
+Copyright (c) 2001 Christopher G. Demetriou
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+1. Redistributions of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+2. Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in the
+   documentation and/or other materials provided with the distribution.
+3. The name of the author may not be used to endorse or promote products
+   derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
+INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+(12) SuperH, Inc.
+
+Copyright 2002 SuperH, Inc. All rights reserved
+
+This software is the property of SuperH, Inc (SuperH) which specifically
+grants the user the right to modify, use and distribute this software
+provided this notice is not removed or altered.  All other rights are
+reserved by SuperH.
+
+SUPERH MAKES NO WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, WITH REGARD TO
+THIS SOFTWARE.  IN NO EVENT SHALL SUPERH BE LIABLE FOR INDIRECT, SPECIAL, 
+INCIDENTAL OR CONSEQUENTIAL DAMAGES IN CONNECTION WITH OR ARISING FROM
+THE FURNISHING, PERFORMANCE, OR USE OF THIS SOFTWARE.
+
+So that all may benefit from your experience, please report any problems
+or suggestions about this software to the SuperH Support Center via
+e-mail at softwaresupport@superh.com .
+
+SuperH, Inc.
+405 River Oaks Parkway
+San Jose
+CA 95134
+USA
+
+(13) Royal Institute of Technology
+
+Copyright (c) 1999 Kungliga Tekniska Hgskolan
+(Royal Institute of Technology, Stockholm, Sweden).
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+
+1. Redistributions of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in the
+   documentation and/or other materials provided with the distribution.
+
+3. Neither the name of KTH nor the names of its contributors may be
+   used to endorse or promote products derived from this software without
+   specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY KTH AND ITS CONTRIBUTORS ``AS IS'' AND ANY
+EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL KTH OR ITS CONTRIBUTORS BE
+LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+(14) Alexey Zelkin
+
+Copyright (c) 2000, 2001 Alexey Zelkin <phantom@FreeBSD.org>
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+1. Redistributions of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+2. Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in the
+   documentation and/or other materials provided with the distribution.
+
+THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+SUCH DAMAGE.
+
+(15) Andrey A. Chernov
+
+Copyright (C) 1997 by Andrey A. Chernov, Moscow, Russia.
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+1. Redistributions of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+2. Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in the
+   documentation and/or other materials provided with the distribution.
+
+THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+SUCH DAMAGE.
+
+(16) FreeBSD
+
+Copyright (c) 1997-2002 FreeBSD Project.
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+1. Redistributions of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+2. Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in the
+   documentation and/or other materials provided with the distribution.
+
+THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+SUCH DAMAGE.
+
+(17) S. L. Moshier
+
+Author:  S. L. Moshier.
+
+Copyright (c) 1984,2000 S.L. Moshier
+
+Permission to use, copy, modify, and distribute this software for any
+purpose without fee is hereby granted, provided that this entire notice
+is included in all copies of any software which is or includes a copy
+or modification of this software and in all copies of the supporting
+documentation for such software.
+
+THIS SOFTWARE IS BEING PROVIDED "AS IS", WITHOUT ANY EXPRESS OR IMPLIED
+WARRANTY.  IN PARTICULAR,  THE AUTHOR MAKES NO REPRESENTATION
+OR WARRANTY OF ANY KIND CONCERNING THE MERCHANTABILITY OF THIS
+SOFTWARE OR ITS FITNESS FOR ANY PARTICULAR PURPOSE.
+
+(18) Citrus Project
+
+Copyright (c)1999 Citrus Project,
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+1. Redistributions of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+2. Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in the
+   documentation and/or other materials provided with the distribution.
+
+THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+SUCH DAMAGE.
+
+(19) Todd C. Miller
+
+Copyright (c) 1998 Todd C. Miller <Todd.Miller@courtesan.com>
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+1. Redistributions of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+2. Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in the
+   documentation and/or other materials provided with the distribution.
+3. The name of the author may not be used to endorse or promote products
+   derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES,
+INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL
+THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+(20) DJ Delorie (i386) 
+
+Copyright (C) 1991 DJ Delorie
+All rights reserved.
+
+Redistribution and use in source and binary forms is permitted
+provided that the above copyright notice and following paragraph are
+duplicated in all such forms.
+
+This file is distributed WITHOUT ANY WARRANTY; without even the implied
+warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+(21) Free Software Foundation LGPL License (*-linux* targets only)
+
+   Copyright (C) 1990-1999, 2000, 2001 
+   Free Software Foundation, Inc.
+   This file is part of the GNU C Library.
+   Contributed by Mark Kettenis <kettenis@phys.uva.nl>, 1997.
+
+   The GNU C Library is free software; you can redistribute it and/or
+   modify it under the terms of the GNU Lesser General Public
+   License as published by the Free Software Foundation; either
+   version 2.1 of the License, or (at your option) any later version.
+
+   The GNU C Library is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   Lesser General Public License for more details.
+
+   You should have received a copy of the GNU Lesser General Public
+   License along with the GNU C Library; if not, write to the Free
+   Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+   02110-1301 USA
+
+(22) Xavier Leroy LGPL License (i[3456]86-*-linux* targets only)
+
+Copyright (C) 1996 Xavier Leroy (Xavier.Leroy@inria.fr)
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU Library General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+                                                     
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Library General Public License for more details.
+
+(23) Intel (i960)
+
+Copyright (c) 1993 Intel Corporation
+
+Intel hereby grants you permission to copy, modify, and distribute this
+software and its documentation.  Intel grants this permission provided
+that the above copyright notice appears in all copies and that both the
+copyright notice and this permission notice appear in supporting
+documentation.  In addition, Intel grants this permission provided that
+you prominently mark as "not part of the original" any modifications
+made to this software or documentation, and that the name of Intel
+Corporation not be used in advertising or publicity pertaining to
+distribution of the software or the documentation without specific,
+written prior permission.
+
+Intel Corporation provides this AS IS, WITHOUT ANY WARRANTY, EXPRESS OR
+IMPLIED, INCLUDING, WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY
+OR FITNESS FOR A PARTICULAR PURPOSE.  Intel makes no guarantee or
+representations regarding the use of, or the results of the use of,
+the software and documentation in terms of correctness, accuracy,
+reliability, currentness, or otherwise; and you rely on the software,
+documentation and results solely at your own risk.
+
+IN NO EVENT SHALL INTEL BE LIABLE FOR ANY LOSS OF USE, LOSS OF BUSINESS,
+LOSS OF PROFITS, INDIRECT, INCIDENTAL, SPECIAL OR CONSEQUENTIAL DAMAGES
+OF ANY KIND.  IN NO EVENT SHALL INTEL'S TOTAL LIABILITY EXCEED THE SUM
+PAID TO INTEL FOR THE PRODUCT LICENSED HEREUNDER.
+
+(24) Hewlett-Packard  (hppa targets only)
+
+(c) Copyright 1986 HEWLETT-PACKARD COMPANY
+
+To anyone who acknowledges that this file is provided "AS IS"
+without any express or implied warranty:
+    permission to use, copy, modify, and distribute this file
+for any purpose is hereby granted without fee, provided that
+the above copyright notice and this notice appears in all
+copies, and that the name of Hewlett-Packard Company not be
+used in advertising or publicity pertaining to distribution
+of the software without specific, written prior permission.
+Hewlett-Packard Company makes no representations about the
+suitability of this software for any purpose.
+
+(25) Henry Spencer (only *-linux targets)
+
+Copyright 1992, 1993, 1994 Henry Spencer.  All rights reserved.
+This software is not subject to any license of the American Telephone
+and Telegraph Company or of the Regents of the University of California.
+
+Permission is granted to anyone to use this software for any purpose on
+any computer system, and to alter it and redistribute it, subject
+to the following restrictions:
+
+1. The author is not responsible for the consequences of use of this
+   software, no matter how awful, even if they arise from flaws in it.
+
+2. The origin of this software must not be misrepresented, either by
+   explicit claim or by omission.  Since few users ever read sources,
+   credits must appear in the documentation.
+
+3. Altered versions must be plainly marked as such, and must not be
+   misrepresented as being the original software.  Since few users
+   ever read sources, credits must appear in the documentation.
+
+4. This notice may not be removed or altered.
+
+(26) Mike Barcroft
+
+Copyright (c) 2001 Mike Barcroft <mike@FreeBSD.org>
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+1. Redistributions of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+2. Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in the
+   documentation and/or other materials provided with the distribution.
+
+THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+SUCH DAMAGE.
+
+(27) Konstantin Chuguev (--enable-newlib-iconv)
+
+Copyright (c) 1999, 2000
+   Konstantin Chuguev.  All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+1. Redistributions of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+2. Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in the
+   documentation and/or other materials provided with the distribution.
+
+THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+SUCH DAMAGE.
+
+   iconv (Charset Conversion Library) v2.0
+
+(27) Artem Bityuckiy (--enable-newlib-iconv)
+
+Copyright (c) 2003, Artem B. Bityuckiy, SoftMine Corporation.
+Rights transferred to Franklin Electronic Publishers.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+1. Redistributions of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+2. Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in the
+   documentation and/or other materials provided with the distribution.
+
+THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+SUCH DAMAGE.
+
+(28) Red Hat Incorporated
+
+Unless otherwise stated in each remaining newlib file, the remaining
+files in the newlib subdirectory default to the following copyright.
+It should be noted that Red Hat Incorporated now owns copyrights
+belonging to Cygnus Solutions and Cygnus Support.
+
+Copyright (c) 1994, 1997, 2001, 2002, 2003, 2004 Red Hat Incorporated.
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without 
+modification, are permitted provided that the following conditions are met: 
+
+    Redistributions of source code must retain the above copyright 
+    notice, this list of conditions and the following disclaimer.
+
+    Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+
+    The name of Red Hat Incorporated may not be used to endorse 
+    or promote products derived from this software without specific 
+    prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE 
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED.  IN NO EVENT SHALL RED HAT INCORPORATED BE LIABLE FOR ANY
+DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND 
+ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
+
+
+contrib/unicode:
+
+﻿UNICODE, INC. LICENSE AGREEMENT - DATA FILES AND SOFTWARE
+
+    Unicode Data Files include all data files under the directories
+http://www.unicode.org/Public/, http://www.unicode.org/reports/, and
+http://www.unicode.org/cldr/data/. Unicode Data Files do not include PDF
+online code charts under the directory http://www.unicode.org/Public/.
+Software includes any source code published in the Unicode Standard or under
+the directories http://www.unicode.org/Public/,
+http://www.unicode.org/reports/, and http://www.unicode.org/cldr/data/.
+
+    NOTICE TO USER: Carefully read the following legal agreement. BY
+DOWNLOADING, INSTALLING, COPYING OR OTHERWISE USING UNICODE INC.'S DATA FILES
+("DATA FILES"), AND/OR SOFTWARE ("SOFTWARE"), YOU UNEQUIVOCALLY ACCEPT, AND
+AGREE TO BE BOUND BY, ALL OF THE TERMS AND CONDITIONS OF THIS AGREEMENT. IF
+YOU DO NOT AGREE, DO NOT DOWNLOAD, INSTALL, COPY, DISTRIBUTE OR USE THE DATA
+FILES OR SOFTWARE.
+
+    COPYRIGHT AND PERMISSION NOTICE
+
+    Copyright © 1991-2013 Unicode, Inc. All rights reserved. Distributed under
+the Terms of Use in http://www.unicode.org/copyright.html.
+
+    Permission is hereby granted, free of charge, to any person obtaining a
+copy of the Unicode data files and any associated documentation (the "Data
+Files") or Unicode software and any associated documentation (the "Software")
+to deal in the Data Files or Software without restriction, including without
+limitation the rights to use, copy, modify, merge, publish, distribute, and/or
+sell copies of the Data Files or Software, and to permit persons to whom the
+Data Files or Software are furnished to do so, provided that (a) the above
+copyright notice(s) and this permission notice appear with all copies of the
+Data Files or Software, (b) both the above copyright notice(s) and this
+permission notice appear in associated documentation, and (c) there is clear
+notice in each modified Data File or in the Software as well as in the
+documentation associated with the Data File(s) or Software that the data or
+software has been modified.
+
+    THE DATA FILES AND SOFTWARE ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY
+KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT OF THIRD
+PARTY RIGHTS. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR HOLDERS INCLUDED IN
+THIS NOTICE BE LIABLE FOR ANY CLAIM, OR ANY SPECIAL INDIRECT OR CONSEQUENTIAL
+DAMAGES, OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR
+PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS
+ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THE
+DATA FILES OR SOFTWARE.
+
+    Except as contained in this notice, the name of a copyright holder shall
+not be used in advertising or otherwise to promote the sale, use or other
+dealings in these Data Files or Software without prior written authorization
+of the copyright holder.
+
+contrib/unicode/from_glibc:
+
+# Copyright (C) 2014-2019 Free Software Foundation, Inc.
+# This file is part of the GNU C Library.
+#
+# The GNU C Library is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Lesser General Public
+# License as published by the Free Software Foundation; either
+# version 2.1 of the License, or (at your option) any later version.
+#
+# The GNU C Library is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+# Lesser General Public License for more details.
+#
+# You should have received a copy of the GNU Lesser General Public
+# License along with the GNU C Library; if not, see
+# <https://www.gnu.org/licenses/>.
+
+Runtime notice: /usr/share/doc/libcrypt1/copyright
+
+This is the Debian GNU/Linux prepackaged version of libxcrypt.
+
+It has been packaged by Marco d'Itri <md@linux.it>.
+
+Original sources were obtained from:
+https://github.com/besser82/libxcrypt
+
+On Debian systems the complete text of the licenses can be found in
+/usr/share/common-licenses/ .
+
+
+# Detailed copyright and licensing information for libxcrypt
+
+The overall license for libxcrypt is the GNU Lesser General Public
+License, version 2.1 (or, at your option, any later version); see
+the file COPYING.LIB for the full terms of this license.
+
+Many individual files are under other licenses.  This file provides an
+inventory of the copyright holders and licenses of all files in the
+source tree.  For specific licensing terms consult the files themselves.
+
+ * Copyright Thorsten Kukuk, Björn Esser, Zack Weinberg; LGPL (v2.1 or later):
+   crypt.c, crypt-static.c, crypt-gensalt-static.c, crypt-port.h
+
+ * Copyright Free Software Foundation, Inc.; LGPL (v2.1 or later):
+   crypt.h, crypt-obsolete.h, crypt-md5.c,
+   test-badsalt.c, test-crypt-nonnull.c
+
+ * Copyright David Burren et al.; 3-clause BSD:
+   alg-des.h, alg-des.c, alg-des-tables.c,
+   crypt-des.c, crypt-des-obsolete.c, gen-des-tables.c
+
+ * Public domain, written by Ulrich Drepper et al.:
+   crypt-sha256.c, crypt-sha512.c
+
+ * Public domain, written by Solar Designer et al.:
+   alg-md4.h, alg-md4.c, alg-md5.h, alg-md5.c,
+   crypt-bcrypt.c, crypt-gensalt.c, test-crypt-bcrypt.c
+
+ * Copyright Solar Designer, Colin Percival; 0-clause BSD:
+   alg-yescrypt-common.c, alg-yescrypt-platform.c
+
+ * Copyright Solar Designer, Colin Percival; 2-clause BSD:
+   alg-sha256.c, alg-sha256.h, alg-yescrypt.h, alg-yescrypt-opt.c,
+   alg-yescrypt-sysendian.h
+
+ * Copyright Colin Percival; 2-clause BSD:
+   alg-sha512.h, alg-sha512.c
+
+ * Copyright Alexey Degtyarev; 2-clause BSD:
+   alg-gost3411-2012-const.h, alg-gost3411-2012-core.c,
+   alg-gost3411-2012-core.h, alg-gost3411-2012-precalc.h,
+   alg-gost3411-2012-ref.h
+
+ * Copyright Vitaly Chikunov, Björn Esser; 0-clause BSD:
+   alg-gost3411-2012-hmac.c, alg-gost3411-2012-hmac.h,
+   crypt-gost-yescrypt.c, test-alg-gost3411-2012.c,
+   test-alg-gost3411-2012-hmac.c, test-crypt-gost-yescrypt.c,
+   test-crypt-scrypt.c
+
+ * Copyright Alexander Peslyak; 0-clause BSD:
+   test-alg-yescrypt.c
+
+ * Copyright Alexander Peslyak, Björn Esser; 0-clause BSD:
+   crypt-scrypt.c
+
+ * Copyright Björn Esser; 0-clause BSD:
+   crypt-common.c, test-checksalt.c, test-compile-strong-alias.c,
+   test-gensalt-nthash.c, test-short-outbuf.c, test-special-char-salt.c
+
+ * Copyright Michael Bretterklieber, Björn Esser et al.; 2-clause BSD:
+   crypt-nthash.c
+
+ * Copyright Zack Weinberg; 2-clause BSD:
+   crypt-sunmd5.c
+
+ * Public domain, written by Steve Reid et al.:
+   alg-sha1.c, alg-sha1.h, test-alg-sha1.c
+
+ * Copyright Juniper Networks, Inc.; 3-clause BSD:
+   crypt-pbkdf1-sha1.c, crypt-pbkdf1-sha1.c
+
+ * Copyright Björn Esser; 2-clause BSD:
+   alg-hmac-sha1.c, alg-hmac-sha1.h, test-alg-hmac-sha1.c
+
+ * Public domain, written by Zack Weinberg et al.:
+   byteorder.h, randombytes.c, test-byteorder.c
+   test-alg-pbkdf-hmac-sha256.c
+   test-badsetting.c, test-crypt-badargs.c, test-getrandom-fallbacks.c,
+   test-getrandom-interface.c, test-symbols-compat.sh,
+   test-symbols-renames.sh, test-symbols-static.sh,
+   build-aux/gen-crypt-h, build-aux/gen-crypt-symbol-vers-h,
+   build-aux/gen-libcrypt-map, build-aux/skip-if-exec-format-error,
+   build-aux/zw_alignment.m4, build-aux/zw_static_assert.m4,
+   build-aux/zw_endianness.m4, build-aux/zw_ld_wrap.m4
+
+ * Copyright Zack Weinberg and Free Software Foundation, Inc;
+   GPL (v3 or later), with Autoconf exception:
+   build-aux/zw_automodern.m4, build-aux/zw_simple_warnings.m4
+
+ * Copyright <vt at altlinux.org>; 0-clause BSD:
+   crypt-yescrypt.c, test-crypt-yescrypt.c
+
+ * Copyright Kevin Cernekee; FSF All Permissive License:
+   build-aux/ax_check_vscript.m4
+
+ * Copyright Maarten Bosmans; FSF All Permissive License:
+   build-aux/ax_append_compile_flags.m4
+
+ * Copyright Guido U. Draheim, Maarten Bosmans;
+   FSF All Permissive License:
+   build-aux/ax_append_flag.m4, build-aux/ax_check_compile_flag.m4
+
+ * Copyright Mike Frysinger; FSF All Permissive License:
+   build-aux/ax_require_defined.m4
+
+ * Copyright Scott James Remnant, Dan Nicholson;
+   GPL (v2 or later), with Autoconf exception:
+   build-aux/pkg_installdir_compat.m4
+
+ * Copyright Tim Toolan; FSF All Permissive License:
+   build-aux/ax_compare_version.m4
+
+ * Copyright Philip Withnall; FSF All Permissive License:
+   build-aux/ax_valgrind_check.m4
+
+ * Copyright Steven G. Johnson, Daniel Richard G.;
+   GPL (v3 or later), with Autoconf exception:
+   build-aux/ax_pthread.m4
+
+ * Copyright Francesco Salvestrini; FSF All Permissive License:
+   build-aux/ax_prog_python_version.m4
+
+ * Copyright Andrew Collier; FSF All Permissive License:
+   build-aux/ax_python_module.m4
+
+ * Copyright holders unknown, no statement of license (all of these
+   files are part of the testsuite and do not contribute to the
+   installed library or its headers):
+   test-alg-des.c, test-alg-md4.c (adaption of test-alg-md5.c),
+   test-alg-md5.c, test-alg-sha256.c, test-alg-sha512.c, test-crypt-des.c,
+   test-crypt-md5.c, test-crypt-sha256.c, test-crypt-sha512.c,
+   test-des-cases.h, test-des-obsolete{,_r}.c, test-gensalt.c,
+   test-crypt-nthash.c (adaption of test-crypt-des.c),
+   test-crypt-sunmd5.c (adaption of test-crypt-des.c),
+   test-crypt-pbkdf1-sha1.c (adaption of test-crypt-des.c)
+
+ * The NEWS file formerly contained the following copyright assertions:
+
+     Copyright 2002, 2003, 2004 SuSE Linux AG, Germany
+     Copyright 2005, 2008, 2009 2011 SUSE LINUX Products GmbH, Germany
+     Copyright 2015 Björn Esser
+
+   These were meant to apply to the library as a whole rather than
+   specific files or portions of files.

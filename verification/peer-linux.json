@@ -1,0 +1,37 @@
+{
+  "status": "passed",
+  "sessions": {
+    "paired-0": {
+      "outcome": "complete",
+      "reason": null
+    },
+    "paired-1": {
+      "outcome": "complete",
+      "reason": null
+    },
+    "paired-2": {
+      "outcome": "complete",
+      "reason": null
+    },
+    "wrong-pair": {
+      "outcome": "refused",
+      "reason": "private response mismatch"
+    },
+    "truncated": {
+      "outcome": "refused",
+      "reason": "truncated native observation"
+    },
+    "nonfinite": {
+      "outcome": "refused",
+      "reason": "private response mismatch"
+    }
+  },
+  "private_pair_files": true,
+  "existing_pair_preserved": true,
+  "masked_code_import": true,
+  "noninteractive_secret_export_import_refused": true,
+  "unsafe_permissions_and_symlinks_refused": true,
+  "no_secrets_in_records": true,
+  "binary_sha256": "8507dfc21b774803aabe09ad5fa9c0f82c6e276ce2a3380c4d6df03f67470a98",
+  "peer_authentication_security_established": false
+}

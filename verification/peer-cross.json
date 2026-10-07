@@ -1,0 +1,17 @@
+{
+  "host_returncode": 0,
+  "client_returncode": 0,
+  "private_seed_recorded": false,
+  "status": "bounded-correspondence",
+  "pairing": "ephemeral local fixture, not network pairing",
+  "endpoint_outcomes": {
+    "host": "bounded-correspondence",
+    "client": "bounded-correspondence"
+  },
+  "reasons": {
+    "host": null,
+    "client": null
+  },
+  "application_wire_bytes": 520,
+  "peer_authentication_established": false
+}

@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "checks": {
+    "local_install": {
+      "status": "passed",
+      "version": "rrsh-peer 0.3.3; RFC 1.0.1; research tester"
+    },
+    "http_install": "passed",
+    "tester-bytes": {
+      "status": "refused-before-installation",
+      "reason": "rfc: Tester release checksum mismatch; refusing installation."
+    },
+    "tester-signature": {
+      "status": "refused-before-installation",
+      "reason": "rfc: Tester signature verification failed; refusing installation."
+    },
+    "core-signature": {
+      "status": "refused-before-installation",
+      "reason": "rfc: Signature verification failed; refusing installation."
+    },
+    "header": {
+      "status": "refused-before-installation",
+      "reason": "rfc: Header checksum mismatch; refusing installation."
+    }
+  },
+  "signature_checks": 4,
+  "installer_sha256": "98b12ff319146a5bdcb3092400670b700e751dc542f705a102211402f909d3ad"
+}

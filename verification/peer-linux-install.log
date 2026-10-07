@@ -1,0 +1,10 @@
+debconf: delaying package configuration, since apt-utils is not installed
+rfc: staging RFC 1.0.1 for x86_64-linux
+rfc: release public key DER sha256: c37466fe09e02e92955e2651517027fca2e96b96608063d31c105bc85c229d5e
+rfc: library and tester signatures and header checksum verified
+rfc: installed library: /tmp/rfc-installed/lib/librelational_field_core_1_0_1.so
+rfc: installed header: /tmp/rfc-installed/include/relational_field_core.h
+rfc: installed connection tester: /tmp/rfc-installed/bin/rrsh-peer
+rfc: configure your application's linker and loader for this prefix
+rrsh-peer 0.3.3; RFC 1.0.1; research tester
+Verified OK

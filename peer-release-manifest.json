@@ -1,0 +1,82 @@
+{
+  "product": "RRSH paired connection research tester",
+  "version": "0.3.3",
+  "built": "2026-10-07",
+  "protocol": "native-private-history-v3",
+  "artifacts": {
+    "bin/aarch64-macos/rrsh-peer-aarch64-macos": {
+      "sha256": "cedc5c611057422ffa2b76a78695265fe10f24302f2b8e30dd52d9bb7eee7a20",
+      "bytes": 8682800,
+      "signature": "bin/aarch64-macos/rrsh-peer-aarch64-macos.sig",
+      "build": {
+        "product": "RRSH paired connection tester",
+        "version": "0.3.3",
+        "target": "aarch64-macos",
+        "protocol": "native-private-history-v3",
+        "core": "Relational Field Core 1.0.1",
+        "lineage": "Librarian ABI 1.14.0",
+        "library_sha256": "1b7e7b6838c53d4af03fb08924ecc7e1d7d39b413832c194a536ce2f568d1f61",
+        "base_commit": "26f389d081a42bac764b256fb0fe469eb010b98a",
+        "sources": {
+          "impl/prototypes/native_exec/peer_connection/peer_cli.py": "6d9eddbaec191f1b97858b3a193f81646c98d584e38ce1da50607ba542316854",
+          "impl/prototypes/native_exec/peer_connection/build.py": "e2e315bcd197b06369093fc6c1acc66648dd014b52eda74c913ea5b196cd6f83",
+          "experiments/native-peer-auth/native.py": "af97eb90b06910eed01f833692f45cd80447246d4e4fe08fb5fed78b7a16b6c5",
+          "experiments/native-peer-auth/endpoint.py": "050595fe7eb74a15a6b3ab2cd0c2695329cccc4a745253e914aa159847fe4ab8"
+        },
+        "scope": "synthetic paired connection probe; no command, file or forwarding capability",
+        "peer_authentication_security_established": false,
+        "nonreferentiality_established": false,
+        "python": "3.14.6 (main, Jun 10 2026, 10:03:53) [Clang 21.0.0 (clang-2100.0.123.102)]",
+        "dependencies": "altgraph==0.17.5\nmacholib==1.16.4\npackaging==26.3\npyinstaller==6.22.3\npyinstaller-hooks-contrib==2026.8\nsetuptools==84.0.0\n"
+      },
+      "signature_sha256": "3c3138e6e62184a61b880b0b2a20137d227f30ea68c841cc120be651c3cffc08",
+      "signature_verified": true
+    },
+    "bin/x86_64-linux/rrsh-peer-x86_64-linux": {
+      "sha256": "8507dfc21b774803aabe09ad5fa9c0f82c6e276ce2a3380c4d6df03f67470a98",
+      "bytes": 7134080,
+      "signature": "bin/x86_64-linux/rrsh-peer-x86_64-linux.sig",
+      "build": {
+        "product": "RRSH paired connection tester",
+        "version": "0.3.3",
+        "target": "x86_64-linux",
+        "protocol": "native-private-history-v3",
+        "core": "Relational Field Core 1.0.1",
+        "lineage": "Librarian ABI 1.14.0",
+        "library_sha256": "99695573b2ad8bf915675a5a090399bab2b56de9a6c40a7bc169f0dab34f8740",
+        "base_commit": "26f389d081a42bac764b256fb0fe469eb010b98a",
+        "sources": {
+          "impl/prototypes/native_exec/peer_connection/peer_cli.py": "6d9eddbaec191f1b97858b3a193f81646c98d584e38ce1da50607ba542316854",
+          "impl/prototypes/native_exec/peer_connection/build.py": "e2e315bcd197b06369093fc6c1acc66648dd014b52eda74c913ea5b196cd6f83",
+          "experiments/native-peer-auth/native.py": "af97eb90b06910eed01f833692f45cd80447246d4e4fe08fb5fed78b7a16b6c5",
+          "experiments/native-peer-auth/endpoint.py": "050595fe7eb74a15a6b3ab2cd0c2695329cccc4a745253e914aa159847fe4ab8"
+        },
+        "scope": "synthetic paired connection probe; no command, file or forwarding capability",
+        "peer_authentication_security_established": false,
+        "nonreferentiality_established": false,
+        "python": "3.12.11 (main, Jul 22 2025, 01:44:57) [GCC 10.2.1 20210110]",
+        "dependencies": "altgraph==0.17.5\npackaging==26.3\npyinstaller==6.22.3\npyinstaller-hooks-contrib==2026.8\nsetuptools==84.0.0\n"
+      },
+      "signature_sha256": "83d53dcc147d1a9f1ad2ccf5f45784f2e96b2b1e48917f17a9c807e2094c6fd6",
+      "signature_verified": true
+    }
+  },
+  "signing_status": "verified",
+  "core_libraries_changed": false,
+  "authentication_security_established": false,
+  "semantic_nonreferentiality_established": false,
+  "remote_execution": false,
+  "readiness_record": "verification/peer-readiness.json",
+  "signing": {
+    "algorithm": "RSA2048 PKCS1v1.5 SHA256",
+    "slot": "9a",
+    "public_key_matches_pinned": true,
+    "certificate_sha256": "0f79cef3b2987bcff0f92c645d9881f74d496fe9dd8004824c806dd24c5bcba0",
+    "signing_script_sha256": "0737a6ce2393ae49799bfa128a353ffed14b5a96ccc618bbd46590355d84ed07"
+  },
+  "readiness_sha256": "2ae61498a6103285965e127db29cbbd1e3ad3ff265b2f02dccc77985285d30fb",
+  "installer_verification": {
+    "macos": "verification/peer-installer.json",
+    "linux": "verification/peer-linux-install.log"
+  }
+}
