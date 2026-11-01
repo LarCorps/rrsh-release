@@ -1,151 +1,115 @@
 # Security and evaluation scope
 
-The latest distribution adds [RRSH 2.1.0](rfc-2.1.0/README.md), a bounded
-experimental client/daemon and native core. It supports allowlisted exec and small
-file operations; local grant authority does not authenticate a peer. The native
-binary32 content stream and private preparation do not establish confidentiality,
-mechanism classification or complete-wire compliance. A hard 64-event ceiling
-includes framing/idles, and earlier resource refusal is possible. No reset/reseed
-fallback, indefinite shell, PTY, forwarding or production admission is provided.
-The signed manifest records Linux qualification and the macOS runtime-test status.
-A YubiKey detached signature establishes provenance only; macOS Developer ID
-notarization is not provided. Evaluate with synthetic data in isolated environments.
+Updated 2026-11-01 for the signed RRSH 2.1.0 evaluation release. The client/daemon
+supports bounded allowlisted exec and small file operations through a native
+binary32 application content stream. It does not provide established remote peer
+authentication, confidentiality, freshness or production security admission.
 
-The following evidence and limits describe the retained historical artifacts.
+## Authority and operating limits
 
+The daemon checks an operator-configured exact argv allowlist, capability,
+expiry and byte budgets at the host operation. `research_authority` grants local
+experimental permission; it does not identify or authenticate a network peer.
+Anyone who obtains matching pairing material can prepare corresponding endpoint
+state. A successful exchange or wrong-state refusal is not an identity proof.
 
-The current distribution contains Relational Field Core 1.0.1 research libraries,
-derived from Librarian ABI 1.14.0. It also includes `rrsh-peer 0.3.3`, a connection-only research tester with
-local pairing setup and a TCP host/connect probe. It grants no remote commands,
-files or forwarding. Integrating applications own additional capability boundaries.
+Each direction has a hard cumulative 64-event ceiling including framing and
+idles. Earlier native resource refusal is possible. No reset/reseed, raw content
+fallback or indefinite-stream continuation is provided. There is no interactive
+shell/PTY, forwarding, resume, autonomous transport deadline or process timeout.
+Use external watchdogs, unprivileged accounts, synthetic data and isolated tests.
 
-## Current evidence
+Linux upload checks single-component names, confines operations to a supplied
+root and requires unnamed atomic publication without overwrite. The macOS smoke
+test confirms upload refusal with `UnnamedAtomicRequired`, leaving no published
+destination. Download and allowlisted exec pass on both tested platforms.
+Successful macOS upload and broader platform/filesystem combinations are not qualified.
 
-The shipped libraries passed bounded native API checks. The
-[release manifest](release-manifest.json) pins their source, compiler, artifacts
-and verification records. These checks establish the exercised API behavior,
-not a reviewed confidentiality guarantee or production admission.
+Both endpoints receive matching 32-byte private bootstrap input through local
+stdin. Ordinary pairing is on site; the application provides no remote pairing
+exchange. Do not put seeds into command arguments, retained files, logs, chat or
+application traffic. Controlled research used separately authorized administrative
+provisioning where needed; that does not establish physical pairing or RRSH
+transport authentication. Owned-buffer wiping does not establish OS/UI/backup
+erasure. Surviving private field state remains sensitive. Local float captures
+also belong to the observer/security assessment.
 
-Float-valued output, successful recovery and failure of one observer do not
-establish that emissions reveal nothing about content. Confidentiality,
-mechanism classification and complete-wire compliance remain unestablished
-for an integrating application. Do not describe this release as providing
-proven "Structural Privacy," meaningless recordings, harvest resistance or a
-relay whose only possible attack is denial of service. This release also does
-not establish that a proposed transport is categorically not encryption.
+## Evidence and observer limits
 
-The binding design target is no content ciphertext, no plaintext except
-necessary float values, and no other referential information on the application
-wire. Packing content into float bits or sending semantic identifiers,
-snapshots or state hashes does not meet that target. Packaging a core library
-neither implements nor certifies an application protocol meeting it.
+The [validation record](rfc-2.1.0/validation.json) covers bounded Linux
+qualification and the narrower macOS release smoke checks. Linux passes 83
+native tests, 256/256 octets across 16 fresh private contexts and eight RRSH
+application cases with complete TCP/endpoint capture agreement. macOS passes
+five local release checks after a clock-portability correction. Passing those
+checks establishes their exercised functional behavior.
 
-## Paired tester scope
+[Research status](RESEARCH_STATUS.md) records the separate private-field attack
+study, partial-bit/relation scores, public-root disclosure and finite VM-LAN
+speed result. Zero full bytes recovered by one bounded private-state fitting
+algorithm and zero bytes released by 40 wrong-state attempts do not establish
+confidentiality or entropy. The earlier public-root fixture discloses both
+complete key payloads and accepts full-key substitution and replay. Those
+results do not become a private-field security guarantee when the preparation
+changes. No private-field durable-throughput figure is claimed for this release.
 
-The tester sends native measured binary32 observations, without application
-headers, peer IDs, state dumps, keyed tags or packed secret bits. Its local
-pairing code contains a conventional transcription checksum; neither the code
-nor checksum crosses the tested TCP connection. Direct nearby console transfer
-is deliberate private provisioning, not NFC/Bluetooth integration. Console
-scrollback, copied credentials, local backups and compromised accounts remain
-outside the tested credential boundary. Do not transfer the code through SSH,
-chat or a relay. File permissions do not establish hardware-backed storage.
+For the primary confidentiality assessment, give an independent observer public
+implementation knowledge and the complete accessible recording, including setup,
+identifiers, content words, headers, ordering, lengths, timing and closure.
+Withhold private seeds and endpoint state; use fresh private contexts rather
+than a fixed seed embedded in a public harness. Public-code access is the
+assessment model; implementation source/specifications are not distributed here.
 
-The first live candidate admitted a two-session splice: independent directional
-fields allowed the two proofs to belong to different sessions. The current
-candidate clones only its own native first-proof state into the second phase
-and binds continuation to both histories. The tested splice and public/prior
-continuation substitutions refused, while genuine paired connections passed.
-A legitimate challenge collision was also found; the current source chooses
-only measurements unique across all 33 notebook rows. It refuses if fewer than
-16 challenge choices remain or a private probe has no unique eligible event.
+Score full content, partial bits, relationships, state information and metadata
+separately. Identify known/chosen-input and seed-compromise access as separate
+cases. The current private-field fitting algorithm uses a numeric projection;
+its unsuccessful full-byte recovery does not settle timing or stronger
+complete-view attacks. Numeric ambiguity is not a calibrated advantage bound.
 
-These bounded tests do not establish unforgeability or a secure authentication
-primitive. A recording observer recovered all 64 public challenge choices;
-a tested public-bootstrap response predictor matched 0/64 private responses.
-Adaptive chosen-challenge/parallel oracles, secret-state inference, effective
-response entropy, collisions, side channels and stronger attackers remain open.
-The probe has no variable application content, so it does not test content
-confidentiality. Semantic non-referentiality and mechanism classification are
-unestablished; float serialization alone cannot establish either claim.
-All holders of a pairing credential can construct matching native fields. The
-tester does not attest individual device identity or bind host permissions.
-Transparent forwarding of actual paired endpoints remains possible.
+Float serialization alone does not show that emissions are nonreferential,
+non-ciphertext or confidential. The design targets no content ciphertext, no
+plaintext except necessary float values and no other referential application
+wire content. The experimental transform and whole TCP-envelope classification
+remain unresolved. Do not claim reviewed cryptographic security, meaningless
+recordings, harvest resistance, forward secrecy or denial-of-service-only risk.
 
-Each host accepts one connection, with a 300-second state-machine deadline and
-60-second socket waits. Native calls are not preempted by that deadline.
-This is not production denial-of-service resistance.
-Local run records include the proposed application stream and timing but not
-packet-level TCP/IP captures; an unexpected post-proof trailing byte is rejected
-but not included in the persisted stream. Preserve failures when evaluating a
-broader observer. Current evidence is summarized in
-[verification/peer-readiness.json](verification/peer-readiness.json).
+## Artifact provenance
 
-## Historical RRSH findings
+All six 2.1.0 executables and `rfc-2.1.0/manifest.json` have detached RSA2048
+PKCS#1 v1.5 SHA-256 signatures made with the pinned MiulusTek release key in
+YubiKey PIV slot 9a. Verify the manifest and every executable before use using
+the [main guide](README.md). Establish key trust independently; the accompanying
+certificate identifies the key, but detached-signature verification alone does
+not validate a certificate chain. Signing establishes provenance and integrity
+of signed bytes, not their behavior or security.
 
-The previous full RRSH distribution remains in repository history. The
-2026-10-03 restoration record reports seedless recovery of six bits of every
-byte in one 165-byte server message, including 128 synthetic stdout bytes,
-from a recorded Linux executable's wire. Its binary SHA-256 was
-`80894fc4206df111482fe1f81d8395c10632e4815fe928c4ac76fdf094f2fc09`.
-This is a scoped partial-content leak, not general full-byte recovery and not
-a measurement of these new core libraries.
+The signed manifest pins the release binaries, validation record and listed
+documentation. `SHA256SUMS` is an additional distribution consistency check; it
+is not separately hardware-signed. macOS linker ad-hoc code-signature integrity
+was checked, but Apple Developer ID notarization is not provided.
 
-The owning record is RRSH `docs/PRIMITIVE_RESTORATION.md`, section "Existing
-release findings," at source commit
-`26f389d081a42bac764b256fb0fe469eb010b98a`. Original captures reside in the
-adjacent private PHIc research repository. That finding supersedes the previous
-README and security document's categorical unreadability and denial-only claims.
-Replacing the artifact does not erase that finding or establish that a future
-complete application fixes it.
+The old `install.sh` installs RFC 1.0.1 libraries and tester 0.3.3 only. It pins
+that older release key and artifact/header hashes; it does not install 2.1.0 or
+certify the newer binaries. See the [historical guide](LEGACY_1_0_1.md) and
+[historical security record](LEGACY_SECURITY.md).
 
-## Evaluate the complete application
+## Preserved historical findings
 
-Give the primary observer the public implementation and complete recording at
-the claimed boundary: setup, identifiers, headers, values, ordering, timing and
-lengths. Withhold private seeds and endpoint state. Use fresh private seeds,
-not fixed seeds from a public harness. Allow independent recovery algorithms;
-do not restrict the observer to the intended decoder.
+The 2026-10-03 restoration record found seedless recovery of six bits per byte
+in a 165-byte server message, including 128 synthetic stdout bytes, from an older
+Linux RRSH artifact (`80894fc4206df111482fe1f81d8395c10632e4815fe928c4ac76fdf094f2fc09`).
+This is a scoped partial-content leak in that artifact, not a measurement of the
+2.1.0 private-field release. Replacing a binary does not erase the failure or
+establish that the successor meets confidentiality requirements.
 
-Report full-symbol recovery, partial-bit information, repeated-symbol
-relationships, state information and metadata separately. Identify additional
-known-plaintext, chosen-plaintext or seed-compromise access explicitly.
-Seed-holder reconstruction is a separate compromise case. A passing round trip
-or absence of a plaintext marker in a capture does not establish privacy.
-
-Snapshots and notebook rows are local diagnostic state. Do not transmit them as
-a recovery shortcut or assume snapshot portability across builds. Handles are
-owned by their creating library; concurrent source mutation during a notebook
-call is unsupported. Applications must provide authorization, input validation,
-resource bounds and secure handling of any private state.
-
-## Verify artifact provenance
-
-Every current library and tester has a detached RSA-2048 PKCS#1 v1.5 SHA-256 signature
-made with the MiulusTek release key in YubiKey PIV slot 9a. The private key
-remains on hardware. See [README.md](README.md) for verification commands.
-Establish trust in the [public key](signing/miulustek-release.pub) independently.
-The supplied certificate identifies that key; checking a detached signature
-does not validate a certificate chain.
-
-The installer pins the key, requires both artifact signatures and pins both artifact and header SHA-256 identities.
-There is no verification bypass. Checksums and manifest metadata are not
-separately hardware-signed and are not independent authenticity evidence.
-The macOS artifact is not Developer ID notarized. A signature establishes
-provenance and integrity of signed bytes, not their behavioral security.
+Older paired-tester splice, challenge, continuation and observer findings remain
+in [LEGACY_SECURITY.md](LEGACY_SECURITY.md). They concern that tester and do not
+supply authentication claims for the 2.1.0 client/daemon.
 
 ## Report findings
 
-Open an issue in this repository for public findings. For sensitive reports,
-email **support@miulustek.com**. Include:
-
-- Platform, library filename, SHA-256 and version from `rfc_version_*`.
-- Integrating application identity and the exact evaluated boundary.
-- Inputs, reproduction code, capture scope and observer access.
-- Expected behavior, observed result, trial count and recovery advantage.
-- For signature failures, artifact, signature and verification key identities.
-
-Do not include real grants, private seeds, signing PINs or unrelated private
-data. API defects, malformed-state behavior, allocation or ownership problems,
-signature failures and partial-information findings are relevant. State the
-tested scope without generalizing a finite result to every possible observer.
+Open an issue here for public findings. For sensitive reports, email
+**support@miulustek.com**. Include artifact/version/platform and SHA-256, the
+exact evaluated boundary, inputs/reproduction, recording scope, observer access,
+expected/observed behavior, trial count and the declared recovery/advantage
+measure. For signature failures include artifact, signature and key identities.
+Do not include real seeds, grants, signing PINs or unrelated private data.

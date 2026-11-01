@@ -77,7 +77,8 @@ watchdog: no autonomous process/transport deadline is provided.
 
 macOS binaries are arm64 Mach-O files linked to system libSystem, with a declared
 minimum OS of 13.0. Static code-signature integrity checks pass (linker ad-hoc
-signatures); see the manifest for runtime-test status. This metadata alone does
+signatures). Release smoke tests pass on macOS 26.6.2; upload refuses safely
+with `UnnamedAtomicRequired` on the tested filesystem. This metadata alone does
 not establish compatibility on every supported OS version.
 
 ## Capacity and evidence limits
@@ -113,5 +114,6 @@ unpatched build aborted at startup due to incorrect platform clock selection;
 it was replaced before publication. These are local release checks, not the
 complete Linux numerical/TCP qualification on another OS.
 
-See the platform-specific validation in `manifest.json`, the repository
-`SECURITY.md`, `LICENSE.md` and `third-party/README.md`.
+See the [platform validation](validation.json), [signed manifest](manifest.json),
+[current research summary](../RESEARCH_STATUS.md), [security scope](../SECURITY.md),
+[license](../LICENSE.md) and [third-party notices](../third-party/README.md).

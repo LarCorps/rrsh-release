@@ -1,231 +1,99 @@
 # RRSH 2.1.0 experimental binaries
 
-The latest evaluation build is [RRSH 2.1.0](rfc-2.1.0/README.md), available for
-Linux x86_64 and macOS Apple Silicon. It includes separate signed client/daemon,
-core and local API-check executables. See the [signed manifest](rfc-2.1.0/manifest.json)
-for artifact identities and platform validation.
+Updated 2026-11-01. RRSH 2.1.0 provides a bounded client and single-use daemon
+for allowlisted exec and small file operations. Linux x86_64 and macOS Apple
+Silicon builds are available, with detached MiulusTek YubiKey signatures.
+This is an experimental evaluation release. Authentication, confidentiality and
+production readiness remain unestablished.
 
-This is bounded experimental exec/copy functionality, with a hard 64-event ceiling
-per direction and possible earlier native resource refusal. Remote authentication,
-confidentiality, interactive shell/PTY, forwarding and unbounded sessions are not
-established or provided. Signing establishes provenance only.
+## Downloads and platform behavior
 
-The existing `install.sh` and endpoint-testing guide target the historical paired
-connection tester below. Follow the 2.1.0 instructions for the new binaries.
-Distribution terms are in [LICENSE.md](LICENSE.md); limits are in [SECURITY.md](SECURITY.md).
+Download all three executables for your platform, with their `.sig` files:
 
-## Historical RFC 1.0.1 and paired connection tester 0.3.3
+| Platform | Client / daemon | Required core | Local API checker | Release validation |
+| --- | --- | --- | --- | --- |
+| Linux x86_64 | [rrsh-rfc21-experimental](rfc-2.1.0/linux-x86_64/rrsh-rfc21-experimental) | [librarian-rfc21-core](rfc-2.1.0/linux-x86_64/librarian-rfc21-core) | [librarian-rfc21-check](rfc-2.1.0/linux-x86_64/librarian-rfc21-check) | Full bounded Linux qualification |
+| macOS Apple Silicon | [rrsh-rfc21-experimental](rfc-2.1.0/macos-aarch64/rrsh-rfc21-experimental) | [librarian-rfc21-core](rfc-2.1.0/macos-aarch64/librarian-rfc21-core) | [librarian-rfc21-check](rfc-2.1.0/macos-aarch64/librarian-rfc21-check) | Five local release smoke checks on macOS 26.6.2 |
 
-This repository distributes signed native **Relational Field Core (RFC)
-1.0.1** libraries, derived from **Librarian ABI 1.14.0**, for evaluation and
-integration. The core owns field creation, profile input, reaction measurement,
-candidate notebooks and local binary snapshots.
+Linux exec, upload and download pass the bounded application checks. macOS exec,
+command denial and download pass; upload safely refuses with
+`UnnamedAtomicRequired` on the tested filesystem. No weaker publication fallback
+is provided. macOS upload success is not qualified.
 
-These libraries replace the previous RRSH command-line binaries here. They are
-loaded through a C API; they are not shell clients or daemons. The previous
-`rrsh`, `rrshd`, `rrsh-cp` and `rrsh-keygen` commands are not included.
-The accompanying `rrsh-peer` executable bundles this core for a synthetic
-paired connection test. It provides local pairing setup and host/connect
-commands; it grants no remote execution, file or forwarding capability.
+Linux links to host glibc, with required symbol versions through 2.28. macOS is
+arm64 with a declared minimum OS of 13.0; runtime testing covers 26.6.2 only.
+Windows, Linux arm64 and Intel macOS builds are not included. The binaries do
+not require Python. Apple Developer ID notarization is not provided.
 
-This is a research profile. Signing establishes artifact provenance, not
-confidentiality, complete-wire compliance or production readiness. See
-[SECURITY.md](SECURITY.md) for evidence limits and reporting, and
-[LICENSE.md](LICENSE.md) for distribution terms and
-[third-party notices](third-party/README.md) for bundled runtime licenses.
+## Verify the download
 
-For an actual two-device connection alongside SSH, follow the
-[pairing and host/connect instructions](ENDPOINT_TESTING.md). The tester checks
-native private-field correspondence. Authentication security and semantic
-non-referentiality remain unestablished.
-
-## Artifacts
-
-| Platform | Native library | Signature | Requirement |
-| --- | --- | --- | --- |
-| Linux x86_64 | [librelational_field_core_1_0_1.so](bin/x86_64-linux/librelational_field_core_1_0_1.so) | [.sig](bin/x86_64-linux/librelational_field_core_1_0_1.so.sig) | glibc 2.28 or later |
-| macOS Apple Silicon | [librelational_field_core_1_0_1.dylib](bin/aarch64-macos/librelational_field_core_1_0_1.dylib) | [.sig](bin/aarch64-macos/librelational_field_core_1_0_1.dylib.sig) | arm64 / aarch64 |
-
-The standalone tester is available for [Linux x86_64](bin/x86_64-linux/rrsh-peer-x86_64-linux)
-([signature](bin/x86_64-linux/rrsh-peer-x86_64-linux.sig)) and
-[macOS Apple Silicon](bin/aarch64-macos/rrsh-peer-aarch64-macos)
-([signature](bin/aarch64-macos/rrsh-peer-aarch64-macos.sig)). It includes the
-unchanged hash-pinned RFC core and a bundled Python runtime: no system Python
-is required. The Linux tester requires glibc 2.31 or later; the standalone core
-requires 2.28. The macOS tester requires macOS 26 or later.
-[Tester manifest](peer-release-manifest.json) records build/source identities.
-
-Linux arm64, Intel macOS and Windows binaries are not included in this update.
-The macOS library has a detached release signature; Apple Developer ID signing
-and notarization are not provided.
-
-The [C header](include/relational_field_core.h),
-[release manifest](release-manifest.json), [checksums](SHA256SUMS),
-[public key](signing/miulustek-release.pub) and
-[certificate](signing/miulustek-release-9a.crt) accompany the libraries.
-Checksums and the manifest describe the artifacts; the detached signatures
-provide the authenticity check.
-
-## Verify before loading
-
-From a checkout, verify the library for your platform:
+From a checkout, select the platform and verify the manifest and all executables:
 
 ```sh
-# Linux
+platform=linux-x86_64  # use macos-aarch64 on Apple Silicon
 openssl dgst -sha256 -verify signing/miulustek-release.pub \
-  -signature bin/x86_64-linux/librelational_field_core_1_0_1.so.sig \
-  bin/x86_64-linux/librelational_field_core_1_0_1.so
-
-# macOS
-openssl dgst -sha256 -verify signing/miulustek-release.pub \
-  -signature bin/aarch64-macos/librelational_field_core_1_0_1.dylib.sig \
-  bin/aarch64-macos/librelational_field_core_1_0_1.dylib
+  -signature rfc-2.1.0/manifest.json.sig rfc-2.1.0/manifest.json
+for name in rrsh-rfc21-experimental librarian-rfc21-core librarian-rfc21-check; do
+  openssl dgst -sha256 -verify signing/miulustek-release.pub \
+    -signature "rfc-2.1.0/$platform/$name.sig" "rfc-2.1.0/$platform/$name" || exit 1
+done
 ```
 
-Verify the tester before executing it as well:
+Every check must print `Verified OK`. Establish trust in the
+[public key](signing/miulustek-release.pub) independently. Signatures use
+RSA2048 PKCS#1 v1.5 with SHA-256, with the private key held in YubiKey PIV slot
+9a. Signing establishes provenance and integrity of signed bytes.
 
-```sh
-# Linux; on macOS use aarch64-macos/rrsh-peer-aarch64-macos instead.
-openssl dgst -sha256 -verify signing/miulustek-release.pub \
-  -signature bin/x86_64-linux/rrsh-peer-x86_64-linux.sig \
-  bin/x86_64-linux/rrsh-peer-x86_64-linux
-```
+The [signed manifest](rfc-2.1.0/manifest.json) pins executable and documentation
+hashes. [Validation records](rfc-2.1.0/validation.json) describe the tested scopes;
+[SHA256SUMS](SHA256SUMS) covers distribution files. Checksums alone are not an
+authenticity check.
 
-Each successful check prints `Verified OK`. The signatures use RSA-2048,
-PKCS#1 v1.5 and SHA-256 with the existing MiulusTek release key in YubiKey PIV
-slot 9a. Establish trust in the public key independently: an attacker who can
-replace both a download and your trust key can substitute a different signed
-artifact. The installer pins this key and prints its DER SHA-256 fingerprint.
+## Run and evaluate
 
-## Install the library, header and connection tester
+Follow the [2.1.0 operating guide](rfc-2.1.0/README.md) for exact arguments,
+local 32-byte pairing input, grants, captures and capacity limits. Both endpoints
+must use matching 2.1.0 binaries. Set `RRSH_RFC21_CORE` to the absolute core path.
 
-From this checkout:
+Each direction has a hard cumulative ceiling of 64 native events, including
+framing and genuine idle events. The 59-byte single-frame payload ceiling is
+before application-schema and session costs. Earlier native resource refusal
+is possible; 64 events are not guaranteed usable capacity. There is no
+reset/reseed or indefinite-stream fallback. The daemon has no autonomous
+transport/process deadline; use an external watchdog for evaluation.
 
-```sh
-sh install.sh
-```
+There is no interactive shell/PTY, forwarding, resume or authenticated peer
+identity. A local research grant authorizes an operation without authenticating
+the network peer. Use synthetic data, unprivileged accounts and isolated test
+environments. See [security and evidence limits](SECURITY.md).
 
-The installer stages the supported platform's library, tester, signatures and
-header, verifies against its pinned release key, and checks both artifacts and
-the header against their pinned SHA-256 identities before installing anything.
-It requires OpenSSL and does not execute downloaded artifacts during installation.
+## Latest evidence
 
-Default layout:
+The Linux build passes 83 native tests, all 256 octets across 16 fresh private
+contexts, 320 events, 44,160 independent source-coordinate checks, two short
+full receiver audits and eight RRSH process cases. Complete TCP recordings
+reconcile with both endpoints' native-float captures. The paired API check
+covers 32 bytes over 34 receiver events, with source-only continuation to 64.
 
-```text
-~/.local/share/relational-field-core/1.0.1/
-  bin/rrsh-peer
-  bin/rrsh-peer.sig
-  lib/librelational_field_core_1_0_1.so     # Linux; .dylib on macOS
-  lib/librelational_field_core_1_0_1.so.sig
-  include/relational_field_core.h
-  share/rfc/miulustek-release.pub
-  share/rfc/LICENSE.md
-  share/rfc/licenses/                       # bundled runtime notices
-```
+The corrected macOS build passes the local core API, exec, command denial,
+download and safe upload-refusal checks. All four application sessions have
+matching paired endpoint captures. A startup clock-portability defect was fixed
+before publication; the manifest records that macOS overlay separately from the
+unchanged qualified Linux executable identities.
 
-To select another checkout, host or prefix:
+[Research status](RESEARCH_STATUS.md) separates these release checks from the
+private-field observer study and the earlier public-root VM-LAN speed result.
+The measured 4.153141 durable B/s belongs to that earlier public-root experiment;
+it is not a throughput claim for this private-field release.
 
-```sh
-RFC_BASEURL=/path/to/rrsh-release RFC_PREFIX=/path/to/rfc sh install.sh
+## Retained older artifacts
 
-# Save and inspect the installer before running it.
-base=https://raw.githubusercontent.com/LarCorps/rrsh-release/main
-curl -fsSL "$base/install.sh" -o install-rfc.sh
-RFC_BASEURL="$base" sh install-rfc.sh
-```
+RFC 1.0.1 libraries, their C header, and the 0.3.3 paired connection tester remain
+available. Their [historical guide](LEGACY_1_0_1.md),
+[tester instructions](ENDPOINT_TESTING.md) and manifests describe their own
+interfaces and evidence. The existing `install.sh` installs those older artifacts;
+it does not install or upgrade RRSH 2.1.0. The earlier C library API and tester
+pairing commands do not apply to the new client/daemon.
 
-The remote example requires this update to be published first. Copying these
-files here does not update `phic.online` or any other hosted download.
-
-`RFC_BASEURL` selects a local directory or HTTP(S) repository root.
-`RFC_PREFIX` selects the installation prefix. The old `RRSH_BIN` and
-`RRSH_NO_VERIFY` behavior is retired. The tester is installed as `bin/rrsh-peer`;
-no services are installed.
-Remove the selected RFC prefix to uninstall after checking that applications
-no longer use it. Existing RRSH installations are separate and are not
-upgraded by this installer.
-
-## Integrate through the C API
-
-Include `relational_field_core.h` and link or dynamically load the matching
-library. The linker name is `relational_field_core_1_0_1`. Configure your
-application's loader search path for the installed library. The macOS install
-name is `@rpath/librelational_field_core_1_0_1.dylib`.
-No Python interpreter is required by the native core.
-
-```c
-#include "relational_field_core.h"
-
-int main(void) {
-    RfcCore *core = rfc_field_create(16);
-    if (!core) return 1;
-    RfcNotebookRow rows[17];
-    int32_t count = rfc_notebook(core, 16, rows, 17);
-    librarian_destroy(core);
-    return count == 17 ? 0 : 1;
-}
-```
-
-Supported field sizes are 16 and 32. A notebook contains the no-input candidate
-(`-1`), then every site candidate, giving 17 or 33 rows. Each row has a 40-byte
-C layout. Reaction bits represent a binary32 value; post-state hashes are local
-diagnostics. The header documents buffer queries, refusal results and sizing.
-
-Handles belong to their creating library and must be destroyed through that
-same library. Do not mutate a source core concurrently with a notebook call.
-The inherited ownership/step APIs are `librarian_destroy` and `librarian_step`.
-`rfc_version_*` reports 1.0.1; `librarian_version_*` reports upstream ABI 1.14.0.
-This profile is not full legacy Librarian compatibility.
-
-Active snapshots use typed local binary state with an `RFCB` schema-1 header.
-They are build-bound validation data, not a cross-platform persistence or peer
-state interchange format. There is no binary snapshot import API. Legacy JSON
-serialization, deserialization and metabolic output refuse in this profile.
-Identity text remains available locally. Snapshots, notebook rows and hashes
-do not define an application wire protocol.
-
-## Build and verification record
-
-Built on 2026-10-07 from RRSH `main` at
-`26f389d081a42bac764b256fb0fe469eb010b98a`, using unchanged RFC 1.0.1 sources
-and Zig 0.15.2, `ReleaseFast`, with debug symbols stripped. Binary-state,
-instrumentation and passive-event omission options are enabled. The macOS SDK
-was 15.4; Linux targets glibc 2.28.
-
-These are new platform builds, not replicas of the earlier Windows artifact
-recorded with Zig `0.16.0-dev.2349+204fa8959`. The
-[manifest](release-manifest.json) records source, compiler, header, library,
-signature and certificate identities.
-
-The native smoke check passed on the macOS arm64 host and in an emulated
-Linux x86_64 Debian bookworm container: product and upstream versions, the
-40-byte row layout, JSON refusal, snapshot schema, candidate ordering,
-selected reaction agreement, 16 notebooks across both profile sizes and
-native ownership cleanup. Logs: [macOS](verification/macos-smoke.log),
-[Linux](verification/linux-smoke.log). Both copied signatures were verified
-independently with OpenSSL.
-
-These native API checks do not test a complete RRSH transport, authentication,
-PTY, file copy, long-session behavior or confidentiality. The previous full
-RRSH artifacts remain historical evidence in Git history; their behavior
-must not be attributed to the current distribution.
-
-Tester 0.3.3 was frozen separately with PyInstaller 6.22.3, using Python 3.14
-on macOS and Python 3.12 on Debian bullseye for Linux. The unchanged core is
-bundled as a local compressed asset, restored and hash-verified before load
-to preserve its signed byte identity. Actual frozen setup and
-connection checks, capture comparisons and failed-gate limits are documented
-in [ENDPOINT_TESTING.md](ENDPOINT_TESTING.md) and the
-[readiness record](verification/peer-readiness.json).
-
-The final installer passed local-checkout and HTTP staging checks on macOS,
-including refusal of modified tester bytes, tester/core signatures and the C
-header before any prefix was created. See
-[installer verification](verification/peer-installer.json).
-
-The Linux installer also passed in an emulated Debian bookworm container,
-including the installed tester's version and detached-signature verification:
-[Linux installer log](verification/peer-linux-install.log). A bullseye package
-mirror failure occurred before the initial installer attempt could run; paired
-binary runtime checks on bullseye are separate from this setup failure.
+See [license and distribution terms](LICENSE.md) and
+[third-party notices](third-party/README.md).
