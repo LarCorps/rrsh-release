@@ -1,0 +1,65 @@
+{
+  "linux": {
+    "core": true,
+    "native_tests": 83,
+    "octets": 256,
+    "private_contexts": 16,
+    "events": 320,
+    "source_coordinate_checks": 44160,
+    "full_receiver_audits": 2,
+    "api_paired_events": 34,
+    "source_limit": 64,
+    "rrsh_process_cases": 8,
+    "complete_tcp_endpoint_capture_agreement": true,
+    "qualified_binary_identity_preserved": true
+  },
+  "macos": {
+    "passed": true,
+    "platform": "macos-aarch64",
+    "cases": {
+      "api": {
+        "passed": true,
+        "stdout": "{\"passed\":true,\"bytes\":32,\"events\":64,\"source_events\":64,\"receiver_events\":34,\"limit_refused\":true,\"clean_close\":true,\"receiver_after_close_refused\":true}\n",
+        "exit_code": 0
+      },
+      "exec": {
+        "passed": true,
+        "client_exit": 0,
+        "daemon_exit": 0,
+        "tx_events": 32,
+        "rx_events": 23,
+        "captures_match": true,
+        "expected_refusal": null
+      },
+      "denied": {
+        "passed": true,
+        "client_exit": 1,
+        "daemon_exit": 0,
+        "tx_events": 32,
+        "rx_events": 23,
+        "captures_match": true,
+        "expected_refusal": "CommandDenied"
+      },
+      "put": {
+        "passed": true,
+        "client_exit": 1,
+        "daemon_exit": 0,
+        "tx_events": 14,
+        "rx_events": 31,
+        "captures_match": true,
+        "expected_refusal": "UnnamedAtomicRequired"
+      },
+      "get": {
+        "passed": true,
+        "client_exit": 0,
+        "daemon_exit": 0,
+        "tx_events": 11,
+        "rx_events": 12,
+        "captures_match": true,
+        "expected_refusal": null
+      }
+    },
+    "initial_build_failure": "Core startup aborted: panic clock; platform clock IDs corrected before publication",
+    "tested_os": "macOS 26.6.2 (25G83)"
+  }
+}

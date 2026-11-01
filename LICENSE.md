@@ -2,7 +2,7 @@
 
 Copyright © MiulusTek. All rights reserved.
 
-The Relational Field Core native libraries, paired connection tester and accompanying C API header distributed
+The RRSH experimental executables, Relational Field Core native libraries, paired connection tester and accompanying C API header distributed
 in this RRSH release repository (the "Software") are proprietary.
 Separately licensed bundled runtime components retain their upstream terms;
 see [third-party notices](third-party/README.md).

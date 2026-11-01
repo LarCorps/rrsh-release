@@ -1,0 +1,84 @@
+{
+  "product": "RRSH bounded experimental evaluation",
+  "version": "2.1.0",
+  "date": "2026-11-01",
+  "source_commit": "00ff0a448a3da594cbbe51a540f269f3b10140c7",
+  "compiler": {
+    "version": "0.16.0",
+    "sha256": "2317bbb91798556d9d0f38aabdac23db83f0979b25f767259ae474546724087c",
+    "optimize": "ReleaseSafe",
+    "build_host": "VM105 Linux CPU UID1000"
+  },
+  "artifacts": {
+    "rfc-2.1.0/linux-x86_64/librarian-rfc21-core": {
+      "sha256": "d36704ff9757888a2798e3c1dba5920ce5cc997ffa5bbcb700703c58af49f440",
+      "bytes": 15137728,
+      "signature": "rfc-2.1.0/linux-x86_64/librarian-rfc21-core.sig"
+    },
+    "rfc-2.1.0/linux-x86_64/librarian-rfc21-check": {
+      "sha256": "f769b5986027ba5891bd4d27507bd21d270ac7e200aaa39c443d85d68badf3fb",
+      "bytes": 3745592,
+      "signature": "rfc-2.1.0/linux-x86_64/librarian-rfc21-check.sig"
+    },
+    "rfc-2.1.0/linux-x86_64/rrsh-rfc21-experimental": {
+      "sha256": "a8d0169784188a99b753a054f6a8cd2a5e07bf0503450bff9e8dcd0b7259eb2a",
+      "bytes": 4017312,
+      "signature": "rfc-2.1.0/linux-x86_64/rrsh-rfc21-experimental.sig"
+    },
+    "rfc-2.1.0/macos-aarch64/librarian-rfc21-core": {
+      "sha256": "6e98f5833ac15db186fc3c95a8b8e66eab1593c9373d918065e044deac9a8747",
+      "bytes": 6471720,
+      "signature": "rfc-2.1.0/macos-aarch64/librarian-rfc21-core.sig"
+    },
+    "rfc-2.1.0/macos-aarch64/librarian-rfc21-check": {
+      "sha256": "1d0785eef24a79e76f389a0f8c8276226f042f91a2b4d5254f8abb8ca97791a3",
+      "bytes": 539688,
+      "signature": "rfc-2.1.0/macos-aarch64/librarian-rfc21-check.sig"
+    },
+    "rfc-2.1.0/macos-aarch64/rrsh-rfc21-experimental": {
+      "sha256": "d3e3047eec1cafe3cabe1eee97bd517aa56719b002611050a79d93505f6f2ba9",
+      "bytes": 596024,
+      "signature": "rfc-2.1.0/macos-aarch64/rrsh-rfc21-experimental.sig"
+    }
+  },
+  "files": {
+    "rfc-2.1.0/linux-x86_64/librarian-rfc21-core": "d36704ff9757888a2798e3c1dba5920ce5cc997ffa5bbcb700703c58af49f440",
+    "rfc-2.1.0/linux-x86_64/librarian-rfc21-check": "f769b5986027ba5891bd4d27507bd21d270ac7e200aaa39c443d85d68badf3fb",
+    "rfc-2.1.0/linux-x86_64/rrsh-rfc21-experimental": "a8d0169784188a99b753a054f6a8cd2a5e07bf0503450bff9e8dcd0b7259eb2a",
+    "rfc-2.1.0/macos-aarch64/librarian-rfc21-core": "6e98f5833ac15db186fc3c95a8b8e66eab1593c9373d918065e044deac9a8747",
+    "rfc-2.1.0/macos-aarch64/librarian-rfc21-check": "1d0785eef24a79e76f389a0f8c8276226f042f91a2b4d5254f8abb8ca97791a3",
+    "rfc-2.1.0/macos-aarch64/rrsh-rfc21-experimental": "d3e3047eec1cafe3cabe1eee97bd517aa56719b002611050a79d93505f6f2ba9",
+    "rfc-2.1.0/README.md": "425de9e2960635d5f7d24985efa3c0e8013eece2d9aee84cd71c644d7949ccdc",
+    "rfc-2.1.0/validation.json": "4e56cfba9dd512b5b673e6637fc06174879c35283892ccfa22a96ea6cc6c6daa",
+    "README.md": "ae1290794340bf8ec7ff0919d475f81cd5a0cf7801674ebafce25d1cc380963f",
+    "ENDPOINT_TESTING.md": "2c7a9b8bb090592a6a10900436c60d8a73535e042f06d609cc7c81cf255a7cc9",
+    "LICENSE.md": "122c3aedff326ea6b80691b07f746d88a9926313b8ac09bf3270c33004b94619",
+    "SECURITY.md": "66c4ffffd5abbf4a280e6a0983273b274c496f63d486887e5df197d207610e21",
+    "third-party/README.md": "4fb5456fb6e1500df3cedaddf8d7ac5972ce31a9834fd7b1fc0b355f5442b188",
+    "third-party/Zig-LICENSE.txt": "5c537d6853e005298a285d508cff9ac7192cea23576c840d485b2b586a7ff177"
+  },
+  "validation": "rfc-2.1.0/validation.json",
+  "signing": {
+    "algorithm": "detached RSA2048 PKCS1v1.5 SHA256",
+    "slot": "9a",
+    "certificate_der_sha256": "0f79cef3b2987bcff0f92c645d9881f74d496fe9dd8004824c806dd24c5bcba0",
+    "public_key_sha256": "663e4698e7bb3a2f137d2e9ea269ea5c47539dd6192de39bbf9d8455771968f2"
+  },
+  "limits": {
+    "max_events_per_direction": 64,
+    "max_single_frame_payload": 59,
+    "earlier_resource_refusal_possible": true,
+    "authentication_established": false,
+    "confidentiality_established": false,
+    "production_admission": false,
+    "macos_notarized": false
+  },
+  "source_overlays": {
+    "macos-aarch64": {
+      "description": "Platform clock portability only; field/action/observation and wire unchanged",
+      "patch_sha256": "9f26148bc95ffb87c75b04e7d66bd41fdea4ef37833bfd4fb8448213bced7f14",
+      "original_common_sha256": "ce061f11ae0f43b7f14a9078fb29c257a0194111b0d4a947e9b344ade05e84cb",
+      "patched_common_sha256": "755683691bc858b96ab1812b1d60770ca2a460078b7ae9a0268d876f65f1d641"
+    }
+  }
+}

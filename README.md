@@ -1,4 +1,20 @@
-# RFC 1.0.1 and paired connection tester 0.3.3
+# RRSH 2.1.0 experimental binaries
+
+The latest evaluation build is [RRSH 2.1.0](rfc-2.1.0/README.md), available for
+Linux x86_64 and macOS Apple Silicon. It includes separate signed client/daemon,
+core and local API-check executables. See the [signed manifest](rfc-2.1.0/manifest.json)
+for artifact identities and platform validation.
+
+This is bounded experimental exec/copy functionality, with a hard 64-event ceiling
+per direction and possible earlier native resource refusal. Remote authentication,
+confidentiality, interactive shell/PTY, forwarding and unbounded sessions are not
+established or provided. Signing establishes provenance only.
+
+The existing `install.sh` and endpoint-testing guide target the historical paired
+connection tester below. Follow the 2.1.0 instructions for the new binaries.
+Distribution terms are in [LICENSE.md](LICENSE.md); limits are in [SECURITY.md](SECURITY.md).
+
+## Historical RFC 1.0.1 and paired connection tester 0.3.3
 
 This repository distributes signed native **Relational Field Core (RFC)
 1.0.1** libraries, derived from **Librarian ABI 1.14.0**, for evaluation and

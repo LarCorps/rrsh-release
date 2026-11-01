@@ -1,3 +1,6 @@
+> This guide targets the historical 0.3.3 connection tester. For the latest bounded
+> RRSH client/daemon, use [the 2.1.0 guide](rfc-2.1.0/README.md).
+
 # Two-endpoint testing alongside SSH
 
 `rrsh-peer 0.3.3` runs one paired native connection probe between a separately

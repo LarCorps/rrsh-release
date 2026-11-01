@@ -1,5 +1,19 @@
 # Security and evaluation scope
 
+The latest distribution adds [RRSH 2.1.0](rfc-2.1.0/README.md), a bounded
+experimental client/daemon and native core. It supports allowlisted exec and small
+file operations; local grant authority does not authenticate a peer. The native
+binary32 content stream and private preparation do not establish confidentiality,
+mechanism classification or complete-wire compliance. A hard 64-event ceiling
+includes framing/idles, and earlier resource refusal is possible. No reset/reseed
+fallback, indefinite shell, PTY, forwarding or production admission is provided.
+The signed manifest records Linux qualification and the macOS runtime-test status.
+A YubiKey detached signature establishes provenance only; macOS Developer ID
+notarization is not provided. Evaluate with synthetic data in isolated environments.
+
+The following evidence and limits describe the retained historical artifacts.
+
+
 The current distribution contains Relational Field Core 1.0.1 research libraries,
 derived from Librarian ABI 1.14.0. It also includes `rrsh-peer 0.3.3`, a connection-only research tester with
 local pairing setup and a TCP host/connect probe. It grants no remote commands,

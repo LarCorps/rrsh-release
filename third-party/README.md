@@ -11,3 +11,7 @@ macOS includes Python 3.14, OpenSSL 3, mpdecimal 4, zstd and liblzma (XZ's 0BSD
 library). Linux includes Python 3.12 and runtime libraries from Debian bullseye;
 its collected system-library notices are included in linux-runtime-notices.txt.
 These files preserve the upstream notices without modifying their text.
+
+The 2.1.0 executables use Zig standard/runtime components under the MIT license;
+see Zig-LICENSE.txt. They do not bundle Python or PyInstaller. Linux uses the
+host glibc dynamically; macOS uses the system libSystem dynamically.
